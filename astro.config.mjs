@@ -8,5 +8,8 @@ export default defineConfig({
   integrations: [
     tailwind() 
     // sitemap() <-- REMOVED TEMPORARILY
-  ]
+  ],
+  server: {
+    host: '0.0.0.0'
+  }
 });

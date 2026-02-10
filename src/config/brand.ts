@@ -1,3 +1,5 @@
+// src/config/brand.ts
+
 /**
  * PHASE 01 MASTER LOG: 01-01
  * Source of Truth (SoT) for Brand Identity, Pricing, and Regulatory Constants.
@@ -30,4 +32,9 @@ export const PRICING_2026 = {
 export const COMPLIANCE_CONSTANTS = {
   boHardStopDate: 'July 2024',
   restorationProof: '12-month bank statements',
+} as const;
+
+// Social Connectivity
+export const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61587491532935', 
 } as const;
