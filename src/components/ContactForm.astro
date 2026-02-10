@@ -2,29 +2,19 @@
 // src/components/ContactForm.astro
 ---
 
-<div class="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-xl border border-gray-100">
-  
-  <div id="form-success" class="hidden text-center py-8">
-    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
-      <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-      </svg>
-    </div>
-    <h3 class="text-2xl font-bold text-gray-900">Message Sent!</h3>
-    <p class="text-gray-600 mt-2">We have received your details. A compliance officer will contact you shortly.</p>
-    <button onclick="window.location.reload()" class="mt-6 px-6 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition">
-      Send Another Message
-    </button>
-  </div>
-
+<div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
   <form 
-    id="compliance-form"
     name="contact" 
     method="POST" 
-    netlify
+    action="/thank-you" 
+    data-netlify="true" 
+    netlify-honeypot="bot-field"
     class="space-y-6"
   >
     <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </p>
 
     <div>
       <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
@@ -33,8 +23,8 @@
         name="name" 
         id="name" 
         required 
-        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition"
-        placeholder="Enter your name"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="Enter your full name"
       />
     </div>
 
@@ -45,8 +35,8 @@
         name="email" 
         id="email" 
         required 
-        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition"
-        placeholder="john@example.com"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="name@company.com"
       />
     </div>
 
@@ -56,7 +46,7 @@
         type="tel" 
         name="phone" 
         id="phone" 
-        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition duration-200 bg-gray-50 focus:bg-white"
         placeholder="082 123 4567"
       />
     </div>
@@ -66,7 +56,7 @@
       <select 
         name="service" 
         id="service" 
-        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition bg-white"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition duration-200 bg-gray-50 focus:bg-white"
       >
         <option value="New Company Registration">New Company Registration</option>
         <option value="Annual Returns">Annual Returns</option>
@@ -77,45 +67,29 @@
       </select>
     </div>
 
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+      <textarea 
+        name="message" 
+        id="message" 
+        rows="3" 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="How can we help you?"
+      ></textarea>
+    </div>
+
     <button 
       type="submit" 
-      class="w-full py-3 px-4 bg-brand-primary hover:bg-brand-secondary text-white font-bold rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-center items-center gap-2"
+      class="w-full py-4 px-6 bg-brand-primary hover:bg-brand-secondary text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 flex justify-center items-center gap-2"
     >
-      <span>Start Registration</span>
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      <span>Send Inquiry</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      </svg>
     </button>
     
     <p class="text-xs text-center text-gray-500 mt-4">
-      By clicking submit, you agree to our privacy policy. Your data is secure.
+      Secure SSL submission. Your data is protected.
     </p>
   </form>
 </div>
-
-<script>
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-    const myForm = event.target;
-    const formData = new FormData(myForm);
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-    .then((response) => {
-      if (response.ok) {
-        // Success!
-        document.getElementById('compliance-form').classList.add('hidden');
-        document.getElementById('form-success').classList.remove('hidden');
-      } else {
-        // Server returned an error (like 404)
-        alert("Submission failed. The server could not process the form.");
-      }
-    })
-    .catch((error) => {
-      alert("Network error. Please check your connection.");
-    });
-  };
-
-  document.querySelector("form").addEventListener("submit", handleSubmit);
-</script>
