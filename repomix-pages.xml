@@ -1,0 +1,166 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: src/pages/services/cipc/new-company.astro, src/pages/thank-you.astro
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+src/pages/services/cipc/new-company.astro
+src/pages/thank-you.astro
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="src/pages/services/cipc/new-company.astro">
+---
+// src/pages/services/cipc/new-company.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+
+const pageTitle = "New Company Registration (Pty) Ltd";
+const pageDescription = "Register your new South African company in record time. Includes Name Reservation and Income Tax number.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Launch your business with a fully compliant Pty Ltd structure. We handle the Name Reservation and MoI filing."
+    price={PRICING_2026.ptyRegistration}
+    turnaround="3-5 Business Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-blue mb-6">Why Register With JG?</h2>
+        <ul class="space-y-4 text-brand-grey">
+          <li class="flex items-start gap-3">
+            <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span><strong>100% CIPC Compliance Guaranteed</strong>: We ensure no rejection delays.</span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Includes <strong>Name Reservation</strong></span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Free <strong>Income Tax Number</strong> Generation</span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Standard <strong>MoI</strong> (Memorandum of Incorporation)</span>
+          </li>
+        </ul>
+
+        <div class="mt-8 bg-brand-bg p-6 rounded-lg border border-brand-accent/20">
+            <h3 class="font-bold text-brand-blue text-lg mb-2">Process Flow</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-brand-grey">
+                <li>Submit 4 proposed names &amp; ID copy.</li>
+                <li>We lodge the Name Reservation.</li>
+                <li>Once approved, we file the Incorporation (CoR 15.1).</li>
+                <li>Receive Company Papers + Tax Number.</li>
+            </ol>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 h-fit sticky top-24">
+        <h3 class="text-xl font-bold text-brand-blue mb-4">Ready to Start?</h3>
+        <p class="mb-6 text-sm text-brand-grey leading-relaxed">
+          Launch your business officially today. Our team will handle the CIPC administration so you can focus on trading.
+        </p>
+        <a href="/contact?service=new-company" class="block w-full text-center bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Start New Company Registration
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/thank-you.astro">
+---
+import Layout from '../layouts/BaseLayout.astro';
+---
+
+<Layout title="Thank You | JG Compliance">
+  <main class="flex items-center justify-center min-h-[60vh] bg-gray-50 px-4">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-xl p-8 text-center border-t-4 border-brand-primary">
+      
+      <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Message Received!</h1>
+      <p class="text-gray-600 mb-8">
+        Thanks for reaching out. We have received your inquiry and a compliance officer will be in touch shortly (usually within 2 hours).
+      </p>
+
+      <div class="space-y-3">
+        <a 
+          href="/" 
+          class="block w-full py-3 px-4 bg-brand-primary hover:bg-brand-secondary text-white font-semibold rounded-lg transition duration-200"
+        >
+          Return to Home
+        </a>
+        <a 
+          href="/services/cipc/new-company" 
+          class="block w-full py-3 px-4 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium rounded-lg transition duration-200"
+        >
+          View Services
+        </a>
+      </div>
+      
+    </div>
+  </main>
+</Layout>
+</file>
+
+</files>
