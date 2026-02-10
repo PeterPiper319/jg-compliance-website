@@ -1,34 +1,37 @@
 ---
-// src/pages/thank-you.astro
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const pageTitle = "Thank You - Submission Received";
-const pageDescription = "We have received your inquiry.";
+import Layout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <main class="container mx-auto px-4 py-32 text-center">
-    
-    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 text-green-600">
-      <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-    </div>
+<Layout title="Thank You | JG Compliance">
+  <main class="flex items-center justify-center min-h-[60vh] bg-gray-50 px-4">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-xl p-8 text-center border-t-4 border-brand-primary">
+      
+      <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
 
-    <h1 class="text-4xl font-bold text-brand-blue mb-4">Inquiry Received!</h1>
-    
-    <p class="text-xl text-brand-grey max-w-2xl mx-auto mb-8">
-      Thank you for contacting JG Business Compliance. We have successfully received your details.
-    </p>
-
-    <div class="bg-white p-6 rounded-xl border border-brand-accent/20 max-w-lg mx-auto mb-10 shadow-sm">
-      <h3 class="font-bold text-brand-blue mb-2">What happens next?</h3>
-      <p class="text-sm text-brand-grey">
-        A compliance consultant will review your request and contact you via <strong>Email or WhatsApp</strong> within 2 business hours.
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Message Received!</h1>
+      <p class="text-gray-600 mb-8">
+        Thanks for reaching out. We have received your inquiry and a compliance officer will be in touch shortly (usually within 2 hours).
       </p>
+
+      <div class="space-y-3">
+        <a 
+          href="/" 
+          class="block w-full py-3 px-4 bg-brand-primary hover:bg-brand-secondary text-white font-semibold rounded-lg transition duration-200"
+        >
+          Return to Home
+        </a>
+        <a 
+          href="/services/cipc/new-company" 
+          class="block w-full py-3 px-4 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium rounded-lg transition duration-200"
+        >
+          View Services
+        </a>
+      </div>
+      
     </div>
-
-    <a href="/" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors">
-      Return to Home
-    </a>
-
   </main>
-</BaseLayout>
+</Layout>
