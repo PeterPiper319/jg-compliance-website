@@ -1,0 +1,50 @@
+---
+// src/pages/legal/terms.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Terms of Service";
+const lastUpdated = "February 2026";
+---
+
+<BaseLayout title={pageTitle} description="Terms and Conditions for JG Business Compliance services.">
+  <main class="container mx-auto px-4 py-16 max-w-4xl">
+    <h1 class="text-4xl font-bold text-brand-blue mb-4">{pageTitle}</h1>
+    <p class="text-brand-grey mb-8">Last Updated: {lastUpdated}</p>
+
+    <div class="prose prose-blue max-w-none text-brand-grey">
+      
+      <h3>1. Service Provider Status</h3>
+      <p>
+        JG Business Compliance (Pty) Ltd is a private company acting as a professional intermediary. 
+        <strong>We are not the CIPC, the Department of Labour, or the Compensation Fund.</strong> 
+        We charge a professional fee to handle the administrative workload of compliance on your behalf.
+      </p>
+
+      <h3>2. Authorization</h3>
+      <p>
+        By using our services, you grant JG Business Compliance a limited Power of Attorney to act as your authorized representative 
+        for the specific purpose of lodging applications with the relevant government authorities.
+      </p>
+
+      <h3>3. Fees and Refunds</h3>
+      <ul>
+        <li><strong>Professional Fees:</strong> These cover our consultation, data capturing, and administrative time.</li>
+        <li><strong>Government Fees:</strong> These are paid directly to the CIPC or Labour Department.</li>
+        <li><strong>Refund Policy:</strong> Once an application has been lodged with the government (CIPC/Labour), the Government Fee portion is non-refundable. Professional fees may be refunded at management discretion if no work has commenced.</li>
+      </ul>
+
+      <h3>4. Timelines</h3>
+      <p>
+        All turnaround times listed on this website are estimates based on current government processing speeds and are not guaranteed. 
+        JG Business Compliance cannot be held liable for delays caused by system downtime at the CIPC or Department of Labour.
+      </p>
+
+      <h3>5. User Responsibility</h3>
+      <p>
+        You agree to provide accurate, up-to-date information. JG Business Compliance is not liable for rejections 
+        caused by incorrect information provided by the client (e.g., incorrect ID numbers or typos in company names).
+      </p>
+
+    </div>
+  </main>
+</BaseLayout>

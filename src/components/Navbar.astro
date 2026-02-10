@@ -1,0 +1,27 @@
+---
+// src/components/Navbar.astro
+---
+
+<nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+    
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logo1.png" alt="Logo 1" class="h-12 w-auto object-contain" />
+      <img src="/logo2.png" alt="Logo 2" class="h-12 w-auto object-contain" />
+    </a>
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="/" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Home</a>
+      <a href="/services" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Services</a>
+      
+      <a href="/contact" class="bg-brand-blue text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-brand-blue/90 transition-colors shadow-sm">
+        Contact Us
+      </a>
+    </div>
+
+    <a href="/contact" class="md:hidden text-brand-blue font-bold text-sm">
+      Menu &rarr;
+    </a>
+
+  </div>
+</nav>

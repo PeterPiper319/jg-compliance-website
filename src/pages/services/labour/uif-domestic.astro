@@ -1,0 +1,62 @@
+---
+// src/pages/services/labour/uif-domestic.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+
+const pageTitle = "UIF & Labour for Domestic Employers";
+const pageDescription = "Mandatory UIF registration for domestic workers, gardeners, and nannies. Avoid CCMA disputes.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Complete compliance for private households. We register your domestic staff for UIF and help you issue compliant payslips."
+    price={PRICING_2026.uifDomestic}
+    turnaround="2-5 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="mb-10">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Are you a Domestic Employer?</h2>
+        <p class="text-brand-grey mb-4">
+          If you employ someone to work in your private household for more than 24 hours a month, you are legally an employer. 
+          This includes:
+        </p>
+        <ul class="grid md:grid-cols-2 gap-4">
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-blue-50 text-blue-600 rounded-full">🧹</span> Housekeepers / Cleaners
+           </li>
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-green-50 text-green-600 rounded-full">🌳</span> Gardeners
+           </li>
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-pink-50 text-pink-600 rounded-full">👶</span> Nannies & Au Pairs
+           </li>
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-gray-50 text-gray-600 rounded-full">🚗</span> Drivers
+           </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-red-700 mb-2">The Risk of Non-Compliance</h3>
+        <p class="text-red-600 text-sm">
+          Domestic workers often approach the CCMA upon dismissal. If they are not registered for UIF, the employer faces 
+          penalties, back-payments, and potential legal costs far exceeding the cost of registration. Domestic workers are fully covered by the Detailed Basic Conditions of Employment Act.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Protect Your Household</h3>
+        <p class="mb-6 text-sm">Register your employee for UIF today.</p>
+        <a href="/contact?service=general" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          Start UIF Registration (R{PRICING_2026.uifDomestic})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>

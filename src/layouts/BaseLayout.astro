@@ -1,0 +1,33 @@
+---
+// src/layouts/BaseLayout.astro
+import GlobalFooter from '../components/GlobalFooter.astro';
+import Navbar from '../components/Navbar.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description || "JG Business Compliance"} />
+    <title>JG | Business Compliance</title>
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <GoogleAnalytics />
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
+    
+    <Navbar /> 
+
+    <div class="flex-grow">
+      <slot />
+    </div>
+
+    <GlobalFooter />
+
+    <WhatsAppButton />
+    
+  </body>
+</html>

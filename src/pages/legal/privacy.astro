@@ -1,0 +1,67 @@
+---
+// src/pages/legal/privacy.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Privacy Policy";
+const lastUpdated = "February 2026";
+---
+
+<BaseLayout title={pageTitle} description="Privacy Policy and POPIA Compliance for JG Business Compliance.">
+  <main class="container mx-auto px-4 py-16 max-w-4xl">
+    <h1 class="text-4xl font-bold text-brand-blue mb-4">{pageTitle}</h1>
+    <p class="text-brand-grey mb-8">Last Updated: {lastUpdated}</p>
+
+    <div class="prose prose-blue max-w-none text-brand-grey">
+      
+      <h3>1. Introduction</h3>
+      <p>
+        JG Business Compliance ("we", "us", or "our") respects your privacy and is committed to protecting your personal data. 
+        This privacy policy will inform you as to how we look after your personal data when you visit our website 
+        and tell you about your privacy rights and how the law protects you.
+      </p>
+
+      <h3>2. The Data We Collect</h3>
+      <p>
+        To perform our services (CIPC registration, Labour compliance, etc.), we must collect specific "Special Personal Information" 
+        as defined by the <strong>Protection of Personal Information Act (POPIA)</strong>. This includes:
+      </p>
+      <ul>
+        <li>Identity Numbers and Passport Numbers.</li>
+        <li>Physical and Postal Addresses.</li>
+        <li>Tax Reference Numbers.</li>
+        <li>Company Registration Numbers.</li>
+        <li>Financial Information (Turnover figures for Annual Returns).</li>
+      </ul>
+
+      <h3>3. How We Use Your Data</h3>
+      <p>
+        Your data is used strictly for the purpose of:
+      </p>
+      <ul>
+        <li>Lodging applications with the CIPC (Companies and Intellectual Property Commission).</li>
+        <li>Submitting declarations to the Department of Employment and Labour.</li>
+        <li>Registering for COIDA with the Compensation Fund.</li>
+        <li>Communicating with you regarding the status of your applications.</li>
+      </ul>
+
+      <h3>4. Third-Party Sharing</h3>
+      <p>
+        We do not sell your data. However, to fulfill our service mandate, we must share your data with the relevant 
+        government authorities (CIPC, SARS, Dept of Labour). By using our service, you consent to this necessary sharing.
+      </p>
+
+      <h3>5. Data Security</h3>
+      <p>
+        We have put in place appropriate security measures to prevent your personal data from being accidentally lost, 
+        used, or accessed in an unauthorized way. Our website uses SSL encryption for all data transmission.
+      </p>
+
+      <h3>6. Contact Details</h3>
+      <p>
+        If you have any questions about this privacy policy or our privacy practices, please contact us at: <br/>
+        <strong>Email:</strong> jillian@jgcompliance.co.za
+      </p>
+
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+// src/pages/services/labour/letter-good-standing.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+
+const pageTitle = "Letter of Good Standing (LOGS)";
+const pageDescription = "Essential documentation for tender eligibility. Verify your good standing with the Compensation Commissioner.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund."
+    price={PRICING_2026.letterGoodStanding}
+    turnaround="1-3 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-yellow-700 mb-2">Eligibility Check</h3>
+        <p class="text-yellow-800 text-sm">
+          The Compensation Commissioner will <strong>only</strong> issue a LOGS if:
+          <ul class="list-disc list-inside mt-2 ml-2">
+            <li>The company is registered with the Compensation Fund.</li>
+            <li>Your Assessment Fees are paid in full.</li>
+            <li>Your Return of Earnings (ROE) is up to date.</li>
+            <li>No outstanding debt exists on the account.</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="prose prose-blue max-w-none mb-10 text-brand-grey">
+        <p>
+          A Letter of Good Standing (LOGS) is the official confirmation that your business has met its statutory requirements under the COID Act. 
+          It is a mandatory requirement for <span class="font-bold">state tenders, construction contracts, and supply chain databases</span>.
+        </p>
+        <p>
+          Without this document, your business cannot apply for government work or large corporate contracts that require proof of compliance.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Get Tender Ready</h3>
+        <p class="mb-6 text-sm">We resolve administrative blocks to get your letter issued fast.</p>
+        <a href="/contact?service=letter-good-standing" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          Retrieve LOGS (R{PRICING_2026.letterGoodStanding})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>

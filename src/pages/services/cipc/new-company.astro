@@ -1,0 +1,72 @@
+---
+// src/pages/services/cipc/new-company.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+
+const pageTitle = "New Company Registration (Pty) Ltd";
+const pageDescription = "Register your new South African company in record time. Includes Name Reservation and Income Tax number.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Launch your business with a fully compliant Pty Ltd structure. We handle the Name Reservation and MoI filing."
+    price={PRICING_2026.ptyRegistration}
+    turnaround="3-5 Business Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-blue mb-6">Why Register With JG?</h2>
+        <ul class="space-y-4 text-brand-grey">
+          <li class="flex items-start gap-3">
+            <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span><strong>100% CIPC Compliance Guaranteed</strong>: We ensure no rejection delays.</span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Includes <strong>Name Reservation</strong></span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Free <strong>Income Tax Number</strong> Generation</span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Standard <strong>MoI</strong> (Memorandum of Incorporation)</span>
+          </li>
+        </ul>
+
+        <div class="mt-8 bg-brand-bg p-6 rounded-lg border border-brand-accent/20">
+            <h3 class="font-bold text-brand-blue text-lg mb-2">Process Flow</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-brand-grey">
+                <li>Submit 4 proposed names &amp; ID copy.</li>
+                <li>We lodge the Name Reservation.</li>
+                <li>Once approved, we file the Incorporation (CoR 15.1).</li>
+                <li>Receive Company Papers + Tax Number.</li>
+            </ol>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 h-fit sticky top-24">
+        <h3 class="text-xl font-bold text-brand-blue mb-4">Ready to Start?</h3>
+        <p class="mb-6 text-sm text-brand-grey leading-relaxed">
+          Launch your business officially today. Our team will handle the CIPC administration so you can focus on trading.
+        </p>
+        <a href="/contact?service=new-company" class="block w-full text-center bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Start New Company Registration
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

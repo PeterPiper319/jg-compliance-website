@@ -1,0 +1,14 @@
+---
+// src/components/GoogleAnalytics.astro
+// TODO: Replace 'G-MEASUREMENT_ID' with your actual ID from Google Analytics
+const GA_MEASUREMENT_ID = 'G-MEASUREMENT_ID';
+---
+
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+<script define:vars={{ GA_MEASUREMENT_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', GA_MEASUREMENT_ID);
+</script>

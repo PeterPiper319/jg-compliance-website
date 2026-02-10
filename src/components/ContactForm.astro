@@ -1,0 +1,83 @@
+---
+// src/components/ContactForm.astro
+---
+
+<form class="space-y-6" action="/thank-you" name="contact" method="POST" data-netlify="true">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-brand-grey mb-2">Full Name</label>
+      <input type="text" id="name" name="name" required 
+        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+        placeholder="e.g. John Smith"
+      />
+    </div>
+
+    <div>
+      <label for="phone" class="block text-sm font-medium text-brand-grey mb-2">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required 
+        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+        placeholder="e.g. 082 123 4567"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-brand-grey mb-2">Email Address</label>
+    <input type="email" id="email" name="email" required 
+      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+      placeholder="name@company.co.za"
+    />
+  </div>
+
+  <div>
+    <label for="service" class="block text-sm font-medium text-brand-grey mb-2">Service Required</label>
+    <select id="service" name="service" 
+      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all bg-white"
+    >
+      <option value="general">General Inquiry</option>
+      <option value="new-company">New Company Registration (Pty) Ltd</option>
+      <option value="annual-returns">CIPC Annual Returns</option>
+      <option value="beneficial-ownership">Beneficial Ownership (BO)</option>
+      <option value="restoration">Company Restoration</option>
+      <option value="bee-affidavit">BEE Affidavit (EME)</option>
+      <option value="coida">COIDA Registration</option>
+      <option value="letter-good-standing">Letter of Good Standing</option>
+      <option value="uif-domestic">Domestic UIF Registration</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-brand-grey mb-2">How can we help?</label>
+    <textarea id="message" name="message" rows="4" 
+      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+      placeholder="Tell us about your compliance needs..."
+    ></textarea>
+  </div>
+
+  <button type="submit" class="w-full bg-brand-blue text-white font-bold py-4 rounded-lg hover:bg-brand-blue/90 transition-colors shadow-lg">
+    Send Inquiry
+  </button>
+  
+  <p class="text-xs text-center text-gray-400 mt-4">
+    By submitting this form, you agree to our Privacy Policy.
+  </p>
+</form>
+
+<script>
+  // Auto-Select Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    
+    if (serviceParam) {
+      const select = document.getElementById('service') as HTMLSelectElement;
+      if (select) {
+        // Try to find the option with this value
+        const option = select.querySelector(`option[value="${serviceParam}"]`);
+        if (option) {
+          select.value = serviceParam;
+        }
+      }
+    }
+  });
+</script>

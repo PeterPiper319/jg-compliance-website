@@ -1,0 +1,58 @@
+---
+// src/pages/services/labour/coida-registration.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+
+const pageTitle = "COIDA Registration (Workman's Comp)";
+const pageDescription = "Mandatory registration for all employers, including domestic households. Protect yourself against workplace injury claims.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Essential protection for you and your staff. Mandatory for every employer in South Africa since 2020."
+    price={PRICING_2026.coidRegistration}
+    turnaround="5-10 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-blue-50 border-l-4 border-brand-blue p-6 mb-10">
+        <h3 class="text-lg font-bold text-brand-blue mb-2">The Constitutional Court Ruling (2020)</h3>
+        <p class="text-brand-grey">
+          In 2020, the Constitutional Court ruled that domestic workers are entitled to compensation for injuries on duty. 
+          This makes COIDA registration <span class="font-bold">mandatory for all households employing staff</span>.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div>
+           <h4 class="font-bold text-brand-blue mb-2">What is Covered?</h4>
+           <ul class="list-disc list-inside text-sm text-brand-grey space-y-1">
+             <li>Medical expenses for workplace injuries.</li>
+             <li>Temporary disablement (paid time off).</li>
+             <li>Permanent disablement compensation.</li>
+             <li>Death benefits for dependents.</li>
+           </ul>
+        </div>
+        <div>
+           <h4 class="font-bold text-brand-blue mb-2">Employer Risk</h4>
+           <p class="text-sm text-brand-grey">
+             If you are not registered, you can be held <strong>personally liable</strong> for all medical costs and loss of income if an employee is injured on your property.
+           </p>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Secure Your Compliance</h3>
+        <p class="mb-6 text-sm">We handle the registration with the Compensation Fund.</p>
+        <a href="/contact?service=coida" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          Register for COIDA (R{PRICING_2026.coidRegistration})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>

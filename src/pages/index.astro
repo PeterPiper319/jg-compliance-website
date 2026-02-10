@@ -1,0 +1,20 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import TrustBanner from '../components/TrustBanner.astro';
+import ComplianceMatrix from '../components/ComplianceMatrix.astro';
+
+const pageTitle = "South African Business Compliance";
+const pageDescription = "JG Business Compliance: CIPC Registration, Annual Returns, and Labour Compliance services for South African entrepreneurs.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <main>
+    <TrustBanner />
+    
+    <HeroSection />
+    
+    <ComplianceMatrix />
+  </main>
+</BaseLayout>

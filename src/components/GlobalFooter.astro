@@ -1,0 +1,55 @@
+---
+// src/components/GlobalFooter.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white py-12 border-t border-brand-accent/20">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      
+      <div>
+        <h3 class="text-xl font-bold mb-4 text-white">JG Business Compliance</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Professional CIPC and Labour compliance services for South African entrepreneurs. 
+          Simplifying the regulatory landscape.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">CIPC Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/services/cipc/new-company" class="hover:text-white transition-colors">New Company Reg</a></li>
+          <li><a href="/services/cipc/annual-returns" class="hover:text-white transition-colors">Annual Returns</a></li>
+          <li><a href="/services/cipc/beneficial-ownership" class="hover:text-white transition-colors">Beneficial Ownership</a></li>
+          <li><a href="/services/cipc/restoration" class="hover:text-white transition-colors">Company Restoration</a></li>
+          <li><a href="/services/bee-affidavit" class="hover:text-white transition-colors">BEE Affidavit</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">Labour Compliance</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/services/labour/coida-registration" class="hover:text-white transition-colors">COIDA Registration</a></li>
+          <li><a href="/services/labour/letter-good-standing" class="hover:text-white transition-colors">Letter of Good Standing</a></li>
+          <li><a href="/services/labour/uif-domestic" class="hover:text-white transition-colors">Domestic UIF</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="/legal/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="/legal/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+      &copy; {currentYear} JG Business Compliance (Pty) Ltd. All rights reserved. 
+      <br class="md:hidden" />
+      <span class="hidden md:inline"> | </span>
+      Standard Terms Apply.
+    </div>
+  </div>
+</footer>

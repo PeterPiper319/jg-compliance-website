@@ -1,0 +1,73 @@
+---
+// src/pages/services/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PRICING_2026 } from '../../config/brand';
+
+const pageTitle = "Our Compliance Services";
+const pageDescription = "Full pricing list for CIPC, COIDA, and Labour compliance services.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <header class="bg-brand-bg pt-24 pb-12 text-center">
+    <h1 class="text-4xl font-bold text-brand-blue mb-4">{pageTitle}</h1>
+    <p class="text-brand-grey max-w-2xl mx-auto">Transparent pricing. No hidden fees. Professional oversight.</p>
+  </header>
+
+  <main class="container mx-auto px-4 pb-20">
+    
+    <h2 class="text-2xl font-bold text-brand-grey mb-6 border-b border-brand-accent/20 pb-2">CIPC & Corporate Services</h2>
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <a href="/services/cipc/new-company" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">New Company (Pty) Ltd</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Includes Name Reservation & Tax Number.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.ptyRegistration}</div>
+      </a>
+      
+      <a href="/services/cipc/annual-returns" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Annual Returns</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Avoid deregistration penalties.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.annualReturnSmall}</div>
+      </a>
+
+      <a href="/services/cipc/beneficial-ownership" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Beneficial Ownership</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Mandatory Hard-Stop Filing.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.boFiling}</div>
+      </a>
+
+      <a href="/services/cipc/restoration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Company Restoration</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Re-instate deregistered entities.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.restoration}</div>
+      </a>
+
+      <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">BEE Affidavit (EME)</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Official sworn affidavit for turnover &lt; R10m.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.beeAffidavit}</div>
+      </a>
+    </div>
+
+    <h2 class="text-2xl font-bold text-brand-grey mb-6 border-b border-brand-accent/20 pb-2">Labour & COIDA</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="/services/labour/coida-registration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">COIDA Registration</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Mandatory Workman's Comp.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.coidaRegistration}</div>
+      </a>
+
+      <a href="/services/labour/letter-good-standing" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Letter of Good Standing</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">For Tenders & Contracts.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.letterGoodStanding}</div>
+      </a>
+
+      <a href="/services/labour/uif-domestic" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Domestic UIF</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Private Household Compliance.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.uifDomestic}</div>
+      </a>
+    </div>
+
+  </main>
+</BaseLayout>

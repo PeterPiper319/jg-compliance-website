@@ -1,0 +1,66 @@
+---
+// src/pages/services/cipc/restoration.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+
+const pageTitle = "Company Restoration (Re-Instatement)";
+const pageDescription = "Restore your deregistered company. Essential for reclaiming assets and property. Includes Government Gazette advertising.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Reclaim your business status and assets. We handle the complex CIPC re-instatement process, including legal advertising."
+    price={PRICING_2026.restoration}
+    turnaround="3-6 Months"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-red-700 mb-2">Critical Requirement: Proof of Activity</h3>
+        <p class="text-red-600 leading-relaxed">
+          CIPC requires proof that the company was in business at the time of deregistration. 
+          You must provide <span class="font-bold">{COMPLIANCE_CONSTANTS.restorationProof}</span> (12 months of bank statements).
+          without this, the restoration application will be rejected.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
+          <h4 class="font-bold text-brand-blue mb-2">Included Services</h4>
+          <ul class="list-disc list-inside text-sm text-brand-grey space-y-2">
+            <li>CIPC Restoration Application (CoR 40.5)</li>
+            <li>Government Gazette Advertisement</li>
+            <li>Local Newspaper Advertisement</li>
+            <li>Outstanding Annual Return Assessment</li>
+            <li>Department of Treasury Liaison</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
+          <h4 class="font-bold text-brand-blue mb-2">Why Restore?</h4>
+          <p class="text-sm text-brand-grey leading-relaxed">
+            When a company is deregistered, it legally ceases to exist. Any assets (property, vehicles, cash) are forfeited to the state as <i>bona vacantia</i>. 
+            <br/><br/>
+            Restoration is the only legal remedy to reclaim ownership of these assets and resume trading.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Ready to Restore Your Company?</h3>
+        <p class="text-brand-grey mb-8 max-w-2xl mx-auto">
+          This is a complex legal process. Our specialists will guide you through every step, ensuring all advertisements and filings are compliant.
+        </p>
+        <a href="/contact?service=restoration" class="inline-block bg-brand-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Start Restoration Process
+        </a>
+        <p class="text-xs text-brand-accent mt-4">
+          Note: Outstanding Annual Returns will be calculated separately by CIPC.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

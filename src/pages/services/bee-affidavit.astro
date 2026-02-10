@@ -1,0 +1,40 @@
+---
+// src/pages/services/bee-affidavit.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../config/brand';
+
+const pageTitle = "BEE Sworn Affidavit (EME)";
+const pageDescription = "Get your official B-BBEE Sworn Affidavit for Exempted Micro Enterprises (EME) in minutes.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Official B-BBEE compliance for businesses with an annual turnover below R10 million. Accepted by all government departments."
+    price={PRICING_2026.beeAffidavit}
+    turnaround="Same Day"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-gray-50 border-l-4 border-brand-blue p-6 mb-10">
+        <h3 class="text-lg font-bold text-brand-blue mb-2">Do you qualify as an EME?</h3>
+        <p class="text-brand-grey">
+          If your company's annual turnover is <strong>below R10 million</strong>, you automatically qualify as an Exempted Micro Enterprise (EME). 
+          You do <em>not</em> need a costly verification agency certificate—this Affidavit is your official legal proof of B-BBEE status.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Get Your Certificate Today</h3>
+        <p class="mb-6 text-sm">We generate the affidavit and facilitate the Commissioner of Oaths process.</p>
+        <a href="/contact?service=general" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg">
+          Generate Affidavit (R{PRICING_2026.beeAffidavit})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>

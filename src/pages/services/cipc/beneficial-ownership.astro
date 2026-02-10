@@ -1,0 +1,61 @@
+---
+// src/pages/services/cipc/beneficial-ownership.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+
+const pageTitle = "Beneficial Ownership (BO) Filing";
+const pageDescription = "Mandatory CIPC requirement. Avoid the hard-stop on your Annual Returns.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="The new mandatory requirement for all South African companies. We file your BO register directly with CIPC."
+    price={PRICING_2026.boFiling}
+    turnaround="24-48 Hours"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-amber-700 mb-2">Warning: The "Hard-Stop" is Active</h3>
+        <p class="text-amber-800 leading-relaxed">
+          As of <span class="font-bold">{COMPLIANCE_CONSTANTS.boHardStopDate}</span>, CIPC prevents the filing of Annual Returns 
+          if your Beneficial Ownership register is not up to date. This can lead to automatic deregistration if not resolved.
+        </p>
+      </div>
+
+      <div class="prose prose-slate max-w-none mb-10 text-brand-grey">
+        <p class="text-lg">
+          Beneficial Ownership refers to the natural persons who ultimately own or control a legal entity. 
+          Following South Africa's removal from the FATF grey list, this transparency is now <strong>non-negotiable</strong>.
+        </p>
+        
+        <h4 class="text-brand-blue font-bold text-xl mt-8 mb-4">Who must file?</h4>
+        <ul class="list-disc pl-5 space-y-2">
+           <li>Profit Companies (Pty Ltd, Inc, Ltd)</li>
+           <li>Non-Profit Companies (NPC)</li>
+           <li>Close Corporations (CC)</li>
+           <li>External Companies</li>
+        </ul>
+
+        <h4 class="text-brand-blue font-bold text-xl mt-8 mb-4">What happens if I don't file?</h4>
+        <p>
+            The CIPC "Hard-Stop" functionality means you simply cannot fulfill your Annual Return obligations until this is done. 
+            Falling behind on Annual Returns triggers the deregistration process, putting your assets and bank accounts at risk.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center shadow-sm">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Don't get blocked.</h3>
+        <p class="mb-8 text-brand-grey">We handle the complex securities register conversions for you, ensuring full compliance.</p>
+        <a href="/contact?service=beneficial-ownership" class="inline-block bg-brand-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          File BO Register Now (R{PRICING_2026.boFiling})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
