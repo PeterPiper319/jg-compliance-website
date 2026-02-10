@@ -92,26 +92,29 @@
 </div>
 
 <script>
-  // This script handles the submission without reloading the page
   const handleSubmit = (event) => {
-    event.preventDefault(); // Stop the 404 redirect
-
+    event.preventDefault(); 
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    // Send data to Netlify via standard fetch
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => {
-        // Hide Form
+    .then((response) => {
+      if (response.ok) {
+        // Success!
         document.getElementById('compliance-form').classList.add('hidden');
-        // Show Success Message
         document.getElementById('form-success').classList.remove('hidden');
-      })
-      .catch((error) => alert("Submission failed. Please try again."));
+      } else {
+        // Server returned an error (like 404)
+        alert("Submission failed. The server could not process the form.");
+      }
+    })
+    .catch((error) => {
+      alert("Network error. Please check your connection.");
+    });
   };
 
   document.querySelector("form").addEventListener("submit", handleSubmit);
