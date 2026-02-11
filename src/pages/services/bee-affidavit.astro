@@ -3,12 +3,28 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
 import { PRICING_2026 } from '../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../config/seo';
 
-const pageTitle = "BEE Sworn Affidavit (EME)";
-const pageDescription = "Get your official B-BBEE Sworn Affidavit for Exempted Micro Enterprises (EME) in minutes.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.beeAffidavit;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "BEE Sworn Affidavit (EME)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.beeAffidavit,
+    "priceCurrency": "ZAR"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Official B-BBEE compliance for businesses with an annual turnover below R10 million. Accepted by all government departments."

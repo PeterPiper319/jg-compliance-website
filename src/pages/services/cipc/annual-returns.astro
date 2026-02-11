@@ -3,12 +3,30 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "CIPC Annual Returns";
-const pageDescription = "Mandatory annual filing to keep your company active. Avoid deregistration and penalties.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.annualReturns;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CIPC Annual Returns Filing",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Corporate Maintenance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.annualReturnSmall,
+    "priceCurrency": "ZAR",
+    "priceValidUntil": "2026-12-31"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Keep your company 'Active' and avoid final deregistration. We calculate your turnover fees and file directly."

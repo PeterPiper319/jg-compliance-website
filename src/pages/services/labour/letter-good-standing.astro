@@ -3,12 +3,29 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "Letter of Good Standing (LOGS)";
-const pageDescription = "Essential documentation for tender eligibility. Verify your good standing with the Compensation Commissioner.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.letterGoodStanding;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Letter of Good Standing (LOGS)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Tender Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.letterGoodStanding,
+    "priceCurrency": "ZAR"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund."

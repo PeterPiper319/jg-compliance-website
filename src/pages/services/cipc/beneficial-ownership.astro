@@ -3,12 +3,30 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "Beneficial Ownership (BO) Filing";
-const pageDescription = "Mandatory CIPC requirement. Avoid the hard-stop on your Annual Returns.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.beneficialOwnership;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Beneficial Ownership Filing (BO)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription, // "Avoid the July 2024 CIPC Hard-Stop..."
+  "serviceType": "Regulatory Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.boFiling,
+    "priceCurrency": "ZAR",
+    "availability": "https://schema.org/OnlineOnly"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="The new mandatory requirement for all South African companies. We file your BO register directly with CIPC."

@@ -3,12 +3,29 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "UIF & Labour for Domestic Employers";
-const pageDescription = "Mandatory UIF registration for domestic workers, gardeners, and nannies. Avoid CCMA disputes.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.domestic;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Domestic Worker UIF & COIDA",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Household Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.uifDomestic,
+    "priceCurrency": "ZAR"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Complete compliance for private households. We register your domestic staff for UIF and help you issue compliant payslips."

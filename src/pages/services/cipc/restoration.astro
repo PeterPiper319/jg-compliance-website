@@ -3,12 +3,30 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "Company Restoration (Re-Instatement)";
-const pageDescription = "Restore your deregistered company. Essential for reclaiming assets and property. Includes Government Gazette advertising.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.restoration;
+
+// Strategic Logic: High-Complexity Recovery Signal
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Company Restoration (CoR 40.5)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": "Strategic re-instatement of deregistered companies. Includes Government Gazette advertising and CIPC liaison.",
+  "serviceType": "Legal Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.restoration,
+    "priceCurrency": "ZAR"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Reclaim your business status and assets. We handle the complex CIPC re-instatement process, including legal advertising."

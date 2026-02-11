@@ -4,19 +4,30 @@ import GlobalFooter from '../components/GlobalFooter.astro';
 import Navbar from '../components/Navbar.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import SEO from '../components/SEO.astro'; // The new Engine
 
-const { title, description } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  schema?: object; // New prop for structured data injection
+}
+
+const { title, description, image, schema } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description || "JG Business Compliance"} />
-    <title>JG | Business Compliance</title>
-    <link rel="icon" type="image/png" href="/logo1.png" />
     <GoogleAnalytics />
+
+    <SEO 
+      title={title} 
+      description={description} 
+      image={image}
+      schema={schema}
+    />
   </head>
+  
   <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
     
     <Navbar /> 

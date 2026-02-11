@@ -3,12 +3,30 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "New Company Registration (Pty) Ltd";
-const pageDescription = "Register your new South African company in record time. Includes Name Reservation and Income Tax number.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.newCompany;
+
+// Structured Authority Signal: Service Schema
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "New Company Registration (Pty) Ltd",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.ptyRegistration,
+    "priceCurrency": "ZAR",
+    "availability": "https://schema.org/OnlineOnly"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Launch your business with a fully compliant Pty Ltd structure. We handle the Name Reservation and MoI filing."

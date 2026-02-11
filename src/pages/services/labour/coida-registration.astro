@@ -3,12 +3,33 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceHero from '../../../components/ServiceHero.astro';
 import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
-const pageTitle = "COIDA Registration (Workman's Comp)";
-const pageDescription = "Mandatory registration for all employers, including domestic households. Protect yourself against workplace injury claims.";
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.coida; // "COIDA Letter of Good Standing..."
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "COIDA Registration (Workman's Comp)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Government Registration",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Employers and Domestic Households"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.coidaRegistration,
+    "priceCurrency": "ZAR"
+  }
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
     subtitle="Essential protection for you and your staff. Mandatory for every employer in South Africa since 2020."
