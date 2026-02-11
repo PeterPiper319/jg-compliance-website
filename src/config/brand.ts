@@ -38,3 +38,9 @@ export const COMPLIANCE_CONSTANTS = {
 export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/profile.php?id=61587491532935', 
 } as const;
+
+// [NEW] Analytics Configuration
+// STATUS: ACTIVE. Google Analytics ID configured.
+export const ANALYTICS_CONFIG = {
+  measurementId: 'G-CY0H2HYLWY', 
+} as const;

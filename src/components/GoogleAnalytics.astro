@@ -1,14 +1,24 @@
 ---
 // src/components/GoogleAnalytics.astro
-// TODO: Replace 'G-MEASUREMENT_ID' with your actual ID from Google Analytics
-const GA_MEASUREMENT_ID = 'G-MEASUREMENT_ID';
+import { ANALYTICS_CONFIG } from '../config/brand';
+
+const { measurementId } = ANALYTICS_CONFIG;
+const isPlaceholder = measurementId === 'G-MEASUREMENT_ID';
 ---
 
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-<script define:vars={{ GA_MEASUREMENT_ID }}>
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+
+<script define:vars={{ measurementId, isPlaceholder }}>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', GA_MEASUREMENT_ID);
+  gtag('config', measurementId);
+
+  // Dev Check: Alert the console if we are still using the placeholder
+  if (isPlaceholder) {
+    console.warn("GA4 STATUS: Pending. Using placeholder ID (G-MEASUREMENT_ID). Data will not be recorded.");
+  } else {
+    console.log(`GA4 STATUS: Active (${measurementId})`);
+  }
 </script>
