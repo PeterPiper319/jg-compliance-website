@@ -3,20 +3,28 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://jgcompliance.co.za',
+  site: 'https://jgcompliance.co.za', // Must match your production URL exactly
   
-  // CRITICAL FIX: Explicitly define URL structure for Sitemap generation
   trailingSlash: 'never',
   build: {
-    format: 'file' // Generates contact.html instead of contact/index.html
+    format: 'file'
   },
 
   integrations: [
     tailwind(),
-    sitemap()
+    sitemap({
+      // FILTER LOGIC: Prevent the generator from crashing on non-page assets
+      filter: (page) => page !== 'https://jgcompliance.co.za/google-analytics',
+      
+      // CONFIGURATION: Explicitly define entry points if auto-detection fails
+      entryLimit: 10000,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    })
   ],
+  
   server: {
     host: '0.0.0.0'
   }
