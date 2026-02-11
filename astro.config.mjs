@@ -1,13 +1,12 @@
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
+// import sitemap from "@astrojs/sitemap"; // <-- TEMPORARILY DISABLED FOR DEPLOYMENT
 
 // https://astro.build/config
 export default defineConfig({
-  // PRODUCTION URL: Critical for Sitemap generation
   site: 'https://jgcompliance.co.za',
-
-  // BUILD SETTINGS: optimizing for Netlify hosting
+  
   trailingSlash: 'never',
   build: {
     format: 'file'
@@ -15,9 +14,8 @@ export default defineConfig({
 
   integrations: [
     tailwind(),
-    sitemap() // Active for SEO
+    // sitemap() // <-- TEMPORARILY DISABLED FOR DEPLOYMENT
   ],
-
   server: {
     host: '0.0.0.0'
   }
