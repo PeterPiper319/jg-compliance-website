@@ -1,11 +1,13 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
+// https://astro.build/config
 export default defineConfig({
-  site: 'https://jgcompliance.co.za', // Must match your production URL exactly
-  
+  // PRODUCTION URL: Critical for Sitemap generation
+  site: 'https://jgcompliance.co.za',
+
+  // BUILD SETTINGS: optimizing for Netlify hosting
   trailingSlash: 'never',
   build: {
     format: 'file'
@@ -13,18 +15,9 @@ export default defineConfig({
 
   integrations: [
     tailwind(),
-    sitemap({
-      // FILTER LOGIC: Prevent the generator from crashing on non-page assets
-      filter: (page) => page !== 'https://jgcompliance.co.za/google-analytics',
-      
-      // CONFIGURATION: Explicitly define entry points if auto-detection fails
-      entryLimit: 10000,
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
-    })
+    sitemap() // Active for SEO
   ],
-  
+
   server: {
     host: '0.0.0.0'
   }
