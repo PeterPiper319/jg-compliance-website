@@ -44,3 +44,8 @@ export const SOCIAL_LINKS = {
 export const ANALYTICS_CONFIG = {
   measurementId: 'G-CY0H2HYLWY', 
 } as const;
+
+// Regulatory Identity
+export const SITE_IDENTITY = {
+  registrationNumber: '2026/118416/07',
+} as const;

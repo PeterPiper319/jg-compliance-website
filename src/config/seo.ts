@@ -1,5 +1,5 @@
 // src/config/seo.ts
-import { PRICING_2026, BRAND_COLORS, SOCIAL_LINKS } from './brand';
+import { PRICING_2026, BRAND_COLORS, SOCIAL_LINKS, SITE_IDENTITY } from './brand';
 
 export const SITE_METADATA = {
   name: "JG Business Compliance",
@@ -75,6 +75,7 @@ export const JSON_LD = {
     "image": `${SITE_METADATA.siteUrl}/logo1.png`,
     "url": SITE_METADATA.siteUrl,
     "telephone": SITE_METADATA.contactPoint.telephone,
+    "leiCode": SITE_IDENTITY.registrationNumber, // Explicit legal identifier mapping
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "ZA"

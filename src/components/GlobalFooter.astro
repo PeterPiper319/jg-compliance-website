@@ -1,6 +1,6 @@
 ---
 // src/components/GlobalFooter.astro
-import { SOCIAL_LINKS } from '../config/brand';
+import { SOCIAL_LINKS, SITE_IDENTITY } from '../config/brand';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -68,7 +68,11 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
-      &copy; {currentYear} JG Business Compliance (Pty) Ltd. All rights reserved. 
+      &copy; {currentYear} JG Business Compliance (Pty) Ltd.
+      <span class="block md:inline">Reg: {SITE_IDENTITY.registrationNumber}</span>
+      <br class="md:hidden" />
+      <span class="hidden md:inline"> | </span>
+      All rights reserved. 
       <br class="md:hidden" />
       <span class="hidden md:inline"> | </span>
       Standard Terms Apply.
