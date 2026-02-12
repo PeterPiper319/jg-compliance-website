@@ -32,7 +32,7 @@ The content is organized as follows:
 <notes>
 - Some files may have been excluded based on .gitignore rules and Repomix's configuration
 - Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
-- Files matching these patterns are excluded: repomix-*.xml
+- Files matching these patterns are excluded: repomix*.xml
 - Files matching patterns in .gitignore are excluded
 - Files matching default ignore patterns are excluded
 - Files are sorted by Git change count (files with more changes are at the bottom)
@@ -59,6 +59,7 @@ PHASE_09_MASTER_LOG.md
 PHASE_10_MASTER_LOG.md
 PHASE_11_MASTER_LOG.md
 PHASE_12_MASTER_LOG.md
+PHASE_13_MASTER_LOG.md
 public/form-setup.html
 public/google16b29ea6283047c9.html
 public/logo.png
@@ -103,12 +104,40 @@ src/scripts/LINKER_PHASE_05.ts
 src/scripts/LINKER_PHASE_06.ts
 src/scripts/LINKER_PHASE_08.ts
 src/scripts/LINKER_PHASE_10.ts
+src/scripts/LINKER_PHASE_13.ts
 tailwind.config.cjs
+test.txt
 tsconfig.json
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="src/scripts/LINKER_PHASE_13.ts">
+// src/scripts/LINKER_PHASE_13.ts
+import { SITE_IDENTITY } from '../config/brand';
+import { JSON_LD } from '../config/seo';
+
+export function validatePhase13(): boolean {
+  console.log("Initiating Phase 13 Regulatory Linker...");
+
+  const sotNumber = SITE_IDENTITY.registrationNumber;
+  const schemaNumber = (JSON_LD.organization as any).leiCode;
+
+  if (sotNumber === schemaNumber && sotNumber === '2026/118416/07') {
+    console.log("✅ Regulatory Parity: VERIFIED");
+    return true;
+  } else {
+    console.error("❌ Regulatory Drift Detected in Schema.");
+    return false;
+  }
+}
+
+// Manual execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  validatePhase13();
+}
+</file>
 
 <file path=".astro/settings.json">
 {
@@ -523,6 +552,27 @@ Ensure the system handles the "Pending ID" state gracefully without causing buil
 - [x] Console Warning Verified (Proof: `(index):12 GA4 STATUS: Pending...`)
 </file>
 
+<file path="PHASE_13_MASTER_LOG.md">
+# PHASE 13 MASTER LOG: Regulatory Identity Update
+Status: COMPLETED
+
+## OBJECTIVE
+Inject the official CIPC registration number into the Source of Truth (SoT) and propagate it to the Global Footer and SEO Schema to ensure legal compliance.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 13-01 | src/config/brand.ts | Add REGISTRATION_NUMBER to the Brand constants. | COMPLETED |
+| 13-02 | src/components/GlobalFooter.astro | Update footer UI to display the registration number. | COMPLETED |
+| 13-03 | src/config/seo.ts | Update JSON-LD schema to include the registration number. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 13-01 Locked
+- [x] 13-02 Locked
+- [x] 13-03 Locked
+PHASE COMPLETE
+</file>
+
 <file path="public/form-setup.html">
 <!DOCTYPE html>
 <html lang="en">
@@ -761,110 +811,6 @@ const phoneNumber = "27812876540";
     link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
   }
 </script>
-</file>
-
-<file path="src/config/seo.ts">
-// src/config/seo.ts
-import { PRICING_2026, BRAND_COLORS, SOCIAL_LINKS } from './brand';
-
-export const SITE_METADATA = {
-  name: "JG Business Compliance",
-  legalName: "JG Business Compliance (Pty) Ltd",
-  siteUrl: "https://jgcompliance.co.za",
-  description: "South African CIPC and Labour compliance specialists. Architecture for Excellence.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    "telephone": "+27 81 287 6540",
-    "contactType": "customer service",
-    "areaServed": "ZA",
-    "availableLanguage": ["English", "Afrikaans"]
-  }
-};
-
-/**
- * STRATEGIC SEO DICTIONARY
- * Aligned with "Integrated Strategic Architecture" PDF
- * Logic: Hard-Stop Triggers & Tender Compliance
- */
-export const ROUTE_SEO = {
-  // ROOT
-  home: {
-    title: "South African Business Compliance | CIPC & Labour Services",
-    description: "Navigate CIPC and Labour regulations with precision. We handle Company Registration, Restoration, and COIDA compliance for South African entrepreneurs."
-  },
-
-  // PILLAR I: CIPC IDENTITY
-  newCompany: {
-    title: "New Company Registration (Pty) Ltd | Turnkey Launch | JG", // [cite: 20]
-    description: "Full launch package: Name Reservation, MoI filing, and Income Tax generation. Start your legally operational business today with our turnkey solution." // [cite: 18, 20, 21]
-  },
-  restoration: {
-    title: "CIPC Company Restoration South Africa | Recovery Experts | JG Business Compliance", // [cite: 68]
-    description: "Your company is a 'legal brick wall' if deregistered. JG Business Compliance provides strategic restoration (CoR 40.5) to restore your trade status. Private expert intermediary." // [cite: 76, 77]
-  },
-  beeAffidavit: {
-    title: "BEE Affidavit (EME) | Same-Day Certificate | JG Business Compliance",
-    description: "Official B-BBEE Sworn Affidavit for Exempted Micro Enterprises (Turnover < R10m). Instant download for tender compliance."
-  },
-
-  // PILLAR II: CORPORATE MAINTENANCE (HARD-STOP)
-  beneficialOwnership: {
-    title: "Beneficial Ownership Filing (BO) | CIPC Hard-Stop Solutions | JG Business Compliance", // [cite: 69]
-    description: "Avoid the July 2024 CIPC Hard-Stop. We manage Beneficial Ownership (BO) declarations to unblock your Annual Returns. Stay compliant and tender-ready. Professional fees apply." // [cite: 78, 79]
-  },
-  annualReturns: {
-    title: "CIPC Annual Returns | Avoid Deregistration & Penalties | JG Business Compliance",
-    description: "Mandatory annual filing to prevent final deregistration. We calculate turnover fees and link with BO filing to clear CIPC Hard-Stops." // [cite: 40, 41]
-  },
-
-  // PILLAR III: LABOUR & COIDA
-  coida: {
-    title: "COIDA Letter of Good Standing | Fast-Track Tender Compliance | JG Business Compliance", // [cite: 70]
-    description: "Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund. April 30th renewal cycle managed." // [cite: 48, 51, 52]
-  },
-  domestic: {
-    title: "Protect Your Home: Domestic Worker UIF & COIDA Registration", // [cite: 59]
-    description: "Mitigate CCMA risk and personal liability. Mandatory UIF and COIDA registration for all private households employing staff > 24 hours/month." // [cite: 57, 60]
-  },
-  letterGoodStanding: {
-    title: "Letter of Good Standing (LOGS) | Tender Documents | JG Business Compliance",
-    description: "Essential documentation for state tenders and construction contracts. Verify your good standing with the Compensation Commissioner today." // [cite: 48]
-  }
-};
-
-// JSON-LD GENERATORS
-export const JSON_LD = {
-  organization: {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService", // [cite: 117]
-    "name": SITE_METADATA.legalName,
-    "image": `${SITE_METADATA.siteUrl}/logo1.png`,
-    "url": SITE_METADATA.siteUrl,
-    "telephone": SITE_METADATA.contactPoint.telephone,
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "ZA"
-    },
-    "priceRange": "R390 - R8800",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-        "opens": "08:00",
-        "closes": "15:45"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Friday",
-        "opens": "08:00",
-        "closes": "13:00"
-      }
-    ],
-    "sameAs": [
-      SOCIAL_LINKS.facebook
-    ]
-  }
-};
 </file>
 
 <file path="src/env.d.ts">
@@ -1508,6 +1454,10 @@ module.exports = {
 }
 </file>
 
+<file path="test.txt">
+test content
+</file>
+
 <file path="tsconfig.json">
 {
   "extends": "astro/tsconfigs/strict"
@@ -1605,86 +1555,6 @@ const pillars = [
     </div>
   </div>
 </section>
-</file>
-
-<file path="src/components/GlobalFooter.astro">
----
-// src/components/GlobalFooter.astro
-import { SOCIAL_LINKS } from '../config/brand';
-
-const currentYear = new Date().getFullYear();
----
-
-<footer class="bg-gray-900 text-white py-12 border-t border-brand-accent/20">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-4 gap-8 mb-8">
-      
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-xl font-bold mb-4 text-white">JG Business Compliance</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Professional CIPC and Labour compliance services for South African entrepreneurs. 
-            Simplifying the regulatory landscape.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-3">Follow Us</h4>
-          <a 
-            href={SOCIAL_LINKS.facebook} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
-            aria-label="Follow us on Facebook"
-          >
-            <div class="p-2 bg-gray-800 rounded-lg group-hover:bg-brand-blue transition-colors">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </div>
-            <span class="text-sm font-medium">Facebook</span>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <h4 class="font-bold mb-4 text-brand-accent">CIPC Services</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/services/cipc/new-company" class="hover:text-white transition-colors">New Company Reg</a></li>
-          <li><a href="/services/cipc/annual-returns" class="hover:text-white transition-colors">Annual Returns</a></li>
-          <li><a href="/services/cipc/beneficial-ownership" class="hover:text-white transition-colors">Beneficial Ownership</a></li>
-          <li><a href="/services/cipc/restoration" class="hover:text-white transition-colors">Company Restoration</a></li>
-          <li><a href="/services/bee-affidavit" class="hover:text-white transition-colors">BEE Affidavit</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-bold mb-4 text-brand-accent">Labour Compliance</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/services/labour/coida-registration" class="hover:text-white transition-colors">COIDA Registration</a></li>
-          <li><a href="/services/labour/letter-good-standing" class="hover:text-white transition-colors">Letter of Good Standing</a></li>
-          <li><a href="/services/labour/uif-domestic" class="hover:text-white transition-colors">Domestic UIF</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-bold mb-4 text-brand-accent">Company</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
-          <li><a href="/legal/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
-          <li><a href="/legal/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
-      &copy; {currentYear} JG Business Compliance (Pty) Ltd. All rights reserved. 
-      <br class="md:hidden" />
-      <span class="hidden md:inline"> | </span>
-      Standard Terms Apply.
-    </div>
-  </div>
-</footer>
 </file>
 
 <file path="src/components/GoogleAnalytics.astro">
@@ -1882,6 +1752,111 @@ const currentMonth = new Date().toLocaleString('default', { month: 'long' });
     </a>
   </div>
 </div>
+</file>
+
+<file path="src/config/seo.ts">
+// src/config/seo.ts
+import { PRICING_2026, BRAND_COLORS, SOCIAL_LINKS, SITE_IDENTITY } from './brand';
+
+export const SITE_METADATA = {
+  name: "JG Business Compliance",
+  legalName: "JG Business Compliance (Pty) Ltd",
+  siteUrl: "https://jgcompliance.co.za",
+  description: "South African CIPC and Labour compliance specialists. Architecture for Excellence.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    "telephone": "+27 81 287 6540",
+    "contactType": "customer service",
+    "areaServed": "ZA",
+    "availableLanguage": ["English", "Afrikaans"]
+  }
+};
+
+/**
+ * STRATEGIC SEO DICTIONARY
+ * Aligned with "Integrated Strategic Architecture" PDF
+ * Logic: Hard-Stop Triggers & Tender Compliance
+ */
+export const ROUTE_SEO = {
+  // ROOT
+  home: {
+    title: "South African Business Compliance | CIPC & Labour Services",
+    description: "Navigate CIPC and Labour regulations with precision. We handle Company Registration, Restoration, and COIDA compliance for South African entrepreneurs."
+  },
+
+  // PILLAR I: CIPC IDENTITY
+  newCompany: {
+    title: "New Company Registration (Pty) Ltd | Turnkey Launch | JG", // [cite: 20]
+    description: "Full launch package: Name Reservation, MoI filing, and Income Tax generation. Start your legally operational business today with our turnkey solution." // [cite: 18, 20, 21]
+  },
+  restoration: {
+    title: "CIPC Company Restoration South Africa | Recovery Experts | JG Business Compliance", // [cite: 68]
+    description: "Your company is a 'legal brick wall' if deregistered. JG Business Compliance provides strategic restoration (CoR 40.5) to restore your trade status. Private expert intermediary." // [cite: 76, 77]
+  },
+  beeAffidavit: {
+    title: "BEE Affidavit (EME) | Same-Day Certificate | JG Business Compliance",
+    description: "Official B-BBEE Sworn Affidavit for Exempted Micro Enterprises (Turnover < R10m). Instant download for tender compliance."
+  },
+
+  // PILLAR II: CORPORATE MAINTENANCE (HARD-STOP)
+  beneficialOwnership: {
+    title: "Beneficial Ownership Filing (BO) | CIPC Hard-Stop Solutions | JG Business Compliance", // [cite: 69]
+    description: "Avoid the July 2024 CIPC Hard-Stop. We manage Beneficial Ownership (BO) declarations to unblock your Annual Returns. Stay compliant and tender-ready. Professional fees apply." // [cite: 78, 79]
+  },
+  annualReturns: {
+    title: "CIPC Annual Returns | Avoid Deregistration & Penalties | JG Business Compliance",
+    description: "Mandatory annual filing to prevent final deregistration. We calculate turnover fees and link with BO filing to clear CIPC Hard-Stops." // [cite: 40, 41]
+  },
+
+  // PILLAR III: LABOUR & COIDA
+  coida: {
+    title: "COIDA Letter of Good Standing | Fast-Track Tender Compliance | JG Business Compliance", // [cite: 70]
+    description: "Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund. April 30th renewal cycle managed." // [cite: 48, 51, 52]
+  },
+  domestic: {
+    title: "Protect Your Home: Domestic Worker UIF & COIDA Registration", // [cite: 59]
+    description: "Mitigate CCMA risk and personal liability. Mandatory UIF and COIDA registration for all private households employing staff > 24 hours/month." // [cite: 57, 60]
+  },
+  letterGoodStanding: {
+    title: "Letter of Good Standing (LOGS) | Tender Documents | JG Business Compliance",
+    description: "Essential documentation for state tenders and construction contracts. Verify your good standing with the Compensation Commissioner today." // [cite: 48]
+  }
+};
+
+// JSON-LD GENERATORS
+export const JSON_LD = {
+  organization: {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService", // [cite: 117]
+    "name": SITE_METADATA.legalName,
+    "image": `${SITE_METADATA.siteUrl}/logo1.png`,
+    "url": SITE_METADATA.siteUrl,
+    "telephone": SITE_METADATA.contactPoint.telephone,
+    "leiCode": SITE_IDENTITY.registrationNumber, // Explicit legal identifier mapping
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "priceRange": "R390 - R8800",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "15:45"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      SOCIAL_LINKS.facebook
+    ]
+  }
+};
 </file>
 
 <file path="src/pages/services/bee-affidavit.astro">
@@ -2495,53 +2470,88 @@ Transform the application from a "Digital Brochure" into a "Compliance Engine" b
 **Validation:** Deployment bypass active - sitemap temporarily disabled for production stability.
 </file>
 
-<file path="src/config/brand.ts">
-// src/config/brand.ts
+<file path="src/components/GlobalFooter.astro">
+---
+// src/components/GlobalFooter.astro
+import { SOCIAL_LINKS, SITE_IDENTITY } from '../config/brand';
 
-/**
- * PHASE 01 MASTER LOG: 01-01
- * Source of Truth (SoT) for Brand Identity, Pricing, and Regulatory Constants.
- * All derived components (Tailwind config, Pricing Cards) must consume this file.
- */
+const currentYear = new Date().getFullYear();
+---
 
-// Visual Identity: Geometric Monogram, #1E4D8C (Primary), #707070 (Secondary).
-export const BRAND_COLORS = {
-  primaryBlue: '#1E4D8C',
-  secondaryGrey: '#707070',
-  accentGrey: '#A9A9A9',
-  background: '#F8F9FA',
-} as const;
+<footer class="bg-gray-900 text-white py-12 border-t border-brand-accent/20">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-white">JG Business Compliance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Professional CIPC and Labour compliance services for South African entrepreneurs. 
+            Simplifying the regulatory landscape.
+          </p>
+        </div>
 
-// Pricing Data: JG Professional Fee (Total) derived from Competitive Pricing Structure
-export const PRICING_2026 = {
-  ptyRegistration: 1250,
-  annualReturn: 590,
-  annualReturnSmall: 590,
-  boFiling: 690,
-  coidRegistration: 1850,
-  coidaRegistration: 1850, // Alias for consistency
-  restoration: 8800,
-  beeAffidavit: 390,
-  letterGoodStanding: 850,
-  uifDomestic: 850,
-} as const;
+        <div>
+          <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-3">Follow Us</h4>
+          <a 
+            href={SOCIAL_LINKS.facebook} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+            aria-label="Follow us on Facebook"
+          >
+            <div class="p-2 bg-gray-800 rounded-lg group-hover:bg-brand-blue transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <span class="text-sm font-medium">Facebook</span>
+          </a>
+        </div>
+      </div>
 
-// Regulatory Constants: Critical threshold data aligned with CIPC requirements
-export const COMPLIANCE_CONSTANTS = {
-  boHardStopDate: 'July 2024',
-  restorationProof: '12-month bank statements',
-} as const;
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">CIPC Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/services/cipc/new-company" class="hover:text-white transition-colors">New Company Reg</a></li>
+          <li><a href="/services/cipc/annual-returns" class="hover:text-white transition-colors">Annual Returns</a></li>
+          <li><a href="/services/cipc/beneficial-ownership" class="hover:text-white transition-colors">Beneficial Ownership</a></li>
+          <li><a href="/services/cipc/restoration" class="hover:text-white transition-colors">Company Restoration</a></li>
+          <li><a href="/services/bee-affidavit" class="hover:text-white transition-colors">BEE Affidavit</a></li>
+        </ul>
+      </div>
 
-// Social Connectivity
-export const SOCIAL_LINKS = {
-  facebook: 'https://www.facebook.com/profile.php?id=61587491532935', 
-} as const;
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">Labour Compliance</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/services/labour/coida-registration" class="hover:text-white transition-colors">COIDA Registration</a></li>
+          <li><a href="/services/labour/letter-good-standing" class="hover:text-white transition-colors">Letter of Good Standing</a></li>
+          <li><a href="/services/labour/uif-domestic" class="hover:text-white transition-colors">Domestic UIF</a></li>
+        </ul>
+      </div>
 
-// [NEW] Analytics Configuration
-// STATUS: ACTIVE. Google Analytics ID configured.
-export const ANALYTICS_CONFIG = {
-  measurementId: 'G-CY0H2HYLWY', 
-} as const;
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="/legal/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="/legal/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+      &copy; {currentYear} JG Business Compliance (Pty) Ltd.
+      <span class="block md:inline">Reg: {SITE_IDENTITY.registrationNumber}</span>
+      <br class="md:hidden" />
+      <span class="hidden md:inline"> | </span>
+      All rights reserved. 
+      <br class="md:hidden" />
+      <span class="hidden md:inline"> | </span>
+      Standard Terms Apply.
+    </div>
+  </div>
+</footer>
 </file>
 
 <file path="src/layouts/BaseLayout.astro">
@@ -2729,6 +2739,60 @@ import Layout from '../layouts/BaseLayout.astro';
     </div>
   </main>
 </Layout>
+</file>
+
+<file path="src/config/brand.ts">
+// src/config/brand.ts
+
+/**
+ * PHASE 01 MASTER LOG: 01-01
+ * Source of Truth (SoT) for Brand Identity, Pricing, and Regulatory Constants.
+ * All derived components (Tailwind config, Pricing Cards) must consume this file.
+ */
+
+// Visual Identity: Geometric Monogram, #1E4D8C (Primary), #707070 (Secondary).
+export const BRAND_COLORS = {
+  primaryBlue: '#1E4D8C',
+  secondaryGrey: '#707070',
+  accentGrey: '#A9A9A9',
+  background: '#F8F9FA',
+} as const;
+
+// Pricing Data: JG Professional Fee (Total) derived from Competitive Pricing Structure
+export const PRICING_2026 = {
+  ptyRegistration: 1250,
+  annualReturn: 590,
+  annualReturnSmall: 590,
+  boFiling: 690,
+  coidRegistration: 1850,
+  coidaRegistration: 1850, // Alias for consistency
+  restoration: 8800,
+  beeAffidavit: 390,
+  letterGoodStanding: 850,
+  uifDomestic: 850,
+} as const;
+
+// Regulatory Constants: Critical threshold data aligned with CIPC requirements
+export const COMPLIANCE_CONSTANTS = {
+  boHardStopDate: 'July 2024',
+  restorationProof: '12-month bank statements',
+} as const;
+
+// Social Connectivity
+export const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61587491532935', 
+} as const;
+
+// [NEW] Analytics Configuration
+// STATUS: ACTIVE. Google Analytics ID configured.
+export const ANALYTICS_CONFIG = {
+  measurementId: 'G-CY0H2HYLWY', 
+} as const;
+
+// Regulatory Identity
+export const SITE_IDENTITY = {
+  registrationNumber: '2026/118416/07',
+} as const;
 </file>
 
 <file path="astro.config.mjs">

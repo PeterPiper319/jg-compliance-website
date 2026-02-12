@@ -1,0 +1,43 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MissionSection from '../components/About/MissionSection.astro';
+import MethodologySection from '../components/About/MethodologySection.astro';
+import { ABOUT_CONTENT } from '../config/content';
+
+const pageTitle = "About JG Business Compliance | Institutional Identity";
+const pageDescription = ABOUT_CONTENT.mission.statement;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-blue text-white pt-24 pb-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-4">{ABOUT_CONTENT.mission.title}</h1>
+      <p class="text-xl opacity-90 max-w-2xl">{ABOUT_CONTENT.mission.statement}</p>
+    </div>
+  </div>
+
+  <main>
+    <MissionSection />
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-brand-blue mb-8 text-center">{ABOUT_CONTENT.expertise.title}</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <p class="text-brand-grey leading-relaxed">{ABOUT_CONTENT.expertise.description}</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <ul class="space-y-2">
+                    {ABOUT_CONTENT.expertise.entities.map(entity => (
+                        <li class="flex items-center gap-2 text-brand-grey">
+                            <span class="text-brand-blue">✓</span> {entity}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+    <MethodologySection />
+  </main>
+</BaseLayout>
