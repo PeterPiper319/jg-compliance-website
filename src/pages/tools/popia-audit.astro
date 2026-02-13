@@ -1,0 +1,40 @@
+---
+// src/pages/tools/popia-audit.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PopiaAudit } from '../../components/Tools/PopiaAudit';
+
+const pageTitle = "POPIA Compliance Readiness Check | Free Assessment | JG Compliance";
+const pageDescription = "Assess your organization's readiness against the 8 Conditions for Lawful Processing. Preliminary self-assessment tool.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-blue text-white pt-24 pb-12">
+    <div class="container mx-auto px-4 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-xs font-bold tracking-wider mb-4 border border-white/20">
+        SELF-ASSESSMENT TOOL
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">POPIA Readiness Check</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Identify gaps in your data protection framework against the 8 Conditions for Lawful Processing.
+      </p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-16 -mt-10 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      {/* CRITICAL: client:load is required for React interactivity */}
+      <PopiaAudit client:load />
+
+      {/* DISCLAIMER: Strictly at the bottom */}
+      <div class="mt-16 p-6 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-900 leading-relaxed shadow-sm">
+        <h4 class="font-bold mb-2 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            Legal Disclaimer
+        </h4>
+        <p>
+            This tool is designed for preliminary self-assessment purposes only. It does not constitute legal advice or a formal compliance audit. The Information Regulator requires specific, documented evidence for full compliance. <a href="/contact" class="underline font-bold hover:text-brand-blue">Contact us</a> for a formal Readiness Assessment.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

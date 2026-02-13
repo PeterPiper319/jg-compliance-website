@@ -1,0 +1,46 @@
+---
+// src/pages/tools/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Free Compliance Tools & Calculators | JG Compliance";
+const pageDescription = "Access our free B-BBEE Scorecard Calculator and POPIA Gap Analysis tool. Instant results, no signup required.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-bg pt-24 pb-12 text-center">
+    <h1 class="text-4xl font-bold text-brand-blue mb-4">Compliance Tools</h1>
+    <p class="text-brand-grey max-w-2xl mx-auto">
+      Interactive tools to help you gauge your standing before a formal audit.
+    </p>
+  </div>
+
+  <main class="container mx-auto px-4 pb-20">
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      {/* B-BBEE Card */}
+      <a href="/tools/bee-calculator" class="group block bg-white p-8 rounded-xl border border-brand-accent/20 hover:border-brand-blue shadow-sm hover:shadow-lg transition-all">
+        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">
+          B
+        </div>
+        <h3 class="text-2xl font-bold text-brand-blue mb-2 group-hover:underline">B-BBEE Calculator</h3>
+        <p class="text-brand-grey mb-4">
+          Calculate your generic scorecard level instantly. Includes Ownership, Management, and Skills Development logic.
+        </p>
+        <span class="text-brand-blue font-bold text-sm">Launch Calculator &rarr;</span>
+      </a>
+
+      {/* POPIA Card */}
+      <a href="/tools/popia-audit" class="group block bg-white p-8 rounded-xl border border-brand-accent/20 hover:border-brand-blue shadow-sm hover:shadow-lg transition-all">
+        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">
+          P
+        </div>
+        <h3 class="text-2xl font-bold text-brand-blue mb-2 group-hover:underline">POPIA Gap Analysis</h3>
+        <p class="text-brand-grey mb-4">
+          Assess your organization's risk profile against the 8 Conditions for Lawful Processing.
+        </p>
+        <span class="text-brand-blue font-bold text-sm">Start Audit &rarr;</span>
+      </a>
+
+    </div>
+  </main>
+</BaseLayout>

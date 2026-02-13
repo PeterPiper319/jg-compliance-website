@@ -1,0 +1,40 @@
+---
+// src/pages/tools/bee-calculator.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { BeeCalculator } from '../../components/Tools/BeeCalculator';
+
+const pageTitle = "B-BBEE Scorecard Calculator (Generic) | JG Business Compliance";
+const pageDescription = "Estimate your B-BBEE Level instantly. Interactive calculator for Ownership, Management Control, Skills Development, ESD, and SED.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-blue text-white pt-24 pb-12">
+    <div class="container mx-auto px-4 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-xs font-bold tracking-wider mb-4 border border-white/20">
+        INTERACTIVE TOOL
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">B-BBEE Scorecard Calculator</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Calculate your preliminary B-BBEE Level based on the Generic Scorecard (Revised Codes of Good Practice).
+      </p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-16 -mt-10 relative z-10">
+    <div class="max-w-5xl mx-auto">
+      {/* CRITICAL: client:load is required for React interactivity 
+          Without this, the calculator will not function.
+      */}
+      <BeeCalculator client:load />
+
+      <div class="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200 text-sm text-gray-500">
+        <h4 class="font-bold text-gray-700 mb-2">Disclaimer</h4>
+        <p>
+          This calculator provides an estimate based on user inputs. It does not constitute a valid B-BBEE Certificate or Sworn Affidavit. 
+          JG Business Compliance accepts no liability for decisions made based on this tool. 
+          <a href="/contact" class="text-brand-blue underline hover:text-brand-primary">Contact us</a> for a formal verification audit.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

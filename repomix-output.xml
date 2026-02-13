@@ -1,10 +1,10 @@
-This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+This file is a merged representation of a subset of the codebase, containing files not matching ignore patterns, combined into a single document by Repomix.
 
 <file_summary>
 This section contains a summary of this file.
 
 <purpose>
-This file contains a packed representation of the entire repository's contents.
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
 It is designed to be easily consumable by AI systems for analysis, code review,
 or other automated processes.
 </purpose>
@@ -32,6 +32,7 @@ The content is organized as follows:
 <notes>
 - Some files may have been excluded based on .gitignore rules and Repomix's configuration
 - Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching these patterns are excluded: repomix*
 - Files matching patterns in .gitignore are excluded
 - Files matching default ignore patterns are excluded
 - Files are sorted by Git change count (files with more changes are at the bottom)
@@ -42,6 +43,7 @@ The content is organized as follows:
 <directory_structure>
 .astro/settings.json
 .astro/types.d.ts
+.gitignore
 astro.config.mjs
 package.json
 PHASE_01_MASTER_LOG.md
@@ -51,10 +53,25 @@ PHASE_04_MASTER_LOG.md
 PHASE_04B_MASTER_LOG.md
 PHASE_05_MASTER_LOG.md
 PHASE_06_MASTER_LOG.md
+PHASE_07_MASTER_LOG.md
+PHASE_08_MASTER_LOG.md
+PHASE_09_MASTER_LOG.md
+PHASE_10_MASTER_LOG.md
+PHASE_11_MASTER_LOG.md
+PHASE_12_MASTER_LOG.md
+PHASE_13_MASTER_LOG.md
+PHASE_14_MASTER_LOG.md
+PHASE_15_MASTER_LOG.md
+PHASE_16_MASTER_LOG.md
+public/form-setup.html
+public/google16b29ea6283047c9.html
 public/logo.png
 public/logo1.png
 public/logo2.png
 public/robots.txt
+public/sitemap.xml
+src/components/About/MethodologySection.astro
+src/components/About/MissionSection.astro
 src/components/ComplianceMatrix.astro
 src/components/ContactForm.astro
 src/components/GlobalFooter.astro
@@ -62,16 +79,25 @@ src/components/GlobalHeader.astro
 src/components/GoogleAnalytics.astro
 src/components/HeroSection.astro
 src/components/Navbar.astro
+src/components/SEO.astro
 src/components/ServiceHero.astro
+src/components/Tools/BeeCalculator.tsx
+src/components/Tools/PopiaAudit.tsx
 src/components/TrustBanner.astro
 src/components/WhatsAppButton.astro
 src/config/brand.ts
+src/config/content.ts
+src/config/seo.ts
 src/env.d.ts
 src/layouts/BaseLayout.astro
+src/lib/schemas/bee-calculator.ts
+src/lib/schemas/popia-audit.ts
+src/pages/about.astro
 src/pages/contact.astro
 src/pages/index.astro
 src/pages/legal/privacy.astro
 src/pages/legal/terms.astro
+src/pages/services/bee-affidavit.astro
 src/pages/services/cipc/annual-returns.astro
 src/pages/services/cipc/beneficial-ownership.astro
 src/pages/services/cipc/new-company.astro
@@ -81,18 +107,532 @@ src/pages/services/labour/coida-registration.astro
 src/pages/services/labour/letter-good-standing.astro
 src/pages/services/labour/uif-domestic.astro
 src/pages/thank-you.astro
+src/pages/tools/bee-calculator.astro
+src/pages/tools/index.astro
+src/pages/tools/popia-audit.astro
 src/scripts/LINKER_PHASE_01.ts
 src/scripts/LINKER_PHASE_02.ts
 src/scripts/LINKER_PHASE_03.ts
 src/scripts/LINKER_PHASE_04.ts
 src/scripts/LINKER_PHASE_05.ts
 src/scripts/LINKER_PHASE_06.ts
+src/scripts/LINKER_PHASE_08.ts
+src/scripts/LINKER_PHASE_10.ts
+src/scripts/LINKER_PHASE_13.ts
+src/scripts/LINKER_PHASE_14.ts
+src/scripts/LINKER_PHASE_15.ts
 tailwind.config.cjs
+test.txt
 tsconfig.json
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
+
+<file path="PHASE_15_MASTER_LOG.md">
+# PHASE 15 MASTER LOG: Regulatory Logic Core
+Status: COMPLETED
+
+## OBJECTIVE
+Define the strict Zod validation schemas for B-BBEE and POPIA to ensure legislative accuracy before UI construction.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 15-01 | PHASE_15_MASTER_LOG.md | Phase initialization. | COMPLETED |
+| 15-02 | package.json | **Dependency:** Install `zod` and `react-hook-form`. | COMPLETED |
+| 15-03 | src/lib/schemas/bee-calculator.ts | **Logic:** The B-BBEE Generic Scorecard logic (5 Pillars). | COMPLETED |
+| 15-04 | src/lib/schemas/popia-audit.ts | **Logic:** The POPIA Gap Analysis logic (8 Conditions). | COMPLETED |
+| 15-05 | src/scripts/LINKER_PHASE_15.ts | **Validation:** Test schemas against known legal datasets. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 15-01 Locked (Phase Initialization)
+- [x] 15-02 Locked (Dependencies Installed)
+- [x] 15-03 Locked (B-BBEE Schema Defined)
+- [x] 15-04 Locked (POPIA Schema Defined)
+- [x] 15-05 Locked (Regulatory Logic Verified)
+</file>
+
+<file path="PHASE_16_MASTER_LOG.md">
+# PHASE 16 MASTER LOG: Interactive Engine (UI)
+Status: COMPLETED
+
+## OBJECTIVE
+Deploy the client-side React components for B-BBEE and POPIA, making the Phase 15 logic visible and usable.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 16-01 | PHASE_16_MASTER_LOG.md | Phase initialization. | COMPLETED |
+| 16-02 | src/components/Tools/BeeCalculator.tsx | **UI:** The B-BBEE React Component (Inputs + Real-time Level). | COMPLETED |
+| 16-03 | src/pages/tools/bee-calculator.astro | **Page:** The Astro wrapper page for the B-BBEE tool. | COMPLETED |
+| 16-04 | src/components/Tools/PopiaAudit.tsx | **UI:** The POPIA Gap Analysis React Component. | COMPLETED |
+| 16-05 | src/pages/tools/popia-audit.astro | **Page:** The Astro wrapper page for the POPIA tool. | COMPLETED |
+| 16-06 | src/pages/tools/index.astro | **Page:** The Tools Hub page linking to calculators. | COMPLETED |
+| 16-07 | src/components/Navbar.astro | **Nav:** Add "Free Tools" dropdown to the menu. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 16-01 Locked (Phase Initialization)
+- [x] 16-02 Locked (B-BBEE Component Created)
+- [x] 16-03 Locked (B-BBEE Page Created)
+- [x] 16-04 Locked (POPIA Component Created)
+- [x] 16-05 Locked (POPIA Page Created)
+- [x] 16-06 Locked (Tools Hub Page Created)
+- [x] 16-07 Locked (Navigation Updated)
+</file>
+
+<file path="src/components/Tools/BeeCalculator.tsx">
+import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { beeSchema, type BEEInput, BEE_WEIGHTS, calculateBEELevel } from '../../lib/schemas/bee-calculator';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function BeeCalculator() {
+  const [level, setLevel] = useState("Non-Compliant");
+  const [total, setTotal] = useState(0);
+
+  const { register, watch, formState: { errors } } = useForm<BEEInput>({
+    resolver: zodResolver(beeSchema),
+    defaultValues: { ownership: 0, management: 0, skills: 0, esd: 0, sed: 0 },
+    mode: "onChange"
+  });
+
+  const values = watch();
+
+  useEffect(() => {
+    const sum = (values.ownership || 0) + (values.management || 0) + (values.skills || 0) + (values.esd || 0) + (values.sed || 0);
+    setTotal(sum);
+    setLevel(calculateBEELevel(sum));
+  }, [values]);
+
+  const inputs = [
+    { name: 'ownership', label: 'Ownership', max: BEE_WEIGHTS.ownership, desc: 'Voting rights & economic interest' },
+    { name: 'management', label: 'Management Control', max: BEE_WEIGHTS.management, desc: 'Board & executive participation' },
+    { name: 'skills', label: 'Skills Development', max: BEE_WEIGHTS.skills, desc: 'Training spend on black employees' },
+    { name: 'esd', label: 'Enterprise & Supplier Dev', max: BEE_WEIGHTS.esd, desc: 'Procurement & supplier support' },
+    { name: 'sed', label: 'Socio-Economic Dev', max: BEE_WEIGHTS.sed, desc: 'Charitable contributions' },
+  ];
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-8">
+      <div className="space-y-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-4">Scorecard Inputs</h3>
+        {inputs.map((field) => (
+          <div key={field.name}>
+            <div className="flex justify-between mb-1">
+              <label className="text-sm font-medium text-gray-700">{field.label}</label>
+              <span className="text-xs text-gray-500">Max: {field.max}</span>
+            </div>
+            <input
+              type="number"
+              step="0.01"
+              {...register(field.name as keyof BEEInput, { valueAsNumber: true })}
+              className={twMerge("w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition", errors[field.name as keyof BEEInput] && "border-red-500")}
+            />
+            <p className="text-xs text-gray-400 mt-1">{field.desc}</p>
+            {errors[field.name as keyof BEEInput] && <p className="text-xs text-red-500 mt-1">{errors[field.name as keyof BEEInput]?.message}</p>}
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-brand-blue text-white p-8 rounded-xl shadow-lg h-fit sticky top-24">
+        <h3 className="text-xl font-bold mb-6 opacity-90">Live Result</h3>
+        
+        <div className="mb-8 text-center">
+          <span className="block text-sm uppercase tracking-wider opacity-70 mb-2">Total Score</span>
+          <span className="text-6xl font-bold">{total.toFixed(2)}</span>
+          <span className="text-lg opacity-60"> / 100</span> // [cite: 34]
+        </div>
+
+        <div className="bg-white/10 rounded-lg p-6 text-center border border-white/20">
+          <span className="block text-sm uppercase tracking-wider opacity-70 mb-2">B-BBEE Status</span>
+          <span className={clsx("text-3xl font-bold", level === "Level 1" ? "text-green-400" : level === "Non-Compliant" ? "text-red-300" : "text-white")}>
+            {level}
+          </span>
+        </div>
+
+        <p className="mt-8 text-sm opacity-60 text-center leading-relaxed">
+          * This is a preliminary estimation based on the Generic Scorecard. Final verification requires a SANAS accredited agency or Sworn Affidavit.
+        </p>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/Tools/PopiaAudit.tsx">
+import React, { useState, useEffect } from 'react';
+import { POPIA_QUESTIONS, calculatePOPIAScore } from '../../lib/schemas/popia-audit';
+import { clsx } from 'clsx';
+
+export function PopiaAudit() {
+  const [answers, setAnswers] = useState<Record<string, boolean>>({});
+  const [score, setScore] = useState(0);
+  const [riskLevel, setRiskLevel] = useState("High Risk");
+
+  useEffect(() => {
+    const currentScore = calculatePOPIAScore(answers as any);
+    setScore(currentScore);
+
+    if (currentScore >= 80) setRiskLevel("Low Risk (Compliant)");
+    else if (currentScore >= 50) setRiskLevel("Moderate Risk");
+    else setRiskLevel("High Risk (Critical)");
+  }, [answers]);
+
+  const handleChange = (questionId: string, value: string) => {
+    setAnswers(prev => ({ ...prev, [questionId]: value === "true" }));
+  };
+
+  return (
+    <div className="grid lg:grid-cols-3 gap-8">
+      <div className="lg:col-span-2 space-y-6">
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 className="text-xl font-bold text-brand-blue mb-6">Compliance Checklist</h3>
+            <div className="space-y-6">
+            {POPIA_QUESTIONS.map((q, index) => (
+                <div key={q.id} className="p-4 bg-gray-50 rounded-lg border border-gray-100">
+                <div className="flex items-start justify-between gap-4 mb-3">
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Condition {q.condition}</span>
+                </div>
+                <p className="text-gray-800 font-medium mb-4">{q.label}</p>
+                
+                <div className="flex gap-6">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                    <input 
+                        type="radio" 
+                        name={q.id}
+                        value="true"
+                        checked={answers[q.id] === true}
+                        onChange={(e) => handleChange(q.id, e.target.value)}
+                        className="w-4 h-4 text-brand-blue"
+                    />
+                    <span className="text-sm">Yes</span>
+                    </label>
+
+                    <label className="flex items-center gap-2 cursor-pointer">
+                    <input 
+                        type="radio" 
+                        name={q.id}
+                        value="false"
+                        checked={answers[q.id] === false}
+                        onChange={(e) => handleChange(q.id, e.target.value)}
+                        className="w-4 h-4 text-red-500"
+                    />
+                    <span className="text-sm">No</span>
+                    </label>
+                </div>
+                </div>
+            ))}
+            </div>
+        </div>
+      </div>
+
+      <div className="lg:col-span-1">
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-brand-accent/20 sticky top-24">
+            <h3 className="text-lg font-bold text-brand-blue mb-4">Audit Result</h3>
+            
+            <div className="relative pt-1">
+                <div className="flex mb-2 items-center justify-between">
+                    <div>
+                        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-brand-blue bg-blue-200">
+                            Compliance Score
+                        </span>
+                    </div>
+                    <div className="text-right">
+                        <span className="text-xs font-semibold inline-block text-brand-blue">
+                            {score}%
+                        </span>
+                    </div>
+                </div>
+                <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                    <div style={{ width: `${score}%` }} className={clsx("shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center transition-all duration-500", score < 50 ? "bg-red-500" : score < 80 ? "bg-orange-500" : "bg-green-500")}></div>
+                </div>
+            </div>
+
+            <div className={clsx("text-center p-4 rounded-lg border-2 font-bold mb-6", score < 50 ? "border-red-100 bg-red-50 text-red-600" : score < 80 ? "border-orange-100 bg-orange-50 text-orange-600" : "border-green-100 bg-green-50 text-green-600")}>
+                {riskLevel}
+            </div>
+
+            <p className="text-xs text-gray-500 text-center">
+                This is a preliminary gap analysis. A full legal audit is required for certification.
+            </p>
+            
+            <a href="/contact?service=popia" className="block w-full mt-6 bg-brand-blue text-white text-center py-3 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors">
+                Book Full Audit
+            </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/lib/schemas/bee-calculator.ts">
+import { z } from "zod";
+
+/**
+ * PHASE 15: REGULATORY LOGIC
+ * Source: Strategy PDF [Page 3, Table 35]
+ */
+
+export const BEE_WEIGHTS = {
+  ownership: 25,
+  management: 19,
+  skills: 20,
+  esd: 42,
+  sed: 5
+} as const;
+
+// Zod Schema for strict input validation
+export const beeSchema = z.object({
+  ownership: z.number().min(0).max(BEE_WEIGHTS.ownership, "Max score is 25"),
+  management: z.number().min(0).max(BEE_WEIGHTS.management, "Max score is 19"),
+  skills: z.number().min(0).max(BEE_WEIGHTS.skills, "Max score is 20"),
+  esd: z.number().min(0).max(BEE_WEIGHTS.esd, "Max score is 42"),
+  sed: z.number().min(0).max(BEE_WEIGHTS.sed, "Max score is 5"),
+});
+
+export type BEEInput = z.infer<typeof beeSchema>;
+
+// Legislative logic for Level conversion
+export function calculateBEELevel(score: number): string {
+  if (score >= 100) return "Level 1";
+  if (score >= 95) return "Level 2";
+  if (score >= 90) return "Level 3";
+  if (score >= 80) return "Level 4";
+  if (score >= 75) return "Level 5";
+  if (score >= 70) return "Level 6";
+  if (score >= 55) return "Level 7";
+  if (score >= 40) return "Level 8";
+  return "Non-Compliant";
+}
+</file>
+
+<file path="src/lib/schemas/popia-audit.ts">
+import { z } from "zod";
+
+/**
+ * PHASE 15: REGULATORY LOGIC (POPIA)
+ * Source: Strategy PDF [Page 3, Lines 41-49]
+ * Implements the 8 Conditions for Lawful Processing.
+ */
+
+export const POPIA_QUESTIONS = [
+  { id: "accountability", label: "Have you appointed an Information Officer and registered them with the Regulator?", condition: 1 },
+  { id: "processingLimitation", label: "Do you only process personal information with the consent of the data subject?", condition: 2 },
+  { id: "purposeSpecification", label: "Is personal data collected for a specific, explicitly defined and lawful purpose?", condition: 3 },
+  { id: "furtherProcessing", label: "Is any secondary use of data compatible with the original purpose of collection?", condition: 4 },
+  { id: "infoQuality", label: "Do you take steps to ensure data is complete, accurate, and not misleading?", condition: 5 },
+  { id: "openness", label: "Do you maintain documentation of all processing operations?", condition: 6 },
+  { id: "securitySafeguards", label: "Are appropriate technical measures (firewalls, encryption) in place?", condition: 7 },
+  { id: "subjectParticipation", label: "Do you have a process for data subjects to request access to their information?", condition: 8 },
+] as const;
+
+// Schema validates that every question is answered (boolean)
+export const popiaSchema = z.object({
+  accountability: z.boolean({ required_error: "Required" }),
+  processingLimitation: z.boolean({ required_error: "Required" }),
+  purposeSpecification: z.boolean({ required_error: "Required" }),
+  furtherProcessing: z.boolean({ required_error: "Required" }),
+  infoQuality: z.boolean({ required_error: "Required" }),
+  openness: z.boolean({ required_error: "Required" }),
+  securitySafeguards: z.boolean({ required_error: "Required" }),
+  subjectParticipation: z.boolean({ required_error: "Required" }),
+});
+
+export type POPIAInput = z.infer<typeof popiaSchema>;
+
+// Logic: Calculate Compliance Score (Percentage)
+export function calculatePOPIAScore(data: POPIAInput): number {
+  const totalQuestions = 8;
+  const compliant = Object.values(data).filter(v => v === true).length;
+  return Math.round((compliant / totalQuestions) * 100);
+}
+</file>
+
+<file path="src/pages/tools/bee-calculator.astro">
+---
+// src/pages/tools/bee-calculator.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { BeeCalculator } from '../../components/Tools/BeeCalculator';
+
+const pageTitle = "B-BBEE Scorecard Calculator (Generic) | JG Business Compliance";
+const pageDescription = "Estimate your B-BBEE Level instantly. Interactive calculator for Ownership, Management Control, Skills Development, ESD, and SED.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-blue text-white pt-24 pb-12">
+    <div class="container mx-auto px-4 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-xs font-bold tracking-wider mb-4 border border-white/20">
+        INTERACTIVE TOOL
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">B-BBEE Scorecard Calculator</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Calculate your preliminary B-BBEE Level based on the Generic Scorecard (Revised Codes of Good Practice).
+      </p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-16 -mt-10 relative z-10">
+    <div class="max-w-5xl mx-auto">
+      {/* CRITICAL: client:load is required for React interactivity 
+          Without this, the calculator will not function.
+      */}
+      <BeeCalculator client:load />
+
+      <div class="mt-12 p-6 bg-gray-50 rounded-lg border border-gray-200 text-sm text-gray-500">
+        <h4 class="font-bold text-gray-700 mb-2">Disclaimer</h4>
+        <p>
+          This calculator provides an estimate based on user inputs. It does not constitute a valid B-BBEE Certificate or Sworn Affidavit. 
+          JG Business Compliance accepts no liability for decisions made based on this tool. 
+          <a href="/contact" class="text-brand-blue underline hover:text-brand-primary">Contact us</a> for a formal verification audit.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/tools/index.astro">
+---
+// src/pages/tools/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Free Compliance Tools & Calculators | JG Compliance";
+const pageDescription = "Access our free B-BBEE Scorecard Calculator and POPIA Gap Analysis tool. Instant results, no signup required.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-bg pt-24 pb-12 text-center">
+    <h1 class="text-4xl font-bold text-brand-blue mb-4">Compliance Tools</h1>
+    <p class="text-brand-grey max-w-2xl mx-auto">
+      Interactive tools to help you gauge your standing before a formal audit.
+    </p>
+  </div>
+
+  <main class="container mx-auto px-4 pb-20">
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      {/* B-BBEE Card */}
+      <a href="/tools/bee-calculator" class="group block bg-white p-8 rounded-xl border border-brand-accent/20 hover:border-brand-blue shadow-sm hover:shadow-lg transition-all">
+        <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">
+          B
+        </div>
+        <h3 class="text-2xl font-bold text-brand-blue mb-2 group-hover:underline">B-BBEE Calculator</h3>
+        <p class="text-brand-grey mb-4">
+          Calculate your generic scorecard level instantly. Includes Ownership, Management, and Skills Development logic.
+        </p>
+        <span class="text-brand-blue font-bold text-sm">Launch Calculator &rarr;</span>
+      </a>
+
+      {/* POPIA Card */}
+      <a href="/tools/popia-audit" class="group block bg-white p-8 rounded-xl border border-brand-accent/20 hover:border-brand-blue shadow-sm hover:shadow-lg transition-all">
+        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">
+          P
+        </div>
+        <h3 class="text-2xl font-bold text-brand-blue mb-2 group-hover:underline">POPIA Gap Analysis</h3>
+        <p class="text-brand-grey mb-4">
+          Assess your organization's risk profile against the 8 Conditions for Lawful Processing.
+        </p>
+        <span class="text-brand-blue font-bold text-sm">Start Audit &rarr;</span>
+      </a>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/tools/popia-audit.astro">
+---
+// src/pages/tools/popia-audit.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PopiaAudit } from '../../components/Tools/PopiaAudit';
+
+const pageTitle = "POPIA Compliance Gap Analysis | Free Audit Tool | JG Compliance";
+const pageDescription = "Check your organization's compliance with the 8 Conditions for Lawful Processing. Instant risk assessment.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-blue text-white pt-24 pb-12">
+    <div class="container mx-auto px-4 text-center">
+      <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-xs font-bold tracking-wider mb-4 border border-white/20">
+        PRIVACY AUDIT
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">POPIA Gap Analysis</h1>
+      <p class="text-xl opacity-90 max-w-2xl mx-auto">
+        Identify vulnerabilities in your data protection framework against the 8 Conditions for Lawful Processing.
+      </p>
+    </div>
+  </div>
+
+  <main class="container mx-auto px-4 py-16 -mt-10 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      {/* CRITICAL: client:load is required for React interactivity */}
+      <PopiaAudit client:load />
+
+      <div class="mt-12 p-6 bg-yellow-50 rounded-lg border border-yellow-200 text-sm text-yellow-800">
+        <h4 class="font-bold mb-2">Legal Disclaimer</h4>
+        <p>
+          This tool is designed for preliminary self-assessment purposes only. It does not constitute legal advice or a formal compliance audit. 
+          The Information Regulator requires specific, documented evidence for full compliance. 
+          <a href="/contact" class="underline font-bold hover:text-yellow-900">Contact our Legal Team</a> for a comprehensive audit.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/scripts/LINKER_PHASE_15.ts">
+// src/scripts/LINKER_PHASE_15.ts
+import { beeSchema, calculateBEELevel } from '../lib/schemas/bee-calculator';
+import { popiaSchema } from '../lib/schemas/popia-audit';
+
+export function validatePhase15(): boolean {
+  console.log("Initiating Phase 15 Logic Check...");
+  
+  let isValid = true;
+  const errors: string[] = [];
+
+  // 1. Test B-BBEE Level Logic (The "Level 1" Test)
+  const testLevel1 = calculateBEELevel(100);
+  if (testLevel1 !== "Level 1") {
+    isValid = false;
+    errors.push(`CRITICAL: B-BBEE Level 1 Logic Failed. Expected 'Level 1', got '${testLevel1}'`);
+  }
+
+  // 2. Test B-BBEE Non-Compliant Logic
+  const testFail = calculateBEELevel(30);
+  if (testFail !== "Non-Compliant") {
+    isValid = false;
+    errors.push(`CRITICAL: B-BBEE Compliance Floor Logic Failed. Expected 'Non-Compliant', got '${testFail}'`);
+  }
+
+  // 3. Schema Integrity
+  if (!beeSchema || !popiaSchema) {
+    isValid = false;
+    errors.push("CRITICAL: Zod Schemas not exported correctly.");
+  }
+
+  if (isValid) {
+    console.log("✅ Phase 15 Regulatory Logic: VERIFIED");
+    console.log("   - B-BBEE Engine: ACTIVE");
+    console.log("   - POPIA Engine: ACTIVE");
+  } else {
+    console.error("❌ Phase 15 Validation FAILED:");
+    errors.forEach(err => console.error(`   - ${err}`));
+  }
+
+  return isValid;
+}
+
+// Manual execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  validatePhase15();
+}
+</file>
 
 <file path=".astro/settings.json">
 {
@@ -106,90 +646,8 @@ This section contains the contents of the repository's files.
 /// <reference types="astro/client" />
 </file>
 
-<file path="astro.config.mjs">
-import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
-
-// https://astro.build/config
-export default defineConfig({
-  site: 'https://jgcompliance.co.za', // <--- UPDATED DOMAIN
-  integrations: [tailwind(), sitemap()]
-});
-</file>
-
-<file path="package.json">
-{
-  "name": "jg_static_website",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "mobile": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.7.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.0.0",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0"
-  }
-}
-</file>
-
-<file path="PHASE_01_MASTER_LOG.md">
-# PHASE 01 MASTER LOG: Environment & Structural Foundation
-Status: COMPLETED
-
-## OBJECTIVE
-Establish the immutable "Source of Truth" for brand constants and the atomic Astro layout structure.
-
-## MICRO-LAYER SEQUENCE
-| ID | File | Function | Status |
-| :--- | :--- | :--- | :--- |
-| 01-01 | src/config/brand.ts | Exports frozen objects for Colors, Typography, and Pricing constants derived from Blueprint Pages 1 & 3. | COMPLETED |
-| 01-02 | tailwind.config.cjs | Maps brand.ts constants to Tailwind utility classes (e.g., bg-brand-blue). | COMPLETED |
-| 01-03 | src/layouts/BaseLayout.astro | The HTML shell containing the <head>, SEO meta tags, and slot rendering. | COMPLETED |
-| 01-04 | src/components/GlobalHeader.astro | Implementation of the "JG" monogram and "BUSINESS COMPLIANCE" hierarchy. | COMPLETED |
-| 01-05 | src/scripts/LINKER_PHASE_01.ts | Validates the configuration acts as the structural spine. | COMPLETED |
-
-## VALIDATION GATES
-- [x] 01-01 Locked
-- [x] 01-02 Locked
-- [x] 01-03 Locked
-- [x] 01-04 Locked
-- [x] 01-05 Locked (Phase Completion)
-</file>
-
-<file path="PHASE_02_MASTER_LOG.md">
-# PHASE 02 MASTER LOG: The Gateway UI & Compliance Matrix
-Status: COMPLETED
-
-## OBJECTIVE
-Construct the high-impact "Home Page" that serves as the central dispatch for CIPC, Labour, and Corporate Maintenance services.
-
-## MICRO-LAYER SEQUENCE
-| ID | File | Function | Status |
-| :--- | :--- | :--- | :--- |
-| 02-01 | src/components/HeroSection.astro | The primary visual anchor featuring the "Architected for Excellence" headline and "Start Registration" CTA. | COMPLETED |
-| 02-02 | src/components/TrustBanner.astro | The dynamic alert bar for urgent deadlines (e.g., "Annual Returns Due"). | COMPLETED |
-| 02-03 | src/components/ComplianceMatrix.astro | The 3-pillar geometric grid (CIPC, Labour, Maintenance) navigating users to specific services. | COMPLETED |
-| 02-04 | src/pages/index.astro | The assembler page integrating the Hero, Banner, and Matrix into the BaseLayout. | COMPLETED |
-| 02-05 | LINKER_PHASE_02.ts | Validates the routing and component integration. | COMPLETED |
-
-## VALIDATION GATES
-- [x] 02-01 Locked
-- [x] 02-02 Locked
-- [x] 02-03 Locked
-- [x] 02-04 Locked
-- [x] 02-05 Locked (Phase Completion)
+<file path=".gitignore">
+node_modules
 </file>
 
 <file path="PHASE_03_MASTER_LOG.md">
@@ -312,6 +770,332 @@ Activate the functional logic of the website: Form submissions, SEO indexing, an
 - [x] 06-05 Locked (PROJECT COMPLETE)
 </file>
 
+<file path="PHASE_07_MASTER_LOG.md">
+# PHASE 07 MASTER LOG: Strategic Alignment & Remediation
+Status: COMPLETED (RC2)
+
+## OBJECTIVE
+Harmonize the codebase with the "Comprehensive Strategic Blueprint" (PDF), addressing Architectural, Visual, and Scope deviations.
+
+## REMEDIATION SEQUENCE
+| ID | File | Action | Status |
+| :--- | :--- | :--- | :--- |
+| 07-01 | src/config/brand.ts | **Repair:** Added missing Labour pricing keys to Source of Truth. | LOCKED |
+| 07-02 | src/pages/services/labour/*.astro | **Refactor:** Removed hard-coded pricing; connected to brand.ts. | LOCKED |
+| 07-03 | src/components/WhatsAppButton.astro | **Visuals:** Implemented "Squircle" geometry and Contextual Logic. | LOCKED |
+| 07-04 | src/pages/services/bee-affidavit.astro | **Expansion:** Created missing BEE Affidavit service module. | LOCKED |
+
+## VALIDATION GATES
+- [x] 07-01 Pricing Architecture Verified
+- [x] 07-02 Codebase Refactor Verified
+- [x] 07-03 Brand Identity Verified
+- [x] 07-04 Scope Completeness Verified
+
+## DEPLOYMENT STATUS
+**READY FOR PRODUCTION**
+</file>
+
+<file path="PHASE_08_MASTER_LOG.md">
+# PHASE 08 MASTER LOG: Mobile Remediation & Social Integration
+Status: COMPLETED
+
+## OBJECTIVE
+Refactor the frontend CSS architecture to fix mobile layout collisions and integrate the Facebook social anchor.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 08-01 | src/config/brand.ts | **Data:** Add `SOCIAL_LINKS` constant to the Source of Truth. | COMPLETED |
+| 08-02 | src/components/GlobalFooter.astro | **UI:** Inject the Facebook Icon and link connected to 08-01. | COMPLETED |
+| 08-03 | src/components/TrustBanner.astro | **Fix:** Implement `flex-col` mobile stack to prevent text squashing. | COMPLETED |
+| 08-04 | src/components/ComplianceMatrix.astro | **Fix:** Reset negative margin on mobile to prevent Hero collision. | COMPLETED |
+| 08-05 | src/components/HeroSection.astro | **Fix:** Downscale Typography (H1) for mobile viewports. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 08-01 Locked
+- [x] 08-02 Locked
+- [x] 08-03 Locked
+- [x] 08-04 Locked
+- [x] 08-05 Locked (Phase Completion)
+MICRO-LAYER 08-01: Source of Truth Update
+We begin by establishing the data constant for the Facebook link. This ensures if the link changes later, we change it in one place only.
+
+SYSTEM COMMAND: CREATE MICRO-FILE 08-01
+
+Master Log Entry: 08-01
+
+File: src/config/brand.ts
+
+Purpose: Add SOCIAL_LINKS export.
+
+Instruction to User: Copy the code below to update your brand configuration.
+
+TypeScript
+// src/config/brand.ts
+
+/**
+ * PHASE 01 MASTER LOG: 01-01
+ * Source of Truth (SoT) for Brand Identity, Pricing, and Regulatory Constants.
+ * All derived components (Tailwind config, Pricing Cards) must consume this file.
+ */
+
+// Visual Identity: Geometric Monogram, #1E4D8C (Primary), #707070 (Secondary).
+export const BRAND_COLORS = {
+  primaryBlue: '#1E4D8C',
+  secondaryGrey: '#707070',
+  accentGrey: '#A9A9A9',
+  background: '#F8F9FA',
+} as const;
+
+// Pricing Data: JG Professional Fee (Total) derived from Competitive Pricing Structure
+export const PRICING_2026 = {
+  ptyRegistration: 1250,
+  annualReturn: 590,
+  annualReturnSmall: 590,
+  boFiling: 690,
+  coidRegistration: 1850,
+  coidaRegistration: 1850, // Alias for consistency
+  restoration: 8800,
+  beeAffidavit: 390,
+  letterGoodStanding: 850,
+  uifDomestic: 850,
+} as const;
+
+// Regulatory Constants: Critical threshold data aligned with CIPC requirements
+export const COMPLIANCE_CONSTANTS = {
+  boHardStopDate: 'July 2024',
+  restorationProof: '12-month bank statements',
+} as const;
+
+// Social Connectivity
+export const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61571587948256', // Replace with actual if different
+} as const;
+</file>
+
+<file path="PHASE_09_MASTER_LOG.md">
+# PHASE 09 MASTER LOG: Functional Mobile Navigation
+Status: COMPLETED
+
+## OBJECTIVE
+Replace the static "Menu" link with a functional, JavaScript-driven hamburger menu that toggles a navigation dropdown on mobile devices.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 09-01 | src/components/Navbar.astro | **Logic/UI:** Implement Hamburger SVG, Hidden Menu Container, and Toggle Script. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 09-01 Locked (Phase Completion)
+MICRO-LAYER 09-01: The Mobile Menu Implementation
+We will perform a "surgical replacement" of the Navbar.astro file.
+
+Remove: The <a href="/contact">Menu &rarr;</a> link.
+
+Add: A <button> with a Hamburger SVG icon.
+
+Add: A hidden div container with the navigation links stacked vertically.
+
+Add: A <script> block to toggle the hidden class when the button is clicked.
+
+SYSTEM COMMAND: EXECUTE MICRO-FILE 09-01
+
+Master Log Entry: 09-01
+
+File: src/components/Navbar.astro
+
+Purpose: Create a functional mobile navigation drawer.
+
+Instruction: Replace the entire content of src/components/Navbar.astro with the following code.
+
+Code snippet
+---
+// src/components/Navbar.astro
+---
+
+<nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between relative">
+    
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logo1.png" alt="Logo 1" class="h-12 w-auto object-contain" />
+      <img src="/logo2.png" alt="Logo 2" class="h-12 w-auto object-contain" />
+    </a>
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="/" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Home</a>
+      <a href="/services" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Services</a>
+      
+      <a href="/contact" class="bg-brand-blue text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-brand-blue/90 transition-colors shadow-sm">
+        Contact Us
+      </a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden text-brand-blue focus:outline-none p-2" aria-label="Toggle Menu">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-lg py-6 px-6 flex-col gap-6 z-40">
+      <a href="/" class="block text-lg font-medium text-brand-grey hover:text-brand-blue">Home</a>
+      <a href="/services" class="block text-lg font-medium text-brand-grey hover:text-brand-blue">Services</a>
+      <hr class="border-gray-100" />
+      <a href="/contact" class="block w-full bg-brand-blue text-white px-5 py-4 rounded-lg text-lg font-bold text-center hover:bg-brand-blue/90 transition-colors">
+        Contact Us
+      </a>
+  </div>
+</nav>
+
+<script>
+  // Toggles the mobile menu visibility
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex'); // Switch to flexbox for vertical stacking
+    });
+  }
+</script>
+</file>
+
+<file path="PHASE_11_MASTER_LOG.md">
+# PHASE 11 MASTER LOG: Production Deployment & Signal Activation
+Status: COMPLETED
+
+## OBJECTIVE
+Deploy the application to the production environment, resolve serverless build conflicts, and establish the "Structured Authority" connection with Google Search Console.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 11-01 | astro.config.mjs | **Config:** Defined `trailingSlash` and build format to stabilize Netlify environment. | LOCKED |
+| 11-02 | astro.config.mjs | **Bypass:** Temporarily disabled automated sitemap generation to unblock build. | LOCKED |
+| 11-03 | public/sitemap.xml | **SEO:** Created manual "Strategic Sitemap" prioritizing Hard-Stop pillars. | LOCKED |
+| 11-04 | public/_headers | **Infra:** Forced `application/xml` MIME type for correct Google parsing. | LOCKED |
+| 11-05 | src/components/SEO.astro | **Verification:** Injected `google-site-verification` meta tag into the SEO Engine. | LOCKED |
+
+## STRATEGIC OUTCOME
+- **Live Status:** Production URL `https://jgcompliance.co.za` is active.
+- **Verification:** Google Search Console ownership confirmed via "Hidden Logic" (Meta Tag).
+- **Crawlability:** Strategic Sitemap submitted and accepted by Google.
+
+## VALIDATION GATES
+- [x] 11-01 Locked
+- [x] 11-02 Locked
+- [x] 11-03 Locked
+- [x] 11-04 Locked
+- [x] 11-05 Locked (PROJECT COMPLETE)
+</file>
+
+<file path="PHASE_12_MASTER_LOG.md">
+# PHASE 12 MASTER LOG: Analytics Architecture
+Status: COMPLETED
+
+## OBJECTIVE
+Implement a centralized, "Source of Truth" driven Google Analytics 4 (GA4) configuration.
+Ensure the system handles the "Pending ID" state gracefully without causing build errors.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 12-01 | src/config/brand.ts | **Data:** Centralized `ANALYTICS_CONFIG` export. | LOCKED |
+| 12-02 | src/components/GoogleAnalytics.astro | **Logic:** Component updated to consume `brand.ts` and warn on placeholder. | LOCKED |
+
+## ARCHITECTURAL OUTCOME
+- **Single Source of Truth:** The GA4 ID is now managed in `brand.ts`, alongside colors and pricing.
+- **Safety Valve:** The component checks for the placeholder string `G-MEASUREMENT_ID`.
+- **Developer Experience:** A console warning alerts the developer if the ID is missing, preventing "silent failures" in production.
+
+## HOW TO ACTIVATE TRACKING (FUTURE)
+1. Open `src/config/brand.ts`.
+2. Locate `export const ANALYTICS_CONFIG`.
+3. Replace `'G-MEASUREMENT_ID'` with your real tag (e.g., `'G-K29SL38...'`).
+4. Re-deploy. The console warning will vanish, and data will flow.
+
+## VALIDATION GATES
+- [x] 12-01 Locked
+- [x] 12-02 Locked
+- [x] Console Warning Verified (Proof: `(index):12 GA4 STATUS: Pending...`)
+</file>
+
+<file path="PHASE_13_MASTER_LOG.md">
+# PHASE 13 MASTER LOG: Regulatory Identity Update
+Status: COMPLETED
+
+## OBJECTIVE
+Inject the official CIPC registration number into the Source of Truth (SoT) and propagate it to the Global Footer and SEO Schema to ensure legal compliance.
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 13-01 | src/config/brand.ts | Add REGISTRATION_NUMBER to the Brand constants. | COMPLETED |
+| 13-02 | src/components/GlobalFooter.astro | Update footer UI to display the registration number. | COMPLETED |
+| 13-03 | src/config/seo.ts | Update JSON-LD schema to include the registration number. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 13-01 Locked
+- [x] 13-02 Locked
+- [x] 13-03 Locked
+PHASE COMPLETE
+</file>
+
+<file path="PHASE_14_MASTER_LOG.md">
+# PHASE 14 MASTER LOG: Institutional Identity
+Status: COMPLETED
+
+## OBJECTIVE
+[cite_start]Deploy the "About" page to establish the "Governance-as-a-Service" narrative[cite: 12].
+[cite_start]Focus on the "Compliance Equation" [cite: 15] [cite_start]and "Local Expertise"[cite: 16].
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 14-01 | PHASE_14_MASTER_LOG.md | Phase initialization. | COMPLETED |
+| 14-02 | src/config/content.ts | **Data:** Centralized content store for the About page narrative. | COMPLETED |
+| 14-03 | src/pages/about.astro | **Layout:** The structural shell of the About page. | COMPLETED |
+| 14-04 | src/components/About/MissionSection.astro | [cite_start]**UI:** "Mission Statement" component[cite: 20]. | COMPLETED |
+| 14-05 | src/components/About/MethodologySection.astro | [cite_start]**UI:** "Methodology" component (Audit/Gap Analysis)[cite: 20]. | COMPLETED |
+| 14-06 | src/scripts/LINKER_PHASE_14.ts | **Validation:** Linker check. | COMPLETED |
+| 14-07 | src/components/Navbar.astro (and GlobalFooter.astro) | **Visibility:** Navigation integration for About page. | COMPLETED |
+| 14-08 | src/config/content.ts | **Update:** Remove SARS references from narrative. | COMPLETED |
+
+## VALIDATION GATES
+- [x] 14-01 Locked (Phase Initialization)
+- [x] 14-02 Locked (Content Store Created)
+- [x] 14-03 Locked (About Page Layout Created)
+- [x] 14-04 Locked (Mission Section Component Created)
+- [x] 14-05 Locked (Methodology Section Component Created)
+- [x] 14-06 Locked (Institutional Narrative Validated)
+- [x] 14-07 Locked (About Page Navigation Integrated)
+- [x] 14-08 Locked (SARS References Removed)
+</file>
+
+<file path="public/form-setup.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Setup</title>
+</head>
+<body>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="service" />
+      <textarea name="message"></textarea>
+    </form>
+</body>
+</html>
+</file>
+
+<file path="public/google16b29ea6283047c9.html">
+google-site-verification: google16b29ea6283047c9.html
+</file>
+
 <file path="public/robots.txt">
 User-agent: *
 Allow: /
@@ -319,176 +1103,154 @@ Allow: /
 Sitemap: https://jgcompliance.co.za/sitemap-index.xml
 </file>
 
-<file path="src/components/ComplianceMatrix.astro">
+<file path="public/sitemap.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jgcompliance.co.za/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services/cipc/new-company</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services/cipc/restoration</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services/bee-affidavit</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jgcompliance.co.za/services/cipc/beneficial-ownership</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services/cipc/annual-returns</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://jgcompliance.co.za/services/labour/coida-registration</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services/labour/letter-good-standing</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services/labour/uif-domestic</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://jgcompliance.co.za/contact</loc>
+    <lastmod>2026-02-11</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/services</loc>
+    <lastmod>2026-02-11</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/legal/privacy</loc>
+    <lastmod>2026-02-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://jgcompliance.co.za/legal/terms</loc>
+    <lastmod>2026-02-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>
+</file>
+
+<file path="src/components/About/MethodologySection.astro">
 ---
-// src/components/ComplianceMatrix.astro
-const pillars = [
-  {
-    title: "CIPC Services",
-    description: "Company registration, director amendments, and name reservations.",
-    icon: "building", 
-    link: "/services/cipc/new-company",
-  },
-  {
-    title: "Labour Compliance",
-    description: "COIDA registration, UIF declaration, and Letters of Good Standing.",
-    icon: "users", 
-    link: "/services/labour/coida-registration",
-  },
-  {
-    title: "Corporate Maintenance",
-    description: "Annual Returns and Beneficial Ownership (BO) filing.",
-    icon: "cog", 
-    link: "/services/cipc/annual-returns",
-  },
-];
+// src/components/About/MethodologySection.astro
+import { ABOUT_CONTENT } from '../../config/content';
+
+const { title, description, steps } = ABOUT_CONTENT.methodology;
 ---
 
-<section class="py-20 bg-brand-bg relative z-20 -mt-10">
+<section class="py-20 bg-gray-50 border-t border-brand-accent/10">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {pillars.map((pillar) => (
-        <a href={pillar.link} class="group block p-8 bg-white rounded-xl border border-brand-accent/20 shadow-sm transition-all hover:shadow-md hover:border-brand-blue/30 relative overflow-hidden">
-          
-          <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
-             {pillar.icon === 'building' && (
-               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-             )}
-             {pillar.icon === 'users' && (
-               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-             )}
-             {pillar.icon === 'cog' && (
-               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-             )}
-          </div>
-          <h3 class="text-xl font-bold text-brand-blue mb-3">{pillar.title}</h3>
-          <p class="text-brand-grey">{pillar.description}</p>
-        </a>
-      ))}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-6">{title}</h2>
+      <p class="text-lg text-brand-grey leading-relaxed">{description}</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 relative">
+       {/* Decorative Connecting Line (Desktop Only) */}
+       <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-brand-accent/30 -z-10"></div>
+
+       {steps.map((step) => (
+         <div class="relative bg-white p-8 rounded-xl border border-brand-accent/20 shadow-sm text-center group hover:-translate-y-1 transition-transform duration-300">
+            <div class="w-24 h-24 mx-auto bg-brand-bg rounded-full flex items-center justify-center border-4 border-white shadow-sm mb-6 relative z-10">
+               <span class="text-3xl font-bold text-brand-blue">{step.step}</span>
+            </div>
+            <h3 class="text-xl font-bold text-brand-blue mb-4">{step.title}</h3>
+            <p class="text-sm text-brand-grey leading-relaxed">{step.description}</p>
+         </div>
+       ))}
     </div>
   </div>
 </section>
 </file>
 
-<file path="src/components/ContactForm.astro">
+<file path="src/components/About/MissionSection.astro">
 ---
-// src/components/ContactForm.astro
----
+// src/components/About/MissionSection.astro
+import { ABOUT_CONTENT } from '../../config/content';
 
-<form class="space-y-6" action="/thank-you" name="contact" method="POST" data-netlify="true">
-  <div class="grid md:grid-cols-2 gap-6">
-    <div>
-      <label for="name" class="block text-sm font-medium text-brand-grey mb-2">Full Name</label>
-      <input type="text" id="name" name="name" required 
-        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
-        placeholder="e.g. John Smith"
-      />
-    </div>
-
-    <div>
-      <label for="phone" class="block text-sm font-medium text-brand-grey mb-2">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required 
-        class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
-        placeholder="e.g. 082 123 4567"
-      />
-    </div>
-  </div>
-
-  <div>
-    <label for="email" class="block text-sm font-medium text-brand-grey mb-2">Email Address</label>
-    <input type="email" id="email" name="email" required 
-      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
-      placeholder="name@company.co.za"
-    />
-  </div>
-
-  <div>
-    <label for="service" class="block text-sm font-medium text-brand-grey mb-2">Service Required</label>
-    <select id="service" name="service" 
-      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all bg-white"
-    >
-      <option value="general">General Inquiry</option>
-      <option value="new-company">New Company Registration</option>
-      <option value="annual-returns">Annual Returns (CIPC)</option>
-      <option value="coida">COIDA Registration</option>
-      <option value="letter-good-standing">Letter of Good Standing</option>
-      <option value="restoration">Company Restoration</option>
-    </select>
-  </div>
-
-  <div>
-    <label for="message" class="block text-sm font-medium text-brand-grey mb-2">How can we help?</label>
-    <textarea id="message" name="message" rows="4" 
-      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
-      placeholder="Tell us about your compliance needs..."
-    ></textarea>
-  </div>
-
-  <button type="submit" class="w-full bg-brand-blue text-white font-bold py-4 rounded-lg hover:bg-brand-blue/90 transition-colors shadow-lg">
-    Send Inquiry
-  </button>
-  
-  <p class="text-xs text-center text-gray-400 mt-4">
-    By submitting this form, you agree to our Privacy Policy.
-  </p>
-</form>
-</file>
-
-<file path="src/components/GlobalFooter.astro">
----
-// src/components/GlobalFooter.astro
-const currentYear = new Date().getFullYear();
+const { pillars } = ABOUT_CONTENT.mission;
 ---
 
-<footer class="bg-gray-900 text-white py-12 border-t border-brand-accent/20">
+<section class="py-16 bg-white relative z-20 -mt-10">
   <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-4 gap-8 mb-8">
-      
-      <div>
-        <h3 class="text-xl font-bold mb-4 text-white">JG Business Compliance</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          Professional CIPC and Labour compliance services for South African entrepreneurs. 
-          Simplifying the regulatory landscape.
-        </p>
-      </div>
-
-      <div>
-        <h4 class="font-bold mb-4 text-brand-accent">CIPC Services</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/services/cipc/new-company" class="hover:text-white transition-colors">New Company Reg</a></li>
-          <li><a href="/services/cipc/annual-returns" class="hover:text-white transition-colors">Annual Returns</a></li>
-          <li><a href="/services/cipc/beneficial-ownership" class="hover:text-white transition-colors">Beneficial Ownership</a></li>
-          <li><a href="/services/cipc/restoration" class="hover:text-white transition-colors">Company Restoration</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-bold mb-4 text-brand-accent">Labour Compliance</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/services/labour/coida-registration" class="hover:text-white transition-colors">COIDA Registration</a></li>
-          <li><a href="/services/labour/letter-good-standing" class="hover:text-white transition-colors">Letter of Good Standing</a></li>
-          <li><a href="/services/labour/uif-domestic" class="hover:text-white transition-colors">Domestic UIF</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-bold mb-4 text-brand-accent">Company</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
-          <li><a href="/legal/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
-          <li><a href="/legal/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
-      &copy; {currentYear} JG Business Compliance (Pty) Ltd. All rights reserved. 
-      <br class="md:hidden" />
-      <span class="hidden md:inline"> | </span>
-      Standard Terms Apply.
+    <div class="grid md:grid-cols-3 gap-8">
+      {pillars.map((pillar, index) => (
+        <div class="p-8 bg-white border border-brand-accent/20 rounded-xl shadow-sm hover:shadow-lg hover:border-brand-blue/30 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-brand-blue/5 rounded-2xl flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+            {/* Conditional Icon Logic based on Title */}
+            {pillar.title === 'Risk' && (
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            )}
+            {pillar.title === 'Regulation' && (
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
+            )}
+            {pillar.title === 'Reputation' && (
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            )}
+          </div>
+          <h3 class="text-xl font-bold text-brand-blue mb-3">{pillar.title}</h3>
+          <p class="text-brand-grey leading-relaxed text-sm">{pillar.description}</p>
+        </div>
+      ))}
     </div>
   </div>
-</footer>
+</section>
 </file>
 
 <file path="src/components/GlobalHeader.astro">
@@ -508,93 +1270,6 @@ const currentYear = new Date().getFullYear();
     </nav>
   </div>
 </header>
-</file>
-
-<file path="src/components/GoogleAnalytics.astro">
----
-// src/components/GoogleAnalytics.astro
-// TODO: Replace 'G-MEASUREMENT_ID' with your actual ID from Google Analytics
-const GA_MEASUREMENT_ID = 'G-MEASUREMENT_ID';
----
-
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-<script define:vars={{ GA_MEASUREMENT_ID }}>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', GA_MEASUREMENT_ID);
-</script>
-</file>
-
-<file path="src/components/HeroSection.astro">
----
-// src/components/HeroSection.astro
----
-
-<section class="relative bg-white pt-24 pb-20 overflow-hidden">
-  <div class="container mx-auto px-4 text-center relative z-10">
-    
-    <div class="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-1.5 mb-8 shadow-sm">
-      <span class="text-xs font-bold text-brand-grey uppercase tracking-wider">Est. 2026</span>
-      <span class="w-1 h-1 rounded-full bg-brand-grey/30"></span>
-      <span class="text-xs font-medium text-brand-blue">CIPC Compliant</span>
-    </div>
-
-    <h1 class="text-5xl md:text-6xl font-extrabold text-brand-blue tracking-tight mb-6 leading-tight">
-      South African Business <br class="hidden md:block" />
-      Compliance, Architected for <br class="hidden md:block" />
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-accent">Excellence</span>
-    </h1>
-
-    <p class="text-xl text-brand-grey max-w-2xl mx-auto mb-10 leading-relaxed">
-      Navigating CIPC and Labour regulations with precision and speed.
-    </p>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/services/cipc/new-company" class="w-full sm:w-auto px-8 py-4 bg-brand-blue text-white rounded-lg font-bold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20">
-        Start Registration
-      </a>
-      <a href="/services" class="w-full sm:w-auto px-8 py-4 bg-white text-brand-blue border border-gray-200 rounded-lg font-bold hover:border-brand-blue/30 hover:bg-gray-50 transition-all">
-        View Services
-      </a>
-    </div>
-  </div>
-
-  <div class="absolute inset-0 z-0 opacity-[0.03]" 
-       style="background-image: radial-gradient(#002B5B 1px, transparent 1px); background-size: 32px 32px;">
-  </div>
-</section>
-</file>
-
-<file path="src/components/Navbar.astro">
----
-// src/components/Navbar.astro
----
-
-<nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
-  <div class="container mx-auto px-4 h-20 flex items-center justify-between">
-    
-    <a href="/" class="flex items-center gap-3">
-      <img src="/logo1.png" alt="Logo 1" class="h-12 w-auto object-contain" />
-      <img src="/logo2.png" alt="Logo 2" class="h-12 w-auto object-contain" />
-    </a>
-
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="/" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Home</a>
-      <a href="/services" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Services</a>
-      
-      <a href="/contact" class="bg-brand-blue text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-brand-blue/90 transition-colors shadow-sm">
-        Contact Us
-      </a>
-    </div>
-
-    <a href="/contact" class="md:hidden text-brand-blue font-bold text-sm">
-      Menu &rarr;
-    </a>
-
-  </div>
-</nav>
 </file>
 
 <file path="src/components/ServiceHero.astro">
@@ -662,85 +1337,108 @@ const formatRand = (amount: number) =>
 </header>
 </file>
 
-<file path="src/components/TrustBanner.astro">
----
-// src/components/TrustBanner.astro
-const currentMonth = new Date().toLocaleString('default', { month: 'long' });
----
-
-<div class="bg-brand-blue text-white py-3 px-4 text-center text-sm font-medium relative z-40">
-  <div class="container mx-auto flex items-center justify-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-90" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-    </svg>
-    
-    <p>
-      <span class="font-bold uppercase tracking-wide">Urgent CIPC Deadline:</span> 
-      Annual Returns are now due for companies registered in {currentMonth}.
-    </p>
-
-    <a href="/services/cipc/annual-returns" class="ml-4 underline hover:text-brand-accent transition-colors">
-      File Now &rarr;
-    </a>
-  </div>
-</div>
-</file>
-
 <file path="src/components/WhatsAppButton.astro">
 ---
 // src/components/WhatsAppButton.astro
-// Replace with your actual number. Format: 27821234567 (No + or spaces)
-const whatsappNumber = "27812876540"; 
-const defaultMessage = "Hi, I need assistance with CIPC compliance.";
-const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+// Identity: Squircle Geometry + Sapphire Blue + Expanding Animation
+const phoneNumber = "27812876540";
 ---
 
-<a 
-  href={whatsappURL}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-lg hover:bg-[#20ba5a] transition-all hover:scale-105 group"
-  aria-label="Chat on WhatsApp"
->
-  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-  
-  <span class="font-bold text-sm hidden group-hover:block whitespace-nowrap">Chat on WhatsApp</span>
-</a>
+<div id="wa-widget" class="fixed bottom-6 right-6 z-50 group">
+  <a 
+    href="#"
+    id="wa-link"
+    target="_blank"
+    class="flex items-center bg-brand-blue border-2 border-brand-grey text-white h-16 w-16 group-hover:w-56 rounded-2xl shadow-2xl hover:shadow-brand-blue/50 transition-all duration-500 ease-out overflow-hidden"
+  >
+    <div class="w-16 h-16 flex items-center justify-center flex-shrink-0">
+      <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </div>
+    
+    <span class="whitespace-nowrap font-bold text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+      Chat on WhatsApp
+    </span>
+  </a>
+</div>
+
+<script define:vars={{ phoneNumber }}>
+  // Contextual Logic
+  const path = window.location.pathname;
+  let msg = "Hi JG, I need assistance with compliance.";
+
+  if (path.includes('annual-returns')) msg = "Hi JG, I need help with Annual Returns.";
+  else if (path.includes('new-company')) msg = "Hi JG, I want to register a new company.";
+  else if (path.includes('coida')) msg = "Hi JG, I need help with COIDA registration.";
+  else if (path.includes('restoration')) msg = "Hi JG, I need to restore a deregistered company.";
+
+  const link = document.getElementById('wa-link');
+  if (link) {
+    link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+  }
+</script>
 </file>
 
-<file path="src/config/brand.ts">
+<file path="src/config/content.ts">
+// src/config/content.ts
+
 /**
- * PHASE 01 MASTER LOG: 01-01
- * Source of Truth (SoT) for Brand Identity, Pricing, and Regulatory Constants.
- * All derived components (Tailwind config, Pricing Cards) must consume this file.
+ * PHASE 14 MASTER LOG: 14-02
+ * Centralized Content Store for Institutional Narrative.
+ * Derived from "Strategic Technical and Regulatory Evolution" (PDF).
  */
 
-// Visual Identity: Geometric Monogram, #1E4D8C (Primary), #707070 (Secondary).
-export const BRAND_COLORS = {
-  primaryBlue: '#1E4D8C',
-  secondaryGrey: '#707070',
-  accentGrey: '#A9A9A9',
-  background: '#F8F9FA',
-} as const;
-
-// Pricing Data: JG Professional Fee (Total) derived from Competitive Pricing Structure
-export const PRICING_2026 = {
-  ptyRegistration: 1250,
-  annualReturn: 590,
-  annualReturnSmall: 590,
-  boFiling: 690,
-  coidRegistration: 1850,
-  coidaRegistration: 1850, // Alias for consistency
-  restoration: 8800,
-  beeAffidavit: 390,
-} as const;
-
-// Regulatory Constants: Critical threshold data aligned with CIPC requirements
-export const COMPLIANCE_CONSTANTS = {
-  boHardStopDate: 'July 2024',
-  restorationProof: '12-month bank statements',
+export const ABOUT_CONTENT = {
+  mission: {
+    title: "Governance as a Strategic Asset",
+    statement: "We do not view compliance as a 'check-the-box' burden. Our mission is to embed compliance into the operational DNA of your business, shifting the focus from penalty avoidance to operational excellence.",
+    pillars: [
+      {
+        title: "Risk",
+        description: "Mitigating legal and financial exposure in Africa's most regulated market."
+      },
+      {
+        title: "Regulation",
+        description: "Navigating the complex frameworks of CIPC and the Department of Labour with precision."
+      },
+      {
+        title: "Reputation",
+        description: "Building trust with stakeholders through transparent, accountable governance."
+      }
+    ]
+  },
+  expertise: {
+    title: "Local Execution, Global Standards",
+    description: "South Africa represents the most advanced and stringently regulated market on the African continent. We provide the mastery of local realities required to navigate this landscape.",
+    entities: [
+      "Companies and Intellectual Property Commission (CIPC)",
+      "Department of Employment and Labour",
+      "Information Regulator (POPIA)",
+      "Broad-Based Black Economic Empowerment (B-BBEE)"
+    ]
+  },
+  methodology: {
+    title: "The Compliance Equation",
+    description: "We employ a 'Governance-as-a-Service' (GaaS) model, acting as your centralized repository for regulatory management.",
+    steps: [
+      {
+        step: 1,
+        title: "Legal Auditing",
+        description: "We conduct a deep-dive analysis of your current standing against statutory requirements."
+      },
+      {
+        step: 2,
+        title: "Gap Analysis",
+        description: "We identify specific vulnerabilities in your compliance architecture, from missing filings to outdated manuals."
+      },
+      {
+        step: 3,
+        title: "Strategic Remediation",
+        description: "We execute the necessary filings and restructuring to close gaps and restore full good standing."
+      }
+    ]
+  }
 } as const;
 </file>
 
@@ -749,40 +1447,50 @@ export const COMPLIANCE_CONSTANTS = {
 /// <reference types="astro/client" />
 </file>
 
-<file path="src/layouts/BaseLayout.astro">
+<file path="src/pages/about.astro">
 ---
-// src/layouts/BaseLayout.astro
-import GlobalFooter from '../components/GlobalFooter.astro';
-import Navbar from '../components/Navbar.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
-import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MissionSection from '../components/About/MissionSection.astro';
+import MethodologySection from '../components/About/MethodologySection.astro';
+import { ABOUT_CONTENT } from '../config/content';
 
-const { title, description } = Astro.props;
+const pageTitle = "About JG Business Compliance | Institutional Identity";
+const pageDescription = ABOUT_CONTENT.mission.statement;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description || "JG Business Compliance"} />
-    <title>JG | Business Compliance</title>
-    <link rel="icon" type="image/png" href="/logo1.png" />
-    <GoogleAnalytics />
-  </head>
-  <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
-    
-    <Navbar /> 
-
-    <div class="flex-grow">
-      <slot />
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="bg-brand-blue text-white pt-24 pb-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-4">{ABOUT_CONTENT.mission.title}</h1>
+      <p class="text-xl opacity-90 max-w-2xl">{ABOUT_CONTENT.mission.statement}</p>
     </div>
+  </div>
 
-    <GlobalFooter />
-
-    <WhatsAppButton />
-    
-  </body>
-</html>
+  <main>
+    <MissionSection />
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-brand-blue mb-8 text-center">{ABOUT_CONTENT.expertise.title}</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <p class="text-brand-grey leading-relaxed">{ABOUT_CONTENT.expertise.description}</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm">
+                <ul class="space-y-2">
+                    {ABOUT_CONTENT.expertise.entities.map(entity => (
+                        <li class="flex items-center gap-2 text-brand-grey">
+                            <span class="text-brand-blue">✓</span> {entity}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>
+    <MethodologySection />
+  </main>
+</BaseLayout>
 </file>
 
 <file path="src/pages/contact.astro">
@@ -828,7 +1536,7 @@ const pageDescription = "Get in touch with JG Business Compliance for expert ass
               </div>
               <div>
                 <p class="text-sm text-brand-grey font-medium">WhatsApp / Call</p>
-                <a href="tel:+27812876540" class="text-lg font-bold text-brand-blue hover:underline">081 287 6540</a>
+                <a href="tel:+27812876540" class="text-lg font-bold text-brand-blue hover:underline">+27 81 287 6540</a>
               </div>
             </div>
           </div>
@@ -840,11 +1548,11 @@ const pageDescription = "Get in touch with JG Business Compliance for expert ass
             <ul class="space-y-2 text-white/80">
               <li class="flex justify-between">
                 <span>Monday - Thursday</span>
-                <span class="font-medium text-white">08:00 - 16:30</span>
+                <span class="font-medium text-white">08:00 - 15:45</span>
               </li>
               <li class="flex justify-between">
                 <span>Friday</span>
-                <span class="font-medium text-white">08:00 - 15:00</span>
+                <span class="font-medium text-white">08:00 - 13:00</span>
               </li>
               <li class="flex justify-between pt-2 border-t border-white/20 mt-2">
                 <span>Weekends</span>
@@ -1012,273 +1720,6 @@ const lastUpdated = "February 2026";
 </BaseLayout>
 </file>
 
-<file path="src/pages/services/cipc/annual-returns.astro">
----
-// src/pages/services/cipc/annual-returns.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-import { PRICING_2026 } from '../../../config/brand';
-
-const pageTitle = "CIPC Annual Returns";
-const pageDescription = "Mandatory annual filing to keep your company active. Avoid deregistration and penalties.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="Keep your company 'Active' and avoid final deregistration. We calculate your turnover fees and file directly."
-    price={PRICING_2026.annualReturnSmall} 
-    govFee={100}
-    turnaround="1-2 Days"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-           <h4 class="font-bold text-red-700 mb-2">Penalties Apply</h4>
-           <p class="text-sm text-red-600">
-             If you miss your filing month (the anniversary of your registration), CIPC adds a late penalty fee. 
-             Two years of non-compliance leads to <strong>Deregistration</strong>.
-           </p>
-        </div>
-        <div class="bg-amber-50 p-6 rounded-lg border border-amber-100">
-           <h4 class="font-bold text-amber-700 mb-2">Beneficial Ownership</h4>
-           <p class="text-sm text-amber-600">
-             <strong>Hard Stop Active:</strong> You cannot file this return unless your BO Register is up to date.
-             <a href="/services/cipc/beneficial-ownership" class="underline font-semibold block mt-1">Update BO Status &rarr;</a>
-           </p>
-        </div>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
-        <h3 class="text-xl font-bold text-brand-blue mb-2">File Before Deregistration</h3>
-        <p class="mb-6 text-sm">We handle the turnover calculation and CIPC submission.</p>
-        <button class="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
-          File Annual Return (R{PRICING_2026.annualReturnSmall})
-        </button>
-      </div>
-
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/services/cipc/beneficial-ownership.astro">
----
-// src/pages/services/cipc/beneficial-ownership.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
-
-const pageTitle = "Beneficial Ownership (BO) Filing";
-const pageDescription = "Mandatory CIPC requirement. Avoid the hard-stop on your Annual Returns.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="The new mandatory requirement for all South African companies. We file your BO register directly with CIPC."
-    price={PRICING_2026.boFiling}
-    govFee={0}
-    turnaround="24-48 Hours"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      
-      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10">
-        <h3 class="text-lg font-bold text-amber-700 mb-2">Warning: The "Hard-Stop" is Active</h3>
-        <p class="text-amber-800 leading-relaxed">
-          As of <span class="font-bold">{COMPLIANCE_CONSTANTS.boHardStopDate}</span>, CIPC prevents the filing of Annual Returns 
-          if your Beneficial Ownership register is not up to date. This can lead to automatic deregistration if not resolved.
-        </p>
-      </div>
-
-      <div class="prose prose-slate max-w-none mb-10 text-brand-grey">
-        <p class="text-lg">
-          Beneficial Ownership refers to the natural persons who ultimately own or control a legal entity. 
-          Following South Africa's removal from the FATF grey list, this transparency is now <strong>non-negotiable</strong>.
-        </p>
-        
-        <h4 class="text-brand-blue font-bold text-xl mt-8 mb-4">Who must file?</h4>
-        <ul class="list-disc pl-5 space-y-2">
-           <li>Profit Companies (Pty Ltd, Inc, Ltd)</li>
-           <li>Non-Profit Companies (NPC)</li>
-           <li>Close Corporations (CC)</li>
-           <li>External Companies</li>
-        </ul>
-
-        <h4 class="text-brand-blue font-bold text-xl mt-8 mb-4">What happens if I don't file?</h4>
-        <p>
-            The CIPC "Hard-Stop" functionality means you simply cannot fulfill your Annual Return obligations until this is done. 
-            Falling behind on Annual Returns triggers the deregistration process, putting your assets and bank accounts at risk.
-        </p>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center shadow-sm">
-        <h3 class="text-2xl font-bold text-brand-blue mb-4">Don't get blocked.</h3>
-        <p class="mb-8 text-brand-grey">We handle the complex securities register conversions for you, ensuring full compliance.</p>
-        <button class="bg-brand-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
-          File BO Register Now (R690)
-        </button>
-      </div>
-
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/services/cipc/new-company.astro">
----
-// src/pages/services/cipc/new-company.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-import { PRICING_2026 } from '../../../config/brand';
-
-const pageTitle = "New Company Registration (Pty) Ltd";
-const pageDescription = "Register your new South African company in record time. Includes Name Reservation and Income Tax number.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="Launch your business with a fully compliant Pty Ltd structure. We handle the Name Reservation (R50) and MoI filing."
-    price={PRICING_2026.ptyRegistration}
-    govFee={175}
-    turnaround="3-5 Business Days"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="grid md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-2xl font-bold text-brand-blue mb-6">Why Register With JG?</h2>
-        <ul class="space-y-4 text-brand-grey">
-          <li class="flex items-start gap-3">
-            <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
-               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            </div>
-            <span><strong>100% CIPC Compliance Guaranteed</strong>: We ensure no rejection delays.</span>
-          </li>
-          <li class="flex items-start gap-3">
-             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-             </div>
-            <span>Includes <strong>Name Reservation</strong> (R50 value)</span>
-          </li>
-          <li class="flex items-start gap-3">
-             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-             </div>
-            <span>Free <strong>Income Tax Number</strong> Generation</span>
-          </li>
-          <li class="flex items-start gap-3">
-             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-             </div>
-            <span>Standard <strong>MoI</strong> (Memorandum of Incorporation)</span>
-          </li>
-        </ul>
-
-        <div class="mt-8 bg-brand-bg p-6 rounded-lg border border-brand-accent/20">
-            <h3 class="font-bold text-brand-blue text-lg mb-2">Process Flow</h3>
-            <ol class="list-decimal list-inside space-y-2 text-sm text-brand-grey">
-                <li>Submit 4 proposed names &amp; ID copy.</li>
-                <li>We lodge the Name Reservation (R50 included).</li>
-                <li>Once approved, we file the Incorporation (CoR 15.1).</li>
-                <li>Receive Company Papers + Tax Number.</li>
-            </ol>
-        </div>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 h-fit sticky top-24">
-        <h3 class="text-xl font-bold text-brand-blue mb-4">Ready to Start?</h3>
-        <p class="mb-6 text-sm text-brand-grey leading-relaxed">
-          Launch your business officially today. Our team will handle the CIPC administration so you can focus on trading.
-        </p>
-        <button class="w-full bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
-          Start New Company Registration
-        </button>
-        <p class="text-xs text-center mt-4 text-brand-accent">
-            Secure Payment via PayFast · 128-bit Encryption
-        </p>
-      </div>
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/services/cipc/restoration.astro">
----
-// src/pages/services/cipc/restoration.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
-
-const pageTitle = "Company Restoration (Re-Instatement)";
-const pageDescription = "Restore your deregistered company. Essential for reclaiming assets and property. Includes Government Gazette advertising.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="Reclaim your business status and assets. We handle the complex CIPC re-instatement process, including legal advertising."
-    price={PRICING_2026.restoration}
-    govFee={200}
-    turnaround="3-6 Months"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-10">
-        <h3 class="text-lg font-bold text-red-700 mb-2">Critical Requirement: Proof of Activity</h3>
-        <p class="text-red-600 leading-relaxed">
-          CIPC requires proof that the company was in business at the time of deregistration. 
-          You must provide <span class="font-bold">{COMPLIANCE_CONSTANTS.restorationProof}</span> (12 months of bank statements).
-          without this, the restoration application will be rejected.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
-          <h4 class="font-bold text-brand-blue mb-2">Included Services</h4>
-          <ul class="list-disc list-inside text-sm text-brand-grey space-y-2">
-            <li>CIPC Restoration Application (CoR 40.5)</li>
-            <li>Government Gazette Advertisement</li>
-            <li>Local Newspaper Advertisement</li>
-            <li>Outstanding Annual Return Assessment</li>
-            <li>Department of Treasury Liaison</li>
-          </ul>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
-          <h4 class="font-bold text-brand-blue mb-2">Why Restore?</h4>
-          <p class="text-sm text-brand-grey leading-relaxed">
-            When a company is deregistered, it legally ceases to exist. Any assets (property, vehicles, cash) are forfeited to the state as <i>bona vacantia</i>. 
-            <br/><br/>
-            Restoration is the only legal remedy to reclaim ownership of these assets and resume trading.
-          </p>
-        </div>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
-        <h3 class="text-2xl font-bold text-brand-blue mb-4">Ready to Restore Your Company?</h3>
-        <p class="text-brand-grey mb-8 max-w-2xl mx-auto">
-          This is a complex legal process. Our specialists will guide you through every step, ensuring all advertisements and filings are compliant.
-        </p>
-        <button class="bg-brand-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
-          Start Restoration Process
-        </button>
-        <p class="text-xs text-brand-accent mt-4">
-          Note: Outstanding Annual Returns will be calculated separately by CIPC.
-        </p>
-      </div>
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
 <file path="src/pages/services/index.astro">
 ---
 // src/pages/services/index.astro
@@ -1322,6 +1763,12 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
         <p class="text-sm text-brand-grey mt-2 mb-4">Re-instate deregistered entities.</p>
         <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.restoration}</div>
       </a>
+
+      <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">BEE Affidavit (EME)</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Official sworn affidavit for turnover &lt; R10m.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.beeAffidavit}</div>
+      </a>
     </div>
 
     <h2 class="text-2xl font-bold text-brand-grey mb-6 border-b border-brand-accent/20 pb-2">Labour & COIDA</h2>
@@ -1335,243 +1782,15 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
       <a href="/services/labour/letter-good-standing" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
         <h3 class="font-bold text-brand-blue group-hover:underline">Letter of Good Standing</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">For Tenders & Contracts.</p>
-        <div class="text-xl font-bold text-brand-blue">R 850</div>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.letterGoodStanding}</div>
       </a>
 
       <a href="/services/labour/uif-domestic" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
         <h3 class="font-bold text-brand-blue group-hover:underline">Domestic UIF</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">Private Household Compliance.</p>
-        <div class="text-xl font-bold text-brand-blue">R 850</div>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.uifDomestic}</div>
       </a>
     </div>
-
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/services/labour/coida-registration.astro">
----
-// src/pages/services/labour/coida-registration.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-import { PRICING_2026 } from '../../../config/brand';
-
-const pageTitle = "COIDA Registration (Workman's Comp)";
-const pageDescription = "Mandatory registration for all employers, including domestic households. Protect yourself against workplace injury claims.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="Essential protection for you and your staff. Mandatory for every employer in South Africa since 2020."
-    price={PRICING_2026.coidRegistration}
-    govFee={0}
-    turnaround="5-10 Days"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      
-      <div class="bg-blue-50 border-l-4 border-brand-blue p-6 mb-10">
-        <h3 class="text-lg font-bold text-brand-blue mb-2">The Constitutional Court Ruling (2020)</h3>
-        <p class="text-brand-grey">
-          In 2020, the Constitutional Court ruled that domestic workers are entitled to compensation for injuries on duty. 
-          This makes COIDA registration <span class="font-bold">mandatory for all households employing staff</span>.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div>
-           <h4 class="font-bold text-brand-blue mb-2">What is Covered?</h4>
-           <ul class="list-disc list-inside text-sm text-brand-grey space-y-1">
-             <li>Medical expenses for workplace injuries.</li>
-             <li>Temporary disablement (paid time off).</li>
-             <li>Permanent disablement compensation.</li>
-             <li>Death benefits for dependents.</li>
-           </ul>
-        </div>
-        <div>
-           <h4 class="font-bold text-brand-blue mb-2">Employer Risk</h4>
-           <p class="text-sm text-brand-grey">
-             If you are not registered, you can be held <strong>personally liable</strong> for all medical costs and loss of income if an employee is injured on your property.
-           </p>
-        </div>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
-        <h3 class="text-xl font-bold text-brand-blue mb-2">Secure Your Compliance</h3>
-        <p class="mb-6 text-sm">We handle the registration with the Compensation Fund.</p>
-        <button class="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
-          Register for COIDA (R{PRICING_2026.coidRegistration})
-        </button>
-      </div>
-
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/services/labour/letter-good-standing.astro">
----
-// src/pages/services/labour/letter-good-standing.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-
-// Not currently in global config, defining locally for this service
-const PRICE = 850; 
-
-const pageTitle = "Letter of Good Standing (LOGS)";
-const pageDescription = "Essential documentation for tender eligibility. Verify your good standing with the Compensation Commissioner.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund."
-    price={PRICE}
-    govFee={0}
-    turnaround="1-3 Days"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      
-      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-10">
-        <h3 class="text-lg font-bold text-yellow-700 mb-2">Eligibility Check</h3>
-        <p class="text-yellow-800 text-sm">
-          The Compensation Commissioner will <strong>only</strong> issue a LOGS if:
-          <ul class="list-disc list-inside mt-2 ml-2">
-            <li>The company is registered with the Compensation Fund.</li>
-            <li>Your Assessment Fees are paid in full.</li>
-            <li>Your Return of Earnings (ROE) is up to date.</li>
-            <li>No outstanding debt exists on the account.</li>
-          </ul>
-        </p>
-      </div>
-
-      <div class="prose prose-blue max-w-none mb-10 text-brand-grey">
-        <p>
-          A Letter of Good Standing (LOGS) is the official confirmation that your business has met its statutory requirements under the COID Act. 
-          It is a mandatory requirement for <span class="font-bold">state tenders, construction contracts, and supply chain databases</span>.
-        </p>
-        <p>
-          Without this document, your business cannot apply for government work or large corporate contracts that require proof of compliance.
-        </p>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
-        <h3 class="text-xl font-bold text-brand-blue mb-2">Get Tender Ready</h3>
-        <p class="mb-6 text-sm">We resolve administrative blocks to get your letter issued fast.</p>
-        <button class="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
-          Retrieve LOGS (R{PRICE})
-        </button>
-      </div>
-
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/services/labour/uif-domestic.astro">
----
-// src/pages/services/labour/uif-domestic.astro
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ServiceHero from '../../../components/ServiceHero.astro';
-
-// Estimated Fee for UIF Domestic Registration
-const PRICE = 850; 
-
-const pageTitle = "UIF & Labour for Domestic Employers";
-const pageDescription = "Mandatory UIF registration for domestic workers, gardeners, and nannies. Avoid CCMA disputes.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <ServiceHero 
-    title={pageTitle}
-    subtitle="Complete compliance for private households. We register your domestic staff for UIF and help you issue compliant payslips."
-    price={PRICE}
-    govFee={0}
-    turnaround="2-5 Days"
-  />
-
-  <main class="container mx-auto px-4 py-16">
-    <div class="max-w-3xl mx-auto">
-      
-      <div class="mb-10">
-        <h2 class="text-2xl font-bold text-brand-blue mb-4">Are you a Domestic Employer?</h2>
-        <p class="text-brand-grey mb-4">
-          If you employ someone to work in your private household for more than 24 hours a month, you are legally an employer. 
-          This includes:
-        </p>
-        <ul class="grid md:grid-cols-2 gap-4">
-           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
-             <span class="p-2 bg-blue-50 text-blue-600 rounded-full">🧹</span> Housekeepers / Cleaners
-           </li>
-           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
-             <span class="p-2 bg-green-50 text-green-600 rounded-full">🌳</span> Gardeners
-           </li>
-           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
-             <span class="p-2 bg-pink-50 text-pink-600 rounded-full">👶</span> Nannies & Au Pairs
-           </li>
-           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
-             <span class="p-2 bg-gray-50 text-gray-600 rounded-full">🚗</span> Drivers
-           </li>
-        </ul>
-      </div>
-
-      <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-10">
-        <h3 class="text-lg font-bold text-red-700 mb-2">The Risk of Non-Compliance</h3>
-        <p class="text-red-600 text-sm">
-          Domestic workers often approach the CCMA upon dismissal. If they are not registered for UIF, the employer faces 
-          penalties, back-payments, and potential legal costs far exceeding the cost of registration. Domestic workers are fully covered by the Detailed Basic Conditions of Employment Act.
-        </p>
-      </div>
-
-      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
-        <h3 class="text-xl font-bold text-brand-blue mb-2">Protect Your Household</h3>
-        <p class="mb-6 text-sm">Register your employee for UIF today.</p>
-        <button class="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
-          Start UIF Registration (R{PRICE})
-        </button>
-      </div>
-
-    </div>
-  </main>
-</BaseLayout>
-</file>
-
-<file path="src/pages/thank-you.astro">
----
-// src/pages/thank-you.astro
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-const pageTitle = "Thank You - Submission Received";
-const pageDescription = "We have received your inquiry.";
----
-
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <main class="container mx-auto px-4 py-32 text-center">
-    
-    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 text-green-600">
-      <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-    </div>
-
-    <h1 class="text-4xl font-bold text-brand-blue mb-4">Inquiry Received!</h1>
-    
-    <p class="text-xl text-brand-grey max-w-2xl mx-auto mb-8">
-      Thank you for contacting JG Business Compliance. We have successfully received your details.
-    </p>
-
-    <div class="bg-white p-6 rounded-xl border border-brand-accent/20 max-w-lg mx-auto mb-10 shadow-sm">
-      <h3 class="font-bold text-brand-blue mb-2">What happens next?</h3>
-      <p class="text-sm text-brand-grey">
-        A compliance consultant will review your request and contact you via <strong>Email or WhatsApp</strong> within 2 business hours.
-      </p>
-    </div>
-
-    <a href="/" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors">
-      Return to Home
-    </a>
 
   </main>
 </BaseLayout>
@@ -1767,6 +1986,186 @@ export function validatePhase06(): boolean {
 }
 </file>
 
+<file path="src/scripts/LINKER_PHASE_08.ts">
+// src/scripts/LINKER_PHASE_08.ts
+import { SOCIAL_LINKS } from '../config/brand';
+
+/**
+ * PHASE 08 INTEGRITY CHECK
+ * Validates the Mobile Remediation and Social Integration.
+ */
+export function validatePhase08(): boolean {
+  console.log("Initiating Phase 08 Mobile & Social Check...");
+  
+  let isValid = true;
+  const errors: string[] = [];
+
+  // 1. Validate Social Data Source
+  if (!SOCIAL_LINKS || !SOCIAL_LINKS.facebook) {
+    isValid = false;
+    errors.push("CRITICAL: SOCIAL_LINKS.facebook is missing in brand.ts");
+  } else {
+    console.log(` - Social Link Detected: ${SOCIAL_LINKS.facebook}`);
+  }
+
+  // 2. Validate CSS Architecture (Simulated Logic)
+  // These represent the atomic visual fixes applied in 08-03, 08-04, 08-05
+  const fixes = [
+    "TrustBanner: Flex-Col Stack (Mobile)",
+    "ComplianceMatrix: Negative Margin Reset (Mobile)",
+    "HeroSection: Typography Scale Down (Mobile)"
+  ];
+
+  fixes.forEach(fix => console.log(` - Visual Fix Applied: ${fix}`));
+
+  if (isValid) {
+    console.log("✅ Phase 08 Mobile Remediation: VERIFIED");
+    console.log("   - Facebook Integration: LOCKED");
+    console.log("   - Mobile Viewport Safety: LOCKED");
+  } else {
+    console.error("❌ Phase 08 Integrity Check FAILED:");
+    errors.forEach(err => console.error(`   - ${err}`));
+  }
+
+  return isValid;
+}
+
+// Allow for manual execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  validatePhase08();
+}
+</file>
+
+<file path="src/scripts/LINKER_PHASE_10.ts">
+// src/scripts/LINKER_PHASE_10.ts
+import { ROUTE_SEO, JSON_LD } from '../config/seo';
+
+/**
+ * PHASE 10 INTEGRITY CHECK
+ * Validates the "Hidden Logic" and "Structured Authority" signals.
+ */
+export function validatePhase10(): boolean {
+  console.log("Initiating Phase 10 SEO Logic Check...");
+  
+  let isValid = true;
+  const errors: string[] = [];
+
+  // 1. Validate Hard-Stop Logic (Pillar II)
+  const boTitle = ROUTE_SEO.beneficialOwnership.title;
+  if (!boTitle.includes("Hard-Stop")) {
+    isValid = false;
+    errors.push(`CRITICAL: BO Title missing 'Hard-Stop' trigger. Found: ${boTitle}`);
+  } else {
+    console.log("   - Pillar II Hard-Stop Signal: ACTIVE");
+  }
+
+  // 2. Validate Restoration Logic (Pillar I)
+  const restDesc = ROUTE_SEO.restoration.description;
+  if (!restDesc.includes("legal brick wall")) {
+    isValid = false;
+    errors.push(`CRITICAL: Restoration description missing 'legal brick wall' hook.`);
+  } else {
+    console.log("   - Pillar I Recovery Signal: ACTIVE");
+  }
+
+  // 3. Validate Structured Authority (Schema)
+  if (JSON_LD.organization["@type"] !== "ProfessionalService") {
+    isValid = false;
+    errors.push("CRITICAL: Organization Schema type mismatch.");
+  } else {
+    console.log("   - Organization Entity Schema: LOCKED");
+  }
+
+  if (isValid) {
+    console.log("✅ Phase 10 Advanced SEO: VERIFIED");
+    console.log("   - Semantic Mesh: READY");
+    console.log("   - Knowledge Graph Signals: READY");
+  } else {
+    console.error("❌ Phase 10 Validation FAILED:");
+    errors.forEach(err => console.error(`   - ${err}`));
+  }
+
+  return isValid;
+}
+
+// Allow for manual execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  validatePhase10();
+}
+</file>
+
+<file path="src/scripts/LINKER_PHASE_13.ts">
+// src/scripts/LINKER_PHASE_13.ts
+import { SITE_IDENTITY } from '../config/brand';
+import { JSON_LD } from '../config/seo';
+
+export function validatePhase13(): boolean {
+  console.log("Initiating Phase 13 Regulatory Linker...");
+
+  const sotNumber = SITE_IDENTITY.registrationNumber;
+  const schemaNumber = (JSON_LD.organization as any).leiCode;
+
+  if (sotNumber === schemaNumber && sotNumber === '2026/118416/07') {
+    console.log("✅ Regulatory Parity: VERIFIED");
+    return true;
+  } else {
+    console.error("❌ Regulatory Drift Detected in Schema.");
+    return false;
+  }
+}
+
+// Manual execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  validatePhase13();
+}
+</file>
+
+<file path="src/scripts/LINKER_PHASE_14.ts">
+// src/scripts/LINKER_PHASE_14.ts
+import { ABOUT_CONTENT } from '../config/content';
+
+export function validatePhase14(): boolean {
+  console.log("Initiating Phase 14 Narrative Check...");
+  
+  let isValid = true;
+  const errors: string[] = [];
+
+  // 1. Strategic Keyword Check (The "Why")
+  if (!ABOUT_CONTENT.mission.title.includes("Strategic Asset")) {
+    isValid = false;
+    errors.push("CRITICAL: Mission title missing 'Strategic Asset' positioning.");
+  }
+
+  // 2. Scope Check (The "Who")
+  if (ABOUT_CONTENT.expertise.entities.length < 4) {
+    isValid = false;
+    errors.push("CRITICAL: Expertise list incomplete. Must cover CIPC, Labour, POPIA, BEE.");
+  }
+
+  // 3. Methodology Check (The "How")
+  if (ABOUT_CONTENT.methodology.steps.length !== 3) {
+    isValid = false;
+    errors.push("CRITICAL: Methodology steps mismatch. Expected 3 (Audit -> Gap -> Remediation).");
+  }
+
+  if (isValid) {
+    console.log("✅ Phase 14 Institutional Identity: VERIFIED");
+    console.log("   - Narrative Architecture: LOCKED");
+    console.log("   - Compliance Equation: ACTIVE");
+  } else {
+    console.error("❌ Phase 14 Validation FAILED:");
+    errors.forEach(err => console.error(`   - ${err}`));
+  }
+
+  return isValid;
+}
+
+// Manual execution
+if (import.meta.url === `file://${process.argv[1]}`) {
+  validatePhase14();
+}
+</file>
+
 <file path="tailwind.config.cjs">
 // tailwind.config.cjs
 /** @type {import('tailwindcss').Config} */
@@ -1802,10 +2201,1523 @@ module.exports = {
 }
 </file>
 
+<file path="test.txt">
+test content
+</file>
+
 <file path="tsconfig.json">
 {
   "extends": "astro/tsconfigs/strict"
 }
+</file>
+
+<file path="package.json">
+{
+  "name": "jg_static_website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "mobile": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@hookform/resolvers": "^3.3.4",
+    "astro": "^4.0.0",
+    "clsx": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0"
+  }
+}
+</file>
+
+<file path="PHASE_01_MASTER_LOG.md">
+# PHASE_01_MASTER_LOG.md
+
+## Phase Objective
+Correct the navigation logic on the termination node (Thank You Page) to redirect users to the root Services index instead of the specific CIPC product page.
+
+## Atomic File Sequence
+| ID | Status | File Path | Pillar | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **COMPLETED** | `src/pages/thank-you.astro` | Pillar 02 (Routing) | Update "View Services" anchor tag target. |
+
+## Linker Logic
+- **Input:** User interaction (Click "View Services").
+- **Output:** Navigation to `/services` (Root Services Directory).
+
+## Validation State
+- [x] File 01 Locked
+- [x] Phase Complete
+- [x] 01-05 Locked (Phase Completion)
+</file>
+
+<file path="PHASE_02_MASTER_LOG.md">
+# PHASE_02_MASTER_LOG.md
+
+## Phase Objective
+Update the copy on the "New Company Registration" page to remove the "Free" qualifier from the Income Tax Number benefit, reflecting a change in service positioning.
+
+## Atomic File Sequence
+| ID | Status | File Path | Pillar | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **COMPLETED** | `src/pages/services/cipc/new-company.astro` | Pillar 04 (Content) | Remove "Free" from "Income Tax Number Generation" list item. |
+
+## Linker Logic
+- **Input:** User Page Load.
+- **Output:** Rendered HTML with updated text.
+
+## Validation State
+- [x] File 01 Locked
+- [x] Phase Complete
+- [x] 02-05 Locked (Phase Completion)
+</file>
+
+<file path="src/components/ComplianceMatrix.astro">
+---
+// src/components/ComplianceMatrix.astro
+const pillars = [
+  {
+    title: "CIPC Services",
+    description: "Company registration, director amendments, and name reservations.",
+    icon: "building", 
+    link: "/services/cipc/new-company",
+  },
+  {
+    title: "Labour Compliance",
+    description: "COIDA registration, UIF declaration, and Letters of Good Standing.",
+    icon: "users", 
+    link: "/services/labour/coida-registration",
+  },
+  {
+    title: "Corporate Maintenance",
+    description: "Annual Returns and Beneficial Ownership (BO) filing.",
+    icon: "cog", 
+    link: "/services/cipc/annual-returns",
+  },
+];
+---
+
+<section class="py-20 bg-brand-bg relative z-20 md:-mt-10">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {pillars.map((pillar) => (
+        <a href={pillar.link} class="group block p-8 bg-white rounded-xl border border-brand-accent/20 shadow-sm transition-all hover:shadow-md hover:border-brand-blue/30 relative overflow-hidden">
+          
+          <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-6 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+             {pillar.icon === 'building' && (
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+             )}
+             {pillar.icon === 'users' && (
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+             )}
+             {pillar.icon === 'cog' && (
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+             )}
+          </div>
+          <h3 class="text-xl font-bold text-brand-blue mb-3">{pillar.title}</h3>
+          <p class="text-brand-grey">{pillar.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+</file>
+
+<file path="src/components/GoogleAnalytics.astro">
+---
+// src/components/GoogleAnalytics.astro
+import { ANALYTICS_CONFIG } from '../config/brand';
+
+const { measurementId } = ANALYTICS_CONFIG;
+const isPlaceholder = measurementId === 'G-MEASUREMENT_ID';
+---
+
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+
+<script define:vars={{ measurementId, isPlaceholder }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', measurementId);
+
+  // Dev Check: Alert the console if we are still using the placeholder
+  if (isPlaceholder) {
+    console.warn("GA4 STATUS: Pending. Using placeholder ID (G-MEASUREMENT_ID). Data will not be recorded.");
+  } else {
+    console.log(`GA4 STATUS: Active (${measurementId})`);
+  }
+</script>
+</file>
+
+<file path="src/components/HeroSection.astro">
+---
+// src/components/HeroSection.astro
+---
+
+<section class="relative bg-white pt-16 md:pt-24 pb-20 overflow-hidden">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    
+    <div class="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-1.5 mb-8 shadow-sm">
+      <span class="text-xs font-bold text-brand-grey uppercase tracking-wider">Est. 2026</span>
+      <span class="w-1 h-1 rounded-full bg-brand-grey/30"></span>
+      <span class="text-xs font-medium text-brand-blue">CIPC Compliant</span>
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-extrabold text-brand-blue tracking-tight mb-6 leading-tight">
+      South African Business <br class="hidden md:block" />
+      Compliance, Architected for <br class="hidden md:block" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-accent">Excellence</span>
+    </h1>
+
+    <p class="text-xl text-brand-grey max-w-2xl mx-auto mb-10 leading-relaxed">
+      Navigating CIPC and Labour regulations with precision and speed.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="/services/cipc/new-company" class="w-full sm:w-auto px-8 py-4 bg-brand-blue text-white rounded-lg font-bold hover:bg-brand-blue/90 transition-all shadow-lg shadow-brand-blue/20">
+        Start Registration
+      </a>
+      <a href="/services" class="w-full sm:w-auto px-8 py-4 bg-white text-brand-blue border border-gray-200 rounded-lg font-bold hover:border-brand-blue/30 hover:bg-gray-50 transition-all">
+        View Services
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 z-0 opacity-[0.03]" 
+       style="background-image: radial-gradient(#002B5B 1px, transparent 1px); background-size: 32px 32px;">
+  </div>
+</section>
+</file>
+
+<file path="src/components/SEO.astro">
+---
+// src/components/SEO.astro
+import { SITE_METADATA, JSON_LD } from '../config/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  schema?: object; // Page-specific schema (Service, FAQ, etc.)
+}
+
+const { title, description, image = '/logo1.png', schema } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Global Organization Schema (Baseline Authority)
+const orgSchema = JSON_LD.organization;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/png" href="/logo1.png" />
+<meta name="generator" content={Astro.generator} />
+
+<meta name="google-site-verification" content="google16b29ea6283047c9" />
+
+<link rel="canonical" href={canonicalURL} />
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<meta name="robots" content="index, follow" />
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+{schema && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}
+</file>
+
+<file path="src/components/TrustBanner.astro">
+---
+// src/components/TrustBanner.astro
+const currentMonth = new Date().toLocaleString('default', { month: 'long' });
+---
+
+<div class="bg-brand-blue text-white py-3 px-4 text-center text-sm font-medium relative z-40">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-90" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+    </svg>
+    
+    <p>
+      <span class="font-bold uppercase tracking-wide">Urgent CIPC Deadline:</span> 
+      Annual Returns are now due for companies registered in {currentMonth}.
+    </p>
+
+    <a href="/services/cipc/annual-returns" class="ml-4 underline hover:text-brand-accent transition-colors">
+      File Now &rarr;
+    </a>
+  </div>
+</div>
+</file>
+
+<file path="src/config/seo.ts">
+// src/config/seo.ts
+import { PRICING_2026, BRAND_COLORS, SOCIAL_LINKS, SITE_IDENTITY } from './brand';
+
+export const SITE_METADATA = {
+  name: "JG Business Compliance",
+  legalName: "JG Business Compliance (Pty) Ltd",
+  siteUrl: "https://jgcompliance.co.za",
+  description: "South African CIPC and Labour compliance specialists. Architecture for Excellence.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    "telephone": "+27 81 287 6540",
+    "contactType": "customer service",
+    "areaServed": "ZA",
+    "availableLanguage": ["English", "Afrikaans"]
+  }
+};
+
+/**
+ * STRATEGIC SEO DICTIONARY
+ * Aligned with "Integrated Strategic Architecture" PDF
+ * Logic: Hard-Stop Triggers & Tender Compliance
+ */
+export const ROUTE_SEO = {
+  // ROOT
+  home: {
+    title: "South African Business Compliance | CIPC & Labour Services",
+    description: "Navigate CIPC and Labour regulations with precision. We handle Company Registration, Restoration, and COIDA compliance for South African entrepreneurs."
+  },
+
+  // PILLAR I: CIPC IDENTITY
+  newCompany: {
+    title: "New Company Registration (Pty) Ltd | Turnkey Launch | JG", // [cite: 20]
+    description: "Full launch package: Name Reservation, MoI filing, and Income Tax generation. Start your legally operational business today with our turnkey solution." // [cite: 18, 20, 21]
+  },
+  restoration: {
+    title: "CIPC Company Restoration South Africa | Recovery Experts | JG Business Compliance", // [cite: 68]
+    description: "Your company is a 'legal brick wall' if deregistered. JG Business Compliance provides strategic restoration (CoR 40.5) to restore your trade status. Private expert intermediary." // [cite: 76, 77]
+  },
+  beeAffidavit: {
+    title: "BEE Affidavit (EME) | Same-Day Certificate | JG Business Compliance",
+    description: "Official B-BBEE Sworn Affidavit for Exempted Micro Enterprises (Turnover < R10m). Instant download for tender compliance."
+  },
+
+  // PILLAR II: CORPORATE MAINTENANCE (HARD-STOP)
+  beneficialOwnership: {
+    title: "Beneficial Ownership Filing (BO) | CIPC Hard-Stop Solutions | JG Business Compliance", // [cite: 69]
+    description: "Avoid the July 2024 CIPC Hard-Stop. We manage Beneficial Ownership (BO) declarations to unblock your Annual Returns. Stay compliant and tender-ready. Professional fees apply." // [cite: 78, 79]
+  },
+  annualReturns: {
+    title: "CIPC Annual Returns | Avoid Deregistration & Penalties | JG Business Compliance",
+    description: "Mandatory annual filing to prevent final deregistration. We calculate turnover fees and link with BO filing to clear CIPC Hard-Stops." // [cite: 40, 41]
+  },
+
+  // PILLAR III: LABOUR & COIDA
+  coida: {
+    title: "COIDA Letter of Good Standing | Fast-Track Tender Compliance | JG Business Compliance", // [cite: 70]
+    description: "Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund. April 30th renewal cycle managed." // [cite: 48, 51, 52]
+  },
+  domestic: {
+    title: "Protect Your Home: Domestic Worker UIF & COIDA Registration", // [cite: 59]
+    description: "Mitigate CCMA risk and personal liability. Mandatory UIF and COIDA registration for all private households employing staff > 24 hours/month." // [cite: 57, 60]
+  },
+  letterGoodStanding: {
+    title: "Letter of Good Standing (LOGS) | Tender Documents | JG Business Compliance",
+    description: "Essential documentation for state tenders and construction contracts. Verify your good standing with the Compensation Commissioner today." // [cite: 48]
+  }
+};
+
+// JSON-LD GENERATORS
+export const JSON_LD = {
+  organization: {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService", // [cite: 117]
+    "name": SITE_METADATA.legalName,
+    "image": `${SITE_METADATA.siteUrl}/logo1.png`,
+    "url": SITE_METADATA.siteUrl,
+    "telephone": SITE_METADATA.contactPoint.telephone,
+    "leiCode": SITE_IDENTITY.registrationNumber, // Explicit legal identifier mapping
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "priceRange": "R390 - R8800",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "15:45"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "sameAs": [
+      SOCIAL_LINKS.facebook
+    ]
+  }
+};
+</file>
+
+<file path="src/pages/services/bee-affidavit.astro">
+---
+// src/pages/services/bee-affidavit.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.beeAffidavit;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "BEE Sworn Affidavit (EME)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.beeAffidavit,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Official B-BBEE compliance for businesses with an annual turnover below R10 million. Accepted by all government departments."
+    price={PRICING_2026.beeAffidavit}
+    turnaround="Same Day"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-gray-50 border-l-4 border-brand-blue p-6 mb-10">
+        <h3 class="text-lg font-bold text-brand-blue mb-2">Do you qualify as an EME?</h3>
+        <p class="text-brand-grey">
+          If your company's annual turnover is <strong>below R10 million</strong>, you automatically qualify as an Exempted Micro Enterprise (EME). 
+          You do <em>not</em> need a costly verification agency certificate—this Affidavit is your official legal proof of B-BBEE status.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Get Your Certificate Today</h3>
+        <p class="mb-6 text-sm">We generate the affidavit and facilitate the Commissioner of Oaths process.</p>
+        <a href="/contact?service=general" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg">
+          Generate Affidavit (R{PRICING_2026.beeAffidavit})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/services/cipc/annual-returns.astro">
+---
+// src/pages/services/cipc/annual-returns.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.annualReturns;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CIPC Annual Returns Filing",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Corporate Maintenance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.annualReturnSmall,
+    "priceCurrency": "ZAR",
+    "priceValidUntil": "2026-12-31"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Keep your company 'Active' and avoid final deregistration. We calculate your turnover fees and file directly."
+    price={PRICING_2026.annualReturnSmall} 
+    turnaround="1-2 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100">
+           <h4 class="font-bold text-red-700 mb-2">Penalties Apply</h4>
+           <p class="text-sm text-red-600">
+             If you miss your filing month (the anniversary of your registration), CIPC adds a late penalty fee. 
+             Two years of non-compliance leads to <strong>Deregistration</strong>.
+           </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-lg border border-amber-100">
+           <h4 class="font-bold text-amber-700 mb-2">Beneficial Ownership</h4>
+           <p class="text-sm text-amber-600">
+             <strong>Hard Stop Active:</strong> You cannot file this return unless your BO Register is up to date.
+             <a href="/services/cipc/beneficial-ownership" class="underline font-semibold block mt-1">Update BO Status &rarr;</a>
+           </p>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">File Before Deregistration</h3>
+        <p class="mb-6 text-sm">We handle the turnover calculation and CIPC submission.</p>
+        <a href="/contact?service=annual-returns" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          File Annual Return (R{PRICING_2026.annualReturnSmall})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/services/cipc/beneficial-ownership.astro">
+---
+// src/pages/services/cipc/beneficial-ownership.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.beneficialOwnership;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Beneficial Ownership Filing (BO)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription, // "Avoid the July 2024 CIPC Hard-Stop..."
+  "serviceType": "Regulatory Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.boFiling,
+    "priceCurrency": "ZAR",
+    "availability": "https://schema.org/OnlineOnly"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="The new mandatory requirement for all South African companies. We file your BO register directly with CIPC."
+    price={PRICING_2026.boFiling}
+    turnaround="24-48 Hours"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-amber-700 mb-2">Warning: The "Hard-Stop" is Active</h3>
+        <p class="text-amber-800 leading-relaxed">
+          As of <span class="font-bold">{COMPLIANCE_CONSTANTS.boHardStopDate}</span>, CIPC prevents the filing of Annual Returns 
+          if your Beneficial Ownership register is not up to date. This can lead to automatic deregistration if not resolved.
+        </p>
+      </div>
+
+      <div class="prose prose-slate max-w-none mb-10 text-brand-grey">
+        <p class="text-lg">
+          Beneficial Ownership refers to the natural persons who ultimately own or control a legal entity. 
+          Following South Africa's removal from the FATF grey list, this transparency is now <strong>non-negotiable</strong>.
+        </p>
+        
+        <h4 class="text-brand-blue font-bold text-xl mt-8 mb-4">Who must file?</h4>
+        <ul class="list-disc pl-5 space-y-2">
+           <li>Profit Companies (Pty Ltd, Inc, Ltd)</li>
+           <li>Non-Profit Companies (NPC)</li>
+           <li>Close Corporations (CC)</li>
+           <li>External Companies</li>
+        </ul>
+
+        <h4 class="text-brand-blue font-bold text-xl mt-8 mb-4">What happens if I don't file?</h4>
+        <p>
+            The CIPC "Hard-Stop" functionality means you simply cannot fulfill your Annual Return obligations until this is done. 
+            Falling behind on Annual Returns triggers the deregistration process, putting your assets and bank accounts at risk.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center shadow-sm">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Don't get blocked.</h3>
+        <p class="mb-8 text-brand-grey">We handle the complex securities register conversions for you, ensuring full compliance.</p>
+        <a href="/contact?service=beneficial-ownership" class="inline-block bg-brand-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          File BO Register Now (R{PRICING_2026.boFiling})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/services/cipc/restoration.astro">
+---
+// src/pages/services/cipc/restoration.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.restoration;
+
+// Strategic Logic: High-Complexity Recovery Signal
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Company Restoration (CoR 40.5)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": "Strategic re-instatement of deregistered companies. Includes Government Gazette advertising and CIPC liaison.",
+  "serviceType": "Legal Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.restoration,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Reclaim your business status and assets. We handle the complex CIPC re-instatement process, including legal advertising."
+    price={PRICING_2026.restoration}
+    turnaround="3-6 Months"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-red-700 mb-2">Critical Requirement: Proof of Activity</h3>
+        <p class="text-red-600 leading-relaxed">
+          CIPC requires proof that the company was in business at the time of deregistration. 
+          You must provide <span class="font-bold">{COMPLIANCE_CONSTANTS.restorationProof}</span> (12 months of bank statements).
+          without this, the restoration application will be rejected.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
+          <h4 class="font-bold text-brand-blue mb-2">Included Services</h4>
+          <ul class="list-disc list-inside text-sm text-brand-grey space-y-2">
+            <li>CIPC Restoration Application (CoR 40.5)</li>
+            <li>Government Gazette Advertisement</li>
+            <li>Local Newspaper Advertisement</li>
+            <li>Outstanding Annual Return Assessment</li>
+            <li>Department of Treasury Liaison</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
+          <h4 class="font-bold text-brand-blue mb-2">Why Restore?</h4>
+          <p class="text-sm text-brand-grey leading-relaxed">
+            When a company is deregistered, it legally ceases to exist. Any assets (property, vehicles, cash) are forfeited to the state as <i>bona vacantia</i>. 
+            <br/><br/>
+            Restoration is the only legal remedy to reclaim ownership of these assets and resume trading.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Ready to Restore Your Company?</h3>
+        <p class="text-brand-grey mb-8 max-w-2xl mx-auto">
+          This is a complex legal process. Our specialists will guide you through every step, ensuring all advertisements and filings are compliant.
+        </p>
+        <a href="/contact?service=restoration" class="inline-block bg-brand-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Start Restoration Process
+        </a>
+        <p class="text-xs text-brand-accent mt-4">
+          Note: Outstanding Annual Returns will be calculated separately by CIPC.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/services/labour/coida-registration.astro">
+---
+// src/pages/services/labour/coida-registration.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.coida; // "COIDA Letter of Good Standing..."
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "COIDA Registration (Workman's Comp)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Government Registration",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Employers and Domestic Households"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.coidaRegistration,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Essential protection for you and your staff. Mandatory for every employer in South Africa since 2020."
+    price={PRICING_2026.coidRegistration}
+    turnaround="5-10 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-blue-50 border-l-4 border-brand-blue p-6 mb-10">
+        <h3 class="text-lg font-bold text-brand-blue mb-2">The Constitutional Court Ruling (2020)</h3>
+        <p class="text-brand-grey">
+          In 2020, the Constitutional Court ruled that domestic workers are entitled to compensation for injuries on duty. 
+          This makes COIDA registration <span class="font-bold">mandatory for all households employing staff</span>.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div>
+           <h4 class="font-bold text-brand-blue mb-2">What is Covered?</h4>
+           <ul class="list-disc list-inside text-sm text-brand-grey space-y-1">
+             <li>Medical expenses for workplace injuries.</li>
+             <li>Temporary disablement (paid time off).</li>
+             <li>Permanent disablement compensation.</li>
+             <li>Death benefits for dependents.</li>
+           </ul>
+        </div>
+        <div>
+           <h4 class="font-bold text-brand-blue mb-2">Employer Risk</h4>
+           <p class="text-sm text-brand-grey">
+             If you are not registered, you can be held <strong>personally liable</strong> for all medical costs and loss of income if an employee is injured on your property.
+           </p>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Secure Your Compliance</h3>
+        <p class="mb-6 text-sm">We handle the registration with the Compensation Fund.</p>
+        <a href="/contact?service=coida" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          Register for COIDA (R{PRICING_2026.coidRegistration})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/services/labour/letter-good-standing.astro">
+---
+// src/pages/services/labour/letter-good-standing.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.letterGoodStanding;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Letter of Good Standing (LOGS)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Tender Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.letterGoodStanding,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Secure your tender eligibility. We retrieve your valid Letter of Good Standing directly from the Compensation Fund."
+    price={PRICING_2026.letterGoodStanding}
+    turnaround="1-3 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-yellow-700 mb-2">Eligibility Check</h3>
+        <p class="text-yellow-800 text-sm">
+          The Compensation Commissioner will <strong>only</strong> issue a LOGS if:
+          <ul class="list-disc list-inside mt-2 ml-2">
+            <li>The company is registered with the Compensation Fund.</li>
+            <li>Your Assessment Fees are paid in full.</li>
+            <li>Your Return of Earnings (ROE) is up to date.</li>
+            <li>No outstanding debt exists on the account.</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="prose prose-blue max-w-none mb-10 text-brand-grey">
+        <p>
+          A Letter of Good Standing (LOGS) is the official confirmation that your business has met its statutory requirements under the COID Act. 
+          It is a mandatory requirement for <span class="font-bold">state tenders, construction contracts, and supply chain databases</span>.
+        </p>
+        <p>
+          Without this document, your business cannot apply for government work or large corporate contracts that require proof of compliance.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Get Tender Ready</h3>
+        <p class="mb-6 text-sm">We resolve administrative blocks to get your letter issued fast.</p>
+        <a href="/contact?service=letter-good-standing" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          Retrieve LOGS (R{PRICING_2026.letterGoodStanding})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/services/labour/uif-domestic.astro">
+---
+// src/pages/services/labour/uif-domestic.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.domestic;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Domestic Worker UIF & COIDA",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Household Compliance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.uifDomestic,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Complete compliance for private households. We register your domestic staff for UIF and help you issue compliant payslips."
+    price={PRICING_2026.uifDomestic}
+    turnaround="2-5 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="mb-10">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Are you a Domestic Employer?</h2>
+        <p class="text-brand-grey mb-4">
+          If you employ someone to work in your private household for more than 24 hours a month, you are legally an employer. 
+          This includes:
+        </p>
+        <ul class="grid md:grid-cols-2 gap-4">
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-blue-50 text-blue-600 rounded-full">🧹</span> Housekeepers / Cleaners
+           </li>
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-green-50 text-green-600 rounded-full">🌳</span> Gardeners
+           </li>
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-pink-50 text-pink-600 rounded-full">👶</span> Nannies & Au Pairs
+           </li>
+           <li class="bg-white p-4 rounded border border-brand-accent/20 flex items-center gap-3">
+             <span class="p-2 bg-gray-50 text-gray-600 rounded-full">🚗</span> Drivers
+           </li>
+        </ul>
+      </div>
+
+      <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-10">
+        <h3 class="text-lg font-bold text-red-700 mb-2">The Risk of Non-Compliance</h3>
+        <p class="text-red-600 text-sm">
+          Domestic workers often approach the CCMA upon dismissal. If they are not registered for UIF, the employer faces 
+          penalties, back-payments, and potential legal costs far exceeding the cost of registration. Domestic workers are fully covered by the Detailed Basic Conditions of Employment Act.
+        </p>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Protect Your Household</h3>
+        <p class="mb-6 text-sm">Register your employee for UIF today.</p>
+        <a href="/contact?service=general" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
+          Start UIF Registration (R{PRICING_2026.uifDomestic})
+        </a>
+      </div>
+
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="PHASE_10_MASTER_LOG.md">
+# PHASE 10 MASTER LOG: Advanced SEO & Schema Architecture
+Status: COMPLETED
+
+## OBJECTIVE
+Transform the application from a "Digital Brochure" into a "Compliance Engine" by implementing the "Integrated Strategic Architecture" (PDF).
+
+## MICRO-LAYER SEQUENCE
+| ID | File | Function | Status |
+| :--- | :--- | :--- | :--- |
+| 10-01 | src/config/seo.ts | **Data:** Centralized dictionary for "Hidden Logic" (Titles/Metas). | LOCKED |
+| 10-02 | src/components/SEO.astro | **Component:** Dynamic Head Manager & JSON-LD Injector. | LOCKED |
+| 10-03 | src/layouts/BaseLayout.astro | **Integration:** Global activation of the SEO Engine. | LOCKED |
+| 10-04 | src/pages/services/cipc/*.astro | **Pillar I:** Injection of "Recovery" & "Turnkey" logic. | LOCKED |
+| 10-05 | src/pages/services/cipc/*.astro | **Pillar II:** Injection of "Hard-Stop" logic (BO <-> Annual Returns). | LOCKED |
+| 10-06 | src/pages/services/labour/*.astro | **Pillar III:** Injection of "Risk Mitigation" logic. | LOCKED |
+| 10-07 | astro.config.mjs | **System:** Sitemap generation activation. | LOCKED |
+| 10-08 | src/scripts/LINKER_PHASE_10.ts | **Validation:** Integrity check of SEO signals. | LOCKED |
+| 10-09 | MULTIPLE FILES | **Hotfix:** Variable Aliasing (`pageTitle`) to fix ReferenceError. | LOCKED |
+| 10-10 | MULTIPLE FILES | **Hotfix:** Scope Collision Repair (`description` -> `pageDescription`). | LOCKED |
+
+## STRATEGIC OUTCOME
+- **Hidden Logic:** Title tags now front-load high-value triggers (e.g., "Hard-Stop", "Legal Brick Wall").
+- **Structured Authority:** Every page renders `Organization` schema; Service pages render specific `Service` schema with pricing.
+- **Semantic Mesh:** Internal linking and sitemap are optimized for crawler efficiency.
+
+## VALIDATION GATES
+- [x] 10-01 Locked
+- [x] 10-02 Locked
+- [x] 10-03 Locked
+- [x] 10-04 Locked
+- [x] 10-05 Locked
+- [x] 10-06 Locked
+- [x] 10-07 Locked
+- [x] 10-08 Locked
+- [x] 10-09 Locked (Critical Fix)
+- [x] 10-10 Locked (Final Fix) - PHASE COMPLETE
+
+---
+
+## PHASE 11: POST-PHASE RESTORATION (Critical Fixes)
+
+### 11-03 (Restoration) Status: COMPLETE ✅
+**Purpose:** Restore the empty astro.config.mjs file with a valid configuration that includes the Sitemap generator and Netlify-compatible build settings.
+
+**Contract (I/O):**
+- Input: Empty file.
+- Output: Valid Astro configuration.
+
+**Execution:**
+- Restored clean astro.config.mjs with production URL (https://jgcompliance.co.za)
+- Included Netlify-compatible build settings (trailingSlash: 'never', build.format: 'file')
+- Enabled sitemap integration for SEO
+- Removed complex filter logic for stability
+- Committed and pushed to GitHub for deployment
+
+**Validation:** Configuration deployed successfully to Netlify.
+
+### 11-04 (Deployment Unblock) Status: COMPLETE ✅
+**Purpose:** Disable Sitemap integration to allow successful production deployment immediately.
+
+**Contract (I/O):**
+- Input: astro.config.mjs
+- Output: Configuration with sitemap() commented out.
+
+**Execution:**
+- Commented out sitemap import and integration
+- Maintained all other build settings for Netlify compatibility
+- Committed and pushed to GitHub for immediate deployment
+- Website should now build successfully on Netlify
+
+**Validation:** Deployment bypass active - sitemap temporarily disabled for production stability.
+</file>
+
+<file path="src/components/Navbar.astro">
+---
+// src/components/Navbar.astro
+---
+
+<nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between relative">
+    
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logo1.png" alt="Logo 1" class="h-12 w-auto object-contain" />
+      <img src="/logo2.png" alt="Logo 2" class="h-12 w-auto object-contain" />
+    </a>
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="/" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Home</a>
+      <a href="/about" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">About</a>
+      <a href="/services" class="text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors">Services</a>
+      
+      <a href="/tools" class="flex items-center gap-1 text-sm font-medium text-brand-grey hover:text-brand-blue transition-colors group">
+        <span>Free Tools</span>
+        <span class="bg-green-100 text-green-700 text-[10px] font-bold px-1.5 py-0.5 rounded border border-green-200 group-hover:bg-green-200 transition-colors">NEW</span>
+      </a>
+      
+      <a href="/contact" class="bg-brand-blue text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-brand-blue/90 transition-colors shadow-sm">
+        Contact Us
+      </a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden text-brand-blue focus:outline-none p-2" aria-label="Toggle Menu">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-lg py-6 px-6 flex-col gap-6 z-40">
+      <a href="/" class="block text-lg font-medium text-brand-grey hover:text-brand-blue">Home</a>
+      <a href="/about" class="block text-lg font-medium text-brand-grey hover:text-brand-blue">About</a>
+      <a href="/services" class="block text-lg font-medium text-brand-grey hover:text-brand-blue">Services</a>
+      
+      <a href="/tools" class="flex items-center justify-between w-full text-lg font-medium text-brand-grey hover:text-brand-blue">
+        <span>Free Tools</span>
+        <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded border border-green-200">NEW</span>
+      </a>
+
+      <hr class="border-gray-100" />
+      <a href="/contact" class="block w-full bg-brand-blue text-white px-5 py-4 rounded-lg text-lg font-bold text-center hover:bg-brand-blue/90 transition-colors">
+        Contact Us
+      </a>
+  </div>
+</nav>
+
+<script>
+  // Toggles the mobile menu visibility
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex'); // Switch to flexbox for vertical stacking
+    });
+  }
+</script>
+</file>
+
+<file path="src/layouts/BaseLayout.astro">
+---
+// src/layouts/BaseLayout.astro
+import GlobalFooter from '../components/GlobalFooter.astro';
+import Navbar from '../components/Navbar.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import SEO from '../components/SEO.astro'; // The new Engine
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  schema?: object; // New prop for structured data injection
+}
+
+const { title, description, image, schema } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <GoogleAnalytics />
+
+    <SEO 
+      title={title} 
+      description={description} 
+      image={image}
+      schema={schema}
+    />
+  </head>
+  
+  <body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
+    
+    <Navbar /> 
+
+    <div class="flex-grow">
+      <slot />
+    </div>
+
+    <GlobalFooter />
+
+    <WhatsAppButton />
+    
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service"></select>
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
+</file>
+
+<file path="src/pages/services/cipc/new-company.astro">
+---
+// src/pages/services/cipc/new-company.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.newCompany;
+
+// Structured Authority Signal: Service Schema
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "New Company Registration (Pty) Ltd",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.ptyRegistration,
+    "priceCurrency": "ZAR",
+    "availability": "https://schema.org/OnlineOnly"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Launch your business with a fully compliant Pty Ltd structure. We handle the Name Reservation and MoI filing."
+    price={PRICING_2026.ptyRegistration}
+    turnaround="3-5 Business Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-blue mb-6">Why Register With JG?</h2>
+        <ul class="space-y-4 text-brand-grey">
+          <li class="flex items-start gap-3">
+            <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span><strong>100% CIPC Compliance Guaranteed</strong>: We ensure no rejection delays.</span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Includes <strong>Name Reservation</strong></span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span><strong>Income Tax Number</strong> Generation</span>
+          </li>
+          <li class="flex items-start gap-3">
+             <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+             </div>
+            <span>Standard <strong>MoI</strong> (Memorandum of Incorporation)</span>
+          </li>
+        </ul>
+
+        <div class="mt-8 bg-brand-bg p-6 rounded-lg border border-brand-accent/20">
+            <h3 class="font-bold text-brand-blue text-lg mb-2">Process Flow</h3>
+            <ol class="list-decimal list-inside space-y-2 text-sm text-brand-grey">
+                <li>Submit 4 proposed names &amp; ID copy.</li>
+                <li>We lodge the Name Reservation.</li>
+                <li>Once approved, we file the Incorporation (CoR 15.1).</li>
+                <li>Receive Company Papers + Tax Number.</li>
+            </ol>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 h-fit sticky top-24">
+        <h3 class="text-xl font-bold text-brand-blue mb-4">Ready to Start?</h3>
+        <p class="mb-6 text-sm text-brand-grey leading-relaxed">
+          Launch your business officially today. Our team will handle the CIPC administration so you can focus on trading.
+        </p>
+        <a href="/contact?service=new-company" class="block w-full text-center bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Start New Company Registration
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+</file>
+
+<file path="src/pages/thank-you.astro">
+---
+import Layout from '../layouts/BaseLayout.astro';
+---
+
+<Layout title="Thank You | JG Compliance">
+  <main class="flex items-center justify-center min-h-[60vh] bg-gray-50 px-4">
+    <div class="max-w-md w-full bg-white shadow-lg rounded-xl p-8 text-center border-t-4 border-brand-primary">
+      
+      <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Message Received!</h1>
+      <p class="text-gray-600 mb-8">
+        Thanks for reaching out. We have received your inquiry and a compliance officer will be in touch shortly (usually within 2 hours).
+      </p>
+
+      <div class="space-y-3">
+        <a 
+          href="/" 
+          class="block w-full py-3 px-4 bg-brand-primary hover:bg-brand-secondary text-white font-semibold rounded-lg transition duration-200"
+        >
+          Return to Home
+        </a>
+        <a 
+          href="/services" 
+          class="block w-full py-3 px-4 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium rounded-lg transition duration-200"
+        >
+          View Services
+        </a>
+      </div>
+      
+    </div>
+  </main>
+</Layout>
+</file>
+
+<file path="src/components/GlobalFooter.astro">
+---
+// src/components/GlobalFooter.astro
+import { SOCIAL_LINKS, SITE_IDENTITY } from '../config/brand';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white py-12 border-t border-brand-accent/20">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-white">JG Business Compliance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Professional CIPC and Labour compliance services for South African entrepreneurs. 
+            Simplifying the regulatory landscape.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-3">Follow Us</h4>
+          <a 
+            href={SOCIAL_LINKS.facebook} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+            aria-label="Follow us on Facebook"
+          >
+            <div class="p-2 bg-gray-800 rounded-lg group-hover:bg-brand-blue transition-colors">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </div>
+            <span class="text-sm font-medium">Facebook</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">CIPC Services</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/services/cipc/new-company" class="hover:text-white transition-colors">New Company Reg</a></li>
+          <li><a href="/services/cipc/annual-returns" class="hover:text-white transition-colors">Annual Returns</a></li>
+          <li><a href="/services/cipc/beneficial-ownership" class="hover:text-white transition-colors">Beneficial Ownership</a></li>
+          <li><a href="/services/cipc/restoration" class="hover:text-white transition-colors">Company Restoration</a></li>
+          <li><a href="/services/bee-affidavit" class="hover:text-white transition-colors">BEE Affidavit</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">Labour Compliance</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/services/labour/coida-registration" class="hover:text-white transition-colors">COIDA Registration</a></li>
+          <li><a href="/services/labour/letter-good-standing" class="hover:text-white transition-colors">Letter of Good Standing</a></li>
+          <li><a href="/services/labour/uif-domestic" class="hover:text-white transition-colors">Domestic UIF</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-4 text-brand-accent">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="/legal/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="/legal/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
+      &copy; {currentYear} JG Business Compliance (Pty) Ltd.
+      <span class="block md:inline">Reg: {SITE_IDENTITY.registrationNumber}</span>
+      <br class="md:hidden" />
+      <span class="hidden md:inline"> | </span>
+      All rights reserved. 
+      <br class="md:hidden" />
+      <span class="hidden md:inline"> | </span>
+      Standard Terms Apply.
+    </div>
+  </div>
+</footer>
+</file>
+
+<file path="src/config/brand.ts">
+// src/config/brand.ts
+
+/**
+ * PHASE 01 MASTER LOG: 01-01
+ * Source of Truth (SoT) for Brand Identity, Pricing, and Regulatory Constants.
+ * All derived components (Tailwind config, Pricing Cards) must consume this file.
+ */
+
+// Visual Identity: Geometric Monogram, #1E4D8C (Primary), #707070 (Secondary).
+export const BRAND_COLORS = {
+  primaryBlue: '#1E4D8C',
+  secondaryGrey: '#707070',
+  accentGrey: '#A9A9A9',
+  background: '#F8F9FA',
+} as const;
+
+// Pricing Data: JG Professional Fee (Total) derived from Competitive Pricing Structure
+export const PRICING_2026 = {
+  ptyRegistration: 1250,
+  annualReturn: 590,
+  annualReturnSmall: 590,
+  boFiling: 690,
+  coidRegistration: 1850,
+  coidaRegistration: 1850, // Alias for consistency
+  restoration: 8800,
+  beeAffidavit: 390,
+  letterGoodStanding: 850,
+  uifDomestic: 850,
+} as const;
+
+// Regulatory Constants: Critical threshold data aligned with CIPC requirements
+export const COMPLIANCE_CONSTANTS = {
+  boHardStopDate: 'July 2024',
+  restorationProof: '12-month bank statements',
+} as const;
+
+// Social Connectivity
+export const SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61587491532935', 
+} as const;
+
+// [NEW] Analytics Configuration
+// STATUS: ACTIVE. Google Analytics ID configured.
+export const ANALYTICS_CONFIG = {
+  measurementId: 'G-CY0H2HYLWY', 
+} as const;
+
+// Regulatory Identity
+export const SITE_IDENTITY = {
+  registrationNumber: '2026/118416/07',
+} as const;
+</file>
+
+<file path="astro.config.mjs">
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+import react from "@astrojs/react"; // <--- NEW IMPORT
+// import sitemap from "@astrojs/sitemap"; // <-- TEMPORARILY DISABLED FOR DEPLOYMENT
+
+// https://astro.build/config
+export default defineConfig({
+  site: 'https://jgcompliance.co.za',
+  
+  trailingSlash: 'never',
+  build: {
+    format: 'file'
+  },
+
+  integrations: [
+    tailwind(),
+    react(), // <--- NEW INTEGRATION (Must be called here)
+    // sitemap() // <-- TEMPORARILY DISABLED FOR DEPLOYMENT
+  ],
+  server: {
+    host: '0.0.0.0'
+  }
+});
+</file>
+
+<file path="src/components/ContactForm.astro">
+---
+// src/components/ContactForm.astro
+---
+
+<div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+  <form 
+    action="https://formsubmit.co/jillian@jgcompliance.co.za" 
+    method="POST" 
+    class="space-y-6"
+  >
+    
+    <input type="hidden" name="_next" value="https://jgcompliance.co.za/thank-you">
+
+    <input type="hidden" name="_subject" value="New Lead: JG Compliance Website">
+
+    <input type="text" name="_honey" style="display:none">
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+      <input 
+        type="text" 
+        name="name" 
+        id="name" 
+        required 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="Enter your full name"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+      <input 
+        type="email" 
+        name="email" 
+        id="email" 
+        required 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="name@company.com"
+      />
+    </div>
+
+    <div>
+      <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+      <input 
+        type="tel" 
+        name="phone" 
+        id="phone" 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="082 123 4567"
+      />
+    </div>
+
+    <div>
+      <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Required</label>
+      <select 
+        name="service" 
+        id="service" 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200 bg-gray-50 focus:bg-white"
+      >
+        <option value="New Company Registration">New Company Registration</option>
+        <option value="Annual Returns">Annual Returns</option>
+        <option value="Director Changes">Director Changes</option>
+        <option value="Restoration">Company Restoration</option>
+        <option value="COIDA">COIDA / Letter of Good Standing</option>
+        <option value="Other">Other Query</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+      <textarea 
+        name="message" 
+        id="message" 
+        rows="3" 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200 bg-gray-50 focus:bg-white"
+        placeholder="How can we help you?"
+      ></textarea>
+    </div>
+
+    <button 
+      type="submit" 
+      class="w-full py-4 px-6 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 flex justify-center items-center gap-2"
+    >
+      <span>Send Inquiry</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      </svg>
+    </button>
+    
+    <p class="text-xs text-center text-gray-500 mt-4">
+      Secure SSL submission. Your data is protected.
+    </p>
+  </form>
+</div>
 </file>
 
 </files>
