@@ -19,6 +19,7 @@ Deploy the client-side React components for B-BBEE and POPIA, making the Phase 1
 | 16-10 | src/pages/tools/popia-audit.astro | **Disclaimer Refinement:** Synchronize the legal disclaimer on the page wrapper with specific liability text. | COMPLETED |
 | 16-11 | src/components/Navbar.astro | **Visual Polish:** Remove the "NEW" badge from the navigation to create a cleaner, more professional look. | COMPLETED |
 | 16-12 | src/components/Tools/BeeCalculator.tsx | **Diplomatic Rephrase:** Update the scorecard descriptions to use professional, diplomatic, and neutral compliance terminology. | COMPLETED |
+| 16-13 | public/sitemap.xml | **Manual Sitemap Update:** Add the new "About" and "Tools" pages to the manual sitemap so Google indexes them. | COMPLETED |
 
 ## VALIDATION GATES
 - [x] 16-01 Locked (Phase Initialization)
@@ -33,3 +34,4 @@ Deploy the client-side React components for B-BBEE and POPIA, making the Phase 1
 - [x] 16-10 Locked (POPIA Disclaimer Refined)
 - [x] 16-11 Locked (Navigation Polished)
 - [x] 16-12 Locked (B-BBEE Terminology Neutralized)
+- [x] 16-13 Locked (Sitemap Updated)
