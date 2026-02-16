@@ -1,0 +1,34 @@
+---
+// src/pages/services/labour/roe-submission.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026, COMPLIANCE_CONSTANTS } from '../../../config/brand';
+
+const pageTitle = "ROE Submissions (Return of Earnings)";
+---
+
+<BaseLayout title={pageTitle}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Annual declaration of earnings to the Compensation Commissioner."
+    price={PRICING_2026.roeSubmission}
+    turnaround="2-3 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-blue-50 border-l-4 border-brand-blue p-6 mb-10">
+        <h3 class="text-lg font-bold text-brand-blue mb-2">Deadline: {COMPLIANCE_CONSTANTS.roeDeadline}</h3>
+        <p class="text-brand-grey">
+          All employers must submit their Return of Earnings annually. This assessment determines your Workman's Compensation premiums for the year. Failure to submit leads to estimated assessments and penalties.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <a href="/contact?service=roe" class="bg-brand-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-all">
+          File Your ROE Now
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

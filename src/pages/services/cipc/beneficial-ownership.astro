@@ -15,7 +15,7 @@ const schema = {
     "@type": "ProfessionalService",
     "name": SITE_METADATA.legalName
   },
-  "description": pageDescription, // "Avoid the July 2024 CIPC Hard-Stop..."
+  "description": pageDescription,
   "serviceType": "Regulatory Compliance",
   "offers": {
     "@type": "Offer",
@@ -29,13 +29,27 @@ const schema = {
 <BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
-    subtitle="The new mandatory requirement for all South African companies. We file your BO register directly with CIPC."
+    subtitle="The '2026 Hard-Stop Security Bundle' to prevent bank account freezes. We file your BO register directly with CIPC."
     price={PRICING_2026.boFiling}
     turnaround="24-48 Hours"
   />
 
   <main class="container mx-auto px-4 py-16">
     <div class="max-w-3xl mx-auto">
+      
+      <div class="bg-red-900 text-white p-6 rounded-xl shadow-xl border-l-8 border-red-500 mb-10 relative overflow-hidden">
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+            <span>🛑</span> LEGAL ADVISORY: SECTION 216 COMPLIANCE
+          </h3>
+          <p class="text-white/90 leading-relaxed font-medium text-sm md:text-base">
+            Per Section 216(b) of the Companies Act, providing false or misleading information on CIPC filings is a criminal offense. 
+            Conviction can lead to personal fines or imprisonment for up to 12 months. Our 'Architected for Excellence' methodology provides 
+            the professional oversight needed to ensure your submissions are legally sound.
+          </p>
+        </div>
+        <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px);"></div>
+      </div>
       
       <div class="bg-amber-50 border-l-4 border-amber-500 p-6 mb-10">
         <h3 class="text-lg font-bold text-amber-700 mb-2">Warning: The "Hard-Stop" is Active</h3>
@@ -67,10 +81,10 @@ const schema = {
       </div>
 
       <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center shadow-sm">
-        <h3 class="text-2xl font-bold text-brand-blue mb-4">Don't get blocked.</h3>
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Secure Your Entity</h3>
         <p class="mb-8 text-brand-grey">We handle the complex securities register conversions for you, ensuring full compliance.</p>
         <a href="/contact?service=beneficial-ownership" class="inline-block bg-brand-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
-          File BO Register Now (R{PRICING_2026.boFiling})
+          File Security Bundle (R{PRICING_2026.boFiling})
         </a>
       </div>
 

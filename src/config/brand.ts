@@ -15,23 +15,29 @@ export const BRAND_COLORS = {
 } as const;
 
 // Pricing Data: JG Professional Fee (Total) derived from Competitive Pricing Structure
+// UPDATED: Phase 18 - 2026 Strategic Price Logic
 export const PRICING_2026 = {
   ptyRegistration: 1250,
-  annualReturn: 590,
-  annualReturnSmall: 590,
-  boFiling: 690,
-  coidRegistration: 1850,
-  coidaRegistration: 1850, // Alias for consistency
-  restoration: 8800,
+  annualReturn: 950, // Updated: Includes Section 216 Verification
+  annualReturnSmall: 950, // Updated: Consolidated Pricing
+  boFiling: 1850, // Updated: Hard-Stop Security Bundle
+  coidRegistration: 1850, // Technical Facilitation
+  coidaRegistration: 1850, // Alias
+  restoration: 8800, // Professional Fee Only
   beeAffidavit: 390,
   letterGoodStanding: 850,
   uifDomestic: 850,
+  paiaManual: 1450,
+  roeSubmission: 950,
+  informationOfficerReg: 850,
 } as const;
 
 // Regulatory Constants: Critical threshold data aligned with CIPC requirements
 export const COMPLIANCE_CONSTANTS = {
   boHardStopDate: 'July 2024',
   restorationProof: '12-month bank statements',
+  roeDeadline: '30 April',
+  paiaRequirement: 'Mandatory PAIA Manual',
 } as const;
 
 // Social Connectivity
@@ -39,8 +45,7 @@ export const SOCIAL_LINKS = {
   facebook: 'https://www.facebook.com/profile.php?id=61587491532935', 
 } as const;
 
-// [NEW] Analytics Configuration
-// STATUS: ACTIVE. Google Analytics ID configured.
+// Analytics Configuration
 export const ANALYTICS_CONFIG = {
   measurementId: 'G-CY0H2HYLWY', 
 } as const;

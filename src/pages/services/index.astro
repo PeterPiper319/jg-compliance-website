@@ -15,14 +15,9 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
 
   <main class="container mx-auto px-4 pb-20">
     
-    <h2 class="text-2xl font-bold text-brand-grey mb-6 border-b border-brand-accent/20 pb-2">CIPC & Corporate Services</h2>
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <a href="/services/cipc/new-company" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
-        <h3 class="font-bold text-brand-blue group-hover:underline">New Company (Pty) Ltd</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Includes Name Reservation & Tax Number.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.ptyRegistration}</div>
-      </a>
-      
+    <h2 class="text-2xl font-bold text-brand-blue mb-2">CIPC "Hard-Stop" Management</h2>
+    <p class="text-sm text-red-600 mb-6 font-medium">Critical: Annual Returns cannot be filed without an active BO Register.</p>
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
       <a href="/services/cipc/annual-returns" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
         <h3 class="font-bold text-brand-blue group-hover:underline">Annual Returns</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">Avoid deregistration penalties.</p>
@@ -34,22 +29,10 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
         <p class="text-sm text-brand-grey mt-2 mb-4">Mandatory Hard-Stop Filing.</p>
         <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.boFiling}</div>
       </a>
-
-      <a href="/services/cipc/restoration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
-        <h3 class="font-bold text-brand-blue group-hover:underline">Company Restoration</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Re-instate deregistered entities.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.restoration}</div>
-      </a>
-
-      <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
-        <h3 class="font-bold text-brand-blue group-hover:underline">BEE Affidavit (EME)</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Official sworn affidavit for turnover &lt; R10m.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.beeAffidavit}</div>
-      </a>
     </div>
 
-    <h2 class="text-2xl font-bold text-brand-grey mb-6 border-b border-brand-accent/20 pb-2">Labour & COIDA</h2>
-    <div class="grid md:grid-cols-3 gap-6">
+    <h2 class="text-2xl font-bold text-brand-blue mb-6">Labour & COIDA Services</h2>
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
       <a href="/services/labour/coida-registration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
         <h3 class="font-bold text-brand-blue group-hover:underline">COIDA Registration</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">Mandatory Workman's Comp.</p>
@@ -66,6 +49,48 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
         <h3 class="font-bold text-brand-blue group-hover:underline">Domestic UIF</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">Private Household Compliance.</p>
         <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.uifDomestic}</div>
+      </a>
+
+      <a href="/services/labour/roe-submission" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">ROE Submission</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Register of Employees filing.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.roeSubmission}</div>
+      </a>
+    </div>
+
+    <h2 class="text-2xl font-bold text-brand-blue mb-6">New Entity Incorporation</h2>
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <a href="/services/cipc/new-company" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">New Company (Pty) Ltd</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Includes Name Reservation & Tax Number.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.ptyRegistration}</div>
+      </a>
+
+      <a href="/services/cipc/restoration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Company Restoration</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Re-instate deregistered entities.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.restoration}</div>
+      </a>
+
+      <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">BEE Affidavit (EME)</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Official sworn affidavit for turnover &lt; R10m.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.beeAffidavit}</div>
+      </a>
+    </div>
+
+    <h2 class="text-2xl font-bold text-brand-blue mb-6">Information Officer & POPIA</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="/services/popia/information-officer" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Information Officer Registration</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">POPIA compliance registration.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.informationOfficerReg}</div>
+      </a>
+
+      <a href="/services/popia/paia-manual" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">PAIA Manual</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Promotion of Access to Information Act manual.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.paiaManual}</div>
       </a>
     </div>
 

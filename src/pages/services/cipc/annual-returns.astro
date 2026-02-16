@@ -7,6 +7,8 @@ import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
 
 const { title: pageTitle, description: pageDescription } = ROUTE_SEO.annualReturns;
 
+const currentMonth = new Date().toLocaleString('default', { month: 'long' });
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -29,7 +31,7 @@ const schema = {
 <BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
     title={pageTitle}
-    subtitle="Keep your company 'Active' and avoid final deregistration. We calculate your turnover fees and file directly."
+    subtitle="Includes technical verification of the Section 216 Compliance Checklist. Keep your company 'Active' and legally sound."
     price={PRICING_2026.annualReturnSmall} 
     turnaround="1-2 Days"
   />
@@ -37,26 +39,37 @@ const schema = {
   <main class="container mx-auto px-4 py-16">
     <div class="max-w-3xl mx-auto">
       
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-           <h4 class="font-bold text-red-700 mb-2">Penalties Apply</h4>
-           <p class="text-sm text-red-600">
-             If you miss your filing month (the anniversary of your registration), CIPC adds a late penalty fee. 
-             Two years of non-compliance leads to <strong>Deregistration</strong>.
-           </p>
+      <div class="bg-red-900 text-white p-6 rounded-xl shadow-xl border-l-8 border-red-500 mb-10 relative overflow-hidden">
+        <div class="relative z-10">
+          <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+            <span>🛑</span> LEGAL ADVISORY: SECTION 216 COMPLIANCE
+          </h3>
+          <p class="text-white/90 leading-relaxed font-medium text-sm md:text-base">
+            Per Section 216(b) of the Companies Act, providing false or misleading information on CIPC filings is a criminal offense. 
+            Conviction can lead to personal fines or imprisonment for up to 12 months. Our 'Architected for Excellence' methodology provides 
+            the professional oversight needed to ensure your submissions are legally sound.
+          </p>
         </div>
-        <div class="bg-amber-50 p-6 rounded-lg border border-amber-100">
-           <h4 class="font-bold text-amber-700 mb-2">Beneficial Ownership</h4>
-           <p class="text-sm text-amber-600">
-             <strong>Hard Stop Active:</strong> You cannot file this return unless your BO Register is up to date.
-             <a href="/services/cipc/beneficial-ownership" class="underline font-semibold block mt-1">Update BO Status &rarr;</a>
-           </p>
+        <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px);"></div>
+      </div>
+
+      <div class="bg-amber-50 border-2 border-amber-200 p-8 rounded-xl mb-12 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold">!</div>
+          <h2 class="text-xl font-bold text-amber-700 uppercase tracking-tight">Mandatory CIPC Hard-Stop</h2>
         </div>
+        <p class="text-amber-800 leading-relaxed font-medium mb-6">
+          The CIPC filing system is now hard-linked to the Beneficial Ownership register. 
+          <strong>You cannot submit your {currentMonth} Annual Return if your BO filings are incomplete.</strong>
+        </p>
+        <a href="/services/cipc/beneficial-ownership" class="inline-block bg-amber-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-amber-700 transition-all">
+          Resolve BO Status First →
+        </a>
       </div>
 
       <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
         <h3 class="text-xl font-bold text-brand-blue mb-2">File Before Deregistration</h3>
-        <p class="mb-6 text-sm">We handle the turnover calculation and CIPC submission.</p>
+        <p class="mb-6 text-sm">We handle the turnover calculation, Section 216 verification, and CIPC submission.</p>
         <a href="/contact?service=annual-returns" class="inline-block bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue/90 transition-colors">
           File Annual Return (R{PRICING_2026.annualReturnSmall})
         </a>

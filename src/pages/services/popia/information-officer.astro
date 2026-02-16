@@ -1,0 +1,43 @@
+---
+// src/pages/services/popia/information-officer.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+
+const pageTitle = "Information Officer & PAIA Compliance";
+---
+
+<BaseLayout title={pageTitle}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Ensure your business meets the mandatory Information Regulator requirements for data governance."
+    price={PRICING_2026.informationOfficerReg + PRICING_2026.paiaManual}
+    turnaround="3-5 Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+           <h3 class="text-xl font-bold text-brand-blue mb-4">IO Registration</h3>
+           <p class="text-brand-grey text-sm mb-6">Every business entity MUST appoint and register an Information Officer to handle POPIA and PAIA requests.</p>
+           <div class="text-2xl font-bold text-brand-blue">R {PRICING_2026.informationOfficerReg}</div>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+           <h3 class="text-xl font-bold text-brand-blue mb-4">PAIA Manual Drafting</h3>
+           <p class="text-brand-grey text-sm mb-6">A legal document describing the records held by your company and how the public can access them.</p>
+           <div class="text-2xl font-bold text-brand-blue">R {PRICING_2026.paiaManual}</div>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Complete Your Governance Suite</h3>
+        <p class="text-brand-grey mb-8">We handle the submission to the Information Regulator and the professional drafting of your manual.</p>
+        <a href="/contact?service=popia" class="bg-brand-blue text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-all shadow-lg">
+          Request Compliance Package
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
