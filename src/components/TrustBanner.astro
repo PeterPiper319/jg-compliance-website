@@ -1,6 +1,5 @@
 ---
 // src/components/TrustBanner.astro
-const currentMonth = new Date().toLocaleString('default', { month: 'long' });
 ---
 
 <div class="bg-brand-blue text-white py-3 px-4 text-center text-sm font-medium relative z-40">
@@ -11,7 +10,7 @@ const currentMonth = new Date().toLocaleString('default', { month: 'long' });
     
     <p>
       <span class="font-bold uppercase tracking-wide">Urgent CIPC Deadline:</span> 
-      Annual Returns are now due for companies registered in {currentMonth}.
+      Annual Returns are now due for companies registered in <span id="current-month"></span>.
     </p>
 
     <a href="/services/cipc/annual-returns" class="ml-4 underline hover:text-brand-accent transition-colors">
@@ -19,3 +18,7 @@ const currentMonth = new Date().toLocaleString('default', { month: 'long' });
     </a>
   </div>
 </div>
+
+<script>
+  document.getElementById('current-month').textContent = new Date().toLocaleString('default', { month: 'long' });
+</script>
