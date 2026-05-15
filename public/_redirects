@@ -1,1 +1,2 @@
-/tenders/* https://jgtendermatch.netlify.app/:splat 200
+/tenders/.netlify/functions/* https://jgtendermatch.netlify.app/.netlify/functions/:splat  200
+/tenders/* https://jgtendermatch.netlify.app/:splat  200
