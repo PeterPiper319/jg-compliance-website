@@ -17,7 +17,8 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
     
     <h2 class="text-2xl font-bold text-brand-blue mb-2">CIPC "Hard-Stop" Management</h2>
     <p class="text-sm text-red-600 mb-6 font-medium">Critical: Annual Returns cannot be filed without an active BO Register.</p>
-    <div class="grid md:grid-cols-2 gap-6 mb-16">
+    <p class="text-sm text-brand-blue mb-6 font-medium">Critical for companies that need to keep their bank accounts and vendor numbers active.</p>
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
       <a href="/services/cipc/annual-returns" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
         <h3 class="font-bold text-brand-blue group-hover:underline">Annual Return Submission (Single Year)</h3>
         <p class="text-sm text-brand-grey mt-2 mb-2">Does not include: CIPC filing fee</p>
@@ -28,17 +29,6 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
         <h3 class="font-bold text-brand-blue group-hover:underline">Beneficial Ownership</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">Mandatory Hard-Stop Filing.</p>
         <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.boFiling}</div>
-      </a>
-    </div>
-
-    <!-- Labour & COIDA Services section removed per request -->
-
-    <h2 class="text-2xl font-bold text-brand-blue mb-6">New Entity Incorporation</h2>
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <a href="/services/cipc/new-company" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
-        <h3 class="font-bold text-brand-blue group-hover:underline">New Company (Pty) Ltd</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Includes Name Reservation & Tax Number.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.ptyRegistration}</div>
       </a>
 
       <a href="/services/cipc/restoration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
@@ -51,6 +41,17 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
         <h3 class="font-bold text-brand-blue group-hover:underline">Foreign Director BO Compliance</h3>
         <p class="text-sm text-brand-grey mt-2 mb-4">Beneficial ownership compliance for foreign directors.</p>
         <div class="text-xl font-bold text-brand-blue">R{PRICING_2026.foreignDirectorBO.toLocaleString()}</div>
+      </a>
+    </div>
+
+    <!-- Labour & COIDA Services section removed per request -->
+
+    <h2 class="text-2xl font-bold text-brand-blue mb-6">New Entity Incorporation</h2>
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+      <a href="/services/cipc/new-company" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">New Company (Pty) Ltd</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Includes Name Reservation & Tax Number.</p>
+        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.ptyRegistration}</div>
       </a>
 
       <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
