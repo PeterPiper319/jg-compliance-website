@@ -8,51 +8,50 @@
 
 export const ABOUT_CONTENT = {
   mission: {
-    title: "Governance as a Strategic Asset",
-    statement: "We do not view compliance as a 'check-the-box' burden. Our mission is to embed compliance into the operational DNA of your business, shifting the focus from penalty avoidance to operational excellence.",
+    title: "Business Growth Without the Compliance Headache",
+    statement: "We believe keeping your business up to date shouldn’t feel like a burden. Our mission is to handle the administrative heavy lifting and system tracking so you can focus on what you do best: running your operations and winning contracts.",
     pillars: [
       {
-        title: "Risk",
-        description: "Mitigating legal and financial exposure in Africa's most regulated market."
+        title: "Peace of Mind",
+        description: "Protecting your hard work by catching missed annual filings or registration drops before they cause interruptions to your business."
       },
       {
-        title: "Regulation",
-        description: "Navigating the complex frameworks of CIPC and the Department of Labour with precision."
+        title: "Simple Tracking",
+        description: "Making it easy to keep up with CIPC and Department of Labour requirements without needing a corporate law degree to understand them."
       },
       {
-        title: "Reputation",
-        description: "Building trust with stakeholders through transparent, accountable governance."
+        title: "Tender-Ready Status",
+        description: "Building immediate trust with your clients and procurement officers by keeping your business in perfect, active standing."
       }
     ]
   },
   expertise: {
-    title: "Local Execution, Global Standards",
-    description: "South Africa represents the most advanced and stringently regulated market on the African continent. We provide the mastery of local realities required to navigate this landscape.",
+    title: "Real Support for South African Business Owners",
+    description: "Running a business in South Africa means managing a lot of moving parts. We provide the practical, local guidance you need to stay on top of your admin without the stress.",
     entities: [
-      "Companies and Intellectual Property Commission (CIPC)",
-      "Department of Employment and Labour",
-      "Information Regulator (POPIA)",
-      "Broad-Based Black Economic Empowerment (B-BBEE)"
+      "Keeping your CIPC profile active and up to date.",
+      "Simplifying Department of Employment and Labour requirements.",
+      "Practical guidance for basic POPIA and B-BBEE admin."
     ]
   },
   methodology: {
-    title: "The Compliance Equation",
-    description: "We employ a 'Governance-as-a-Service' (GaaS) model, acting as your centralized repository for regulatory management.",
+    title: "Your 3-Step Path to Stress-Free Admin",
+    description: "We employ a simple, transparent process to make sure your business stays in perfect standing from day one.",
     steps: [
       {
         step: 1,
-        title: "Legal Auditing",
-        description: "We conduct a deep-dive analysis of your current standing against statutory requirements."
+        title: "A Friendly Check-Up",
+        description: "We take a close look at where your business currently stands with your annual returns and basic company registries."
       },
       {
         step: 2,
-        title: "Gap Analysis",
-        description: "We identify specific vulnerabilities in your compliance architecture, from missing filings to outdated manuals."
+        title: "Spotting the Gaps",
+        description: "We find exactly what’s missing—whether it’s a forgotten annual filing or an outdated registration—before it can cause any issues."
       },
       {
         step: 3,
-        title: "Strategic Remediation",
-        description: "We execute the necessary filings and restructuring to close gaps and restore full good standing."
+        title: "Sorting the Paperwork",
+        description: "We handle the necessary updates and filings for you, quickly getting your business back into perfect, active standing with zero fuss."
       }
     ]
   }
