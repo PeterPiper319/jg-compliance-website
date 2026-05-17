@@ -1,0 +1,58 @@
+---
+// src/pages/services/cipc/director-changes.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.directorChanges;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Director Changes (CoR39)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Corporate Administration",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.directorChange,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Resignations, appointments and updated Disclosure Certificates handled with statutory accuracy."
+    price={PRICING_2026.directorChange}
+    turnaround="3-5 Business Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="prose prose-slate max-w-none mb-8 text-brand-grey">
+        <p class="text-lg">
+          Director changes must be lodged correctly to maintain banking and vendor relationships. We prepare CoR39 forms, coordinate resignations and appointments, and ensure Disclosure Certificates are current.
+        </p>
+        <ul class="list-disc pl-5 mt-6 space-y-2">
+          <li>Prepare and file CoR39 documentation</li>
+          <li>Update company register and CIPC records</li>
+          <li>Issue updated Disclosure Certificates</li>
+        </ul>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Update Your Statutory Records</h3>
+        <p class="text-brand-grey mb-8 max-w-2xl mx-auto">We coordinate with your bank or tender administrator where required to avoid interruptions.</p>
+        <a href="/contact?service=director-changes" class="inline-block bg-brand-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Request Director Change (R{PRICING_2026.directorChange})
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

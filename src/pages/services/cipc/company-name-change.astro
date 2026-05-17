@@ -1,0 +1,58 @@
+---
+// src/pages/services/cipc/company-name-change.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ServiceHero from '../../../components/ServiceHero.astro';
+import { PRICING_2026 } from '../../../config/brand';
+import { ROUTE_SEO, SITE_METADATA } from '../../../config/seo';
+
+const { title: pageTitle, description: pageDescription } = ROUTE_SEO.companyNameChange;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Company Name Change (CoR15.2)",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": SITE_METADATA.legalName
+  },
+  "description": pageDescription,
+  "serviceType": "Corporate Maintenance",
+  "offers": {
+    "@type": "Offer",
+    "price": PRICING_2026.companyNameChange,
+    "priceCurrency": "ZAR"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <ServiceHero 
+    title={pageTitle}
+    subtitle="Secure name reservation and update statutory records while preserving Tax/VAT linkages."
+    price={PRICING_2026.companyNameChange}
+    turnaround="5-10 Business Days"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="prose prose-slate max-w-none mb-8 text-brand-grey">
+        <p class="text-lg">
+          Changing a company name requires careful coordination to ensure continuity of tax, VAT, and banking references. We handle the CoR15.2 process end-to-end and confirm downstream registrations remain intact.
+        </p>
+        <ul class="list-disc pl-5 mt-6 space-y-2">
+          <li>Name reservation and submission (CoR15.2)</li>
+          <li>Update CIPC records and company register</li>
+          <li>Confirm Tax/VAT references are maintained</li>
+        </ul>
+      </div>
+
+      <div class="bg-brand-bg p-8 rounded-xl border border-brand-accent/20 text-center">
+        <h3 class="text-2xl font-bold text-brand-blue mb-4">Change Your Company Name Safely</h3>
+        <p class="text-brand-grey mb-8 max-w-2xl mx-auto">We liaise with SARS and your bank to ensure continuity of records.</p>
+        <a href="/contact?service=company-name-change" class="inline-block bg-brand-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-brand-blue/90 transition-colors shadow-lg shadow-brand-blue/20">
+          Request Name Change (R{PRICING_2026.companyNameChange})
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

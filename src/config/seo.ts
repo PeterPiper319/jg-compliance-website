@@ -51,6 +51,15 @@ export const ROUTE_SEO = {
     description: "Mandatory annual filing to prevent final deregistration. We calculate turnover fees and link with BO filing to clear CIPC Hard-Stops." // [cite: 40, 41]
   },
 
+  directorChanges: {
+    title: "Director Changes (CoR39) | Resignations & Appointments | JG Business Compliance",
+    description: "Professional handling of director resignations, appointments and disclosure certificates (CoR39). Keep your statutory records and vendor/bank links current." 
+  },
+  companyNameChange: {
+    title: "Company Name Change (CoR15.2) | Name Reservation & Tax Linking | JG Business Compliance",
+    description: "Secure name reservation, update registered documents and ensure Tax/VAT links remain intact following a company name change (CoR15.2)."
+  },
+
   // PILLAR III: LABOUR & COIDA
   coida: {
     title: "COIDA Letter of Good Standing | Fast-Track Tender Compliance | JG Business Compliance", // [cite: 70]
