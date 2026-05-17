@@ -24,7 +24,8 @@ export const PRICING_2026 = {
   foreignDirectorBO: 2450, // New service: Foreign Director BO Compliance
   // COIDA pricing removed
   restoration: 9000, // Professional Fee Only (Resurrection Pack)
-  beeAffidavit: 390,
+  ptyRegistration: 1350,
+  beeAffidavit: 450,
   letterGoodStanding: 850,
   // Domestic UIF pricing removed
   paiaManual: 1450,

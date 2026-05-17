@@ -46,18 +46,19 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
 
     <!-- Labour & COIDA Services section removed per request -->
 
-    <h2 class="text-2xl font-bold text-brand-blue mb-6">New Entity Incorporation</h2>
+    <h2 class="text-2xl font-bold text-brand-blue mb-6">Professional Entity Incorporation</h2>
+    <p class="text-brand-grey max-w-2xl mb-4">For new business owners who want their foundation built correctly.</p>
     <div class="grid md:grid-cols-2 gap-6 mb-16">
       <a href="/services/cipc/new-company" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
-        <h3 class="font-bold text-brand-blue group-hover:underline">New Company (Pty) Ltd</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Includes Name Reservation & Tax Number.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.ptyRegistration}</div>
+        <h3 class="font-bold text-brand-blue group-hover:underline">Premium PTY (Ltd) Registration</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-2">Includes: Name Reservation, Custom MOI, Tax Registration, and initial BO filing.</p>
+        <div class="text-xl font-bold text-brand-blue">R{PRICING_2026.ptyRegistration.toLocaleString()}</div>
       </a>
 
       <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
         <h3 class="font-bold text-brand-blue group-hover:underline">BEE Affidavit (EME)</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Official sworn affidavit for turnover &lt; R10m.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.beeAffidavit}</div>
+        <p class="text-sm text-brand-grey mt-2 mb-2">Official, commissioner-signed affidavit for turnover under R10m.</p>
+        <div class="text-xl font-bold text-brand-blue">R{PRICING_2026.beeAffidavit.toLocaleString()}</div>
       </a>
     </div>
 
