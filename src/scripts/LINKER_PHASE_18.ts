@@ -11,8 +11,8 @@ export function validatePhase18(): boolean {
   const errors: string[] = [];
 
   // 1. Validate "Section 216" Pricing Logic
-  if (PRICING_2026.annualReturn !== 950) {
-    errors.push(`CRITICAL: Annual Return Price Mismatch. Expected 950, got ${PRICING_2026.annualReturn}`);
+  if (PRICING_2026.annualReturn !== 1250) {
+    errors.push(`CRITICAL: Annual Return Price Mismatch. Expected 1250, got ${PRICING_2026.annualReturn}`);
   }
 
   // 2. Validate "Security Bundle" Pricing Logic

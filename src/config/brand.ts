@@ -18,8 +18,8 @@ export const BRAND_COLORS = {
 // UPDATED: Phase 18 - 2026 Strategic Price Logic
 export const PRICING_2026 = {
   ptyRegistration: 1250,
-  annualReturn: 950, // Updated: Includes Section 216 Verification
-  annualReturnSmall: 950, // Updated: Consolidated Pricing
+  annualReturn: 1250, // Updated: Includes Section 216 Verification
+  annualReturnSmall: 1250, // Updated: Consolidated Pricing
   boFiling: 1850, // Updated: Hard-Stop Security Bundle
   // COIDA pricing removed
   restoration: 8800, // Professional Fee Only
