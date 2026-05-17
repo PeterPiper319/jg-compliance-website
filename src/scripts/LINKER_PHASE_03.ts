@@ -10,8 +10,8 @@ export function validatePhase03(): boolean {
 
   // 1. Pricing Integrity Check
   // High risk check: Restoration logic is high-ticket/high-complexity.
-  if (PRICING_2026.restoration !== 8800) {
-    console.error(`CRITICAL: Restoration Price Mismatch. Expected 8800, got ${PRICING_2026.restoration}. Risk of revenue loss.`);
+  if (PRICING_2026.restoration !== 9000) {
+    console.error(`CRITICAL: Restoration Price Mismatch. Expected 9000, got ${PRICING_2026.restoration}. Risk of revenue loss.`);
     return false;
   }
 

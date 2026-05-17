@@ -42,9 +42,15 @@ const pageDescription = "Full pricing list for CIPC, COIDA, and Labour complianc
       </a>
 
       <a href="/services/cipc/restoration" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
-        <h3 class="font-bold text-brand-blue group-hover:underline">Company Restoration</h3>
-        <p class="text-sm text-brand-grey mt-2 mb-4">Re-instate deregistered entities.</p>
-        <div class="text-xl font-bold text-brand-blue">R {PRICING_2026.restoration}</div>
+        <h3 class="font-bold text-brand-blue group-hover:underline">Company Restoration (The "Resurrection" Pack)</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Full legal reinstatement from "Deregistered" status. This does not include the CIPC costs or advertisement costs.</p>
+        <div class="text-xl font-bold text-brand-blue">R{PRICING_2026.restoration.toFixed(2)}</div>
+      </a>
+
+      <a href="/services/cipc/foreign-director-bo" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">
+        <h3 class="font-bold text-brand-blue group-hover:underline">Foreign Director BO Compliance</h3>
+        <p class="text-sm text-brand-grey mt-2 mb-4">Beneficial ownership compliance for foreign directors.</p>
+        <div class="text-xl font-bold text-brand-blue">R{PRICING_2026.foreignDirectorBO.toLocaleString()}</div>
       </a>
 
       <a href="/services/bee-affidavit" class="block p-6 bg-white border border-brand-accent/20 rounded-lg hover:border-brand-blue transition-colors group">

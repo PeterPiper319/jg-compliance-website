@@ -21,8 +21,9 @@ export const PRICING_2026 = {
   annualReturn: 1250, // Updated: Includes Section 216 Verification
   annualReturnSmall: 1250, // Updated: Consolidated Pricing
   boFiling: 1850, // Updated: Hard-Stop Security Bundle
+  foreignDirectorBO: 2450, // New service: Foreign Director BO Compliance
   // COIDA pricing removed
-  restoration: 8800, // Professional Fee Only
+  restoration: 9000, // Professional Fee Only (Resurrection Pack)
   beeAffidavit: 390,
   letterGoodStanding: 850,
   // Domestic UIF pricing removed

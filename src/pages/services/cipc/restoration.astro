@@ -11,12 +11,12 @@ const { title: pageTitle, description: pageDescription } = ROUTE_SEO.restoration
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Company Restoration (CoR 40.5)",
+  "name": "Company Restoration (The \"Resurrection\" Pack)",
   "provider": {
     "@type": "ProfessionalService",
     "name": SITE_METADATA.legalName
   },
-  "description": "Strategic re-instatement of deregistered companies. Professional fee excludes Gazetting and Penalties.",
+  "description": "Full legal reinstatement from \"Deregistered\" status. This does not include the CIPC costs or advertisement costs.",
   "serviceType": "Legal Compliance",
   "offers": {
     "@type": "Offer",
@@ -28,8 +28,8 @@ const schema = {
 
 <BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
   <ServiceHero 
-    title={pageTitle}
-    subtitle="Professional Fee for CoR 40.5 Re-Instatement. (Note: Fee excludes mandatory Government Gazette ads and CIPC penalties)."
+    title={"Company Restoration (The \"Resurrection\" Pack)"}
+    subtitle={"Full legal reinstatement from \"Deregistered\" status. This does not include the CIPC costs or advertisement costs."}
     price={PRICING_2026.restoration}
     turnaround="3-6 Months"
   />
@@ -49,7 +49,7 @@ const schema = {
       <h3 class="text-2xl font-bold text-brand-blue mb-6">Cost Structure Breakdown</h3>
       <div class="grid md:grid-cols-2 gap-8 mb-12">
         <div class="bg-white p-6 rounded-lg shadow-sm border border-brand-accent/20">
-          <h4 class="font-bold text-brand-blue mb-2">Professional Fee (R{PRICING_2026.restoration})</h4>
+          <h4 class="font-bold text-brand-blue mb-2">Professional Fee (R{PRICING_2026.restoration.toFixed(2)})</h4>
           <p class="text-xs text-brand-grey mb-4">Covers our intellectual time and administration:</p>
           <ul class="list-disc list-inside text-sm text-brand-grey space-y-2">
             <li>Drafting of CoR 40.5 Application</li>

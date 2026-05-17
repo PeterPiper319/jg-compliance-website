@@ -19,9 +19,9 @@ export function validatePhase01(): boolean {
   }
 
   // Validation 2: Pricing Logic - Restoration Fee
-  if (PRICING_2026.restoration !== 8800) {
+  if (PRICING_2026.restoration !== 9000) {
     isValid = false;
-    errors.push(`CRITICAL: PRICING_2026.restoration mismatch. Expected 8800, got ${PRICING_2026.restoration}`);
+    errors.push(`CRITICAL: PRICING_2026.restoration mismatch. Expected 9000, got ${PRICING_2026.restoration}`);
   }
 
   if (isValid) {
