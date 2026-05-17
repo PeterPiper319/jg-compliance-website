@@ -21,12 +21,11 @@ export const PRICING_2026 = {
   annualReturn: 950, // Updated: Includes Section 216 Verification
   annualReturnSmall: 950, // Updated: Consolidated Pricing
   boFiling: 1850, // Updated: Hard-Stop Security Bundle
-  coidRegistration: 1850, // Technical Facilitation
-  coidaRegistration: 1850, // Alias
+  // COIDA pricing removed
   restoration: 8800, // Professional Fee Only
   beeAffidavit: 390,
   letterGoodStanding: 850,
-  uifDomestic: 850,
+  // Domestic UIF pricing removed
   paiaManual: 1450,
   roeSubmission: 950,
   informationOfficerReg: 850,
