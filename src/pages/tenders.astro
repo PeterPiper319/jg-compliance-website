@@ -1,0 +1,184 @@
+---
+// src/pages/tenders.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BRAND_COLORS, SITE_IDENTITY } from '../config/brand';
+
+const pageTitle = "TenderMatch™ | Procurement Intelligence & Bid Matching Matrix";
+const pageDescription = "Discover how the automated TenderMatch engine scans national procurement registries, checks CSD indicators, and builds your active contract pipeline.";
+
+// Page-Specific Structured Data for Search Engine Authority
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "JG TenderMatch Platform",
+  "image": "https://jgcompliance.co.za/logo1.png",
+  "description": "Automated procurement tracking and bid matching engine for South African commercial contractors.",
+  "brand": {
+    "@type": "Brand",
+    "name": "JG Business Compliance"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "ZAR",
+    "description": "Free Preliminary Profile Matchmaker Assessment"
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schema={schema}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-slate-900 to-brand-blue text-white pt-28 pb-20 overflow-hidden">
+    <div class="container mx-auto px-4 text-center relative z-10 max-w-5xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-wider text-blue-200 mb-6 backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Platform In Production: Live at jgtendermatch.co.za
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-none mb-6">
+        Turn Public Procurement Into An <br class="hidden md:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Automated Growth Engine</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+        Stop spending hours scouring fragmented government portals. TenderMatch™ acts as a sovereign intelligence node, checking your CSD parameters against live bids to find multi-million rand opportunities instantly.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="https://www.jgtendermatch.co.za" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full sm:w-auto px-8 py-4 bg-white text-brand-blue font-bold rounded-xl shadow-2xl hover:bg-gray-50 transition-all flex items-center justify-center gap-2 text-base group"
+        >
+          Access TenderMatch App
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute inset-0 z-0 opacity-[0.05]" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+  </section>
+
+  <!-- Key Metrics Bar -->
+  <section class="bg-gray-100 border-y border-gray-200 py-8 relative z-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+        <div>
+          <span class="block text-3xl font-black text-brand-blue">340+</span>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1 block">Active Live Tenders Tracked</span>
+        </div>
+        <div class="border-t md:border-t-0 md:border-x border-gray-200 pt-6 md:pt-0">
+          <span class="block text-3xl font-black text-brand-blue">90%</span>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1 block">Reduction in Admin Discovery Time</span>
+        </div>
+        <div class="border-t md:border-t-0 pt-6 md:pt-0">
+          <span class="block text-3xl font-black text-emerald-600">POPIA</span>
+          <span class="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1 block">Compliant Governance Vault</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Infographic Flow Structure -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-blue mb-4">How the Ingestion Engine Architectures Work</h2>
+        <p class="text-brand-grey leading-relaxed">
+          From first principles, the TenderMatch platform bridges the gap between raw public sector notices and your active enterprise capability matrix.
+        </p>
+      </div>
+
+      <!-- Infographic Grid Map -->
+      <div class="relative space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-8">
+        <!-- Connecting Vector Line (Desktop) -->
+        <div class="hidden md:block absolute top-1/4 left-[15%] right-[15%] h-0.5 bg-gray-200 -z-10"></div>
+
+        <!-- Step 1 Card -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200/60 shadow-sm relative text-center">
+          <div class="w-14 h-14 bg-brand-blue text-white rounded-2xl font-black text-xl flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-white -mt-12 md:-mt-14">
+            01
+          </div>
+          <h3 class="text-xl font-bold text-brand-blue mb-3">CSD Parameter Injection</h3>
+          <p class="text-sm text-brand-grey leading-relaxed">
+            The engine safely imports your corporate indicators via your verified Central Supplier Database metadata structures, identifying valid industry sectors and regional parameters.
+          </p>
+        </div>
+
+        <!-- Step 2 Card -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200/60 shadow-sm relative text-center">
+          <div class="w-14 h-14 bg-cyan-600 text-white rounded-2xl font-black text-xl flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-white -mt-12 md:-mt-14">
+            02
+          </div>
+          <h3 class="text-xl font-bold text-brand-blue mb-3">Semantic Evaluation</h3>
+          <p class="text-sm text-brand-grey leading-relaxed">
+            Our background algorithm matches national, provincial, and municipal tender publications against your capacity, filtering out noise to reveal highly relevant prospects.
+          </p>
+        </div>
+
+        <!-- Step 3 Card -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200/60 shadow-sm relative text-center">
+          <div class="w-14 h-14 bg-emerald-600 text-white rounded-2xl font-black text-xl flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-white -mt-12 md:-mt-14">
+            03
+          </div>
+          <h3 class="text-xl font-bold text-brand-blue mb-3">Tender-Ready Pipeline</h3>
+          <p class="text-sm text-brand-grey leading-relaxed">
+            Get instant visibility into estimated tender value bounds, dynamic countdown indicators for closing dates, and direct links to parsed structural documentation sheets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Diagnostic Comparison Section -->
+  <section class="py-20 bg-gray-50 border-t border-gray-200/60">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h3 class="text-2xl font-black text-brand-blue text-center mb-12">Designed to Solve South African Procurement Realities</h3>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-xl border border-gray-200 flex gap-4 shadow-sm">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 font-bold text-lg">✕</div>
+          <div>
+            <h4 class="font-bold text-base text-gray-800">The Problem: Disqualification Loops</h4>
+            <p class="text-sm text-brand-grey mt-1 leading-relaxed">
+              Over 90% of local SMME tender applications are discarded during the first phase of administrative compliance checks due to expired tax clearances, mismatched CSD entries, or out-of-date company registries.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 flex gap-4 shadow-sm">
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-lg">✓</div>
+          <div>
+            <h4 class="font-bold text-base text-gray-800">The Resolution: Automated Status Verification</h4>
+            <p class="text-sm text-brand-grey mt-1 leading-relaxed">
+              By working hand-in-hand with your core records at JG Business Compliance, TenderMatch continuously monitors your status so you know you are fully compliant before investing time in a bid.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Strategic Call to Action -->
+  <section class="bg-brand-blue text-white py-16 text-center relative overflow-hidden">
+    <div class="container mx-auto px-4 max-w-3xl relative z-10">
+      <h2 class="text-3xl md:text-4xl font-black mb-4">Ready to Run a Matchmaker Audit?</h2>
+      <p class="text-white/80 mb-8 text-sm md:text-base max-w-xl mx-auto">
+        Deploy your corporate metrics inside our secure portal and verify your localized contract pipeline immediately. No complicated setup files required.
+      </p>
+      <a 
+        href="https://www.jgtendermatch.co.za" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-block bg-white text-brand-blue px-10 py-4 rounded-xl font-extrabold shadow-xl hover:bg-gray-100 transition-all text-base tracking-wide"
+      >
+        Launch Free Interactive Matchmaker
+      </a>
+    </div>
+    <div class="absolute -bottom-16 -left-16 w-48 h-48 bg-cyan-600/20 rounded-full blur-2xl"></div>
+    <div class="absolute -top-16 -right-16 w-48 h-48 bg-slate-900/40 rounded-full blur-2xl"></div>
+  </section>
+</BaseLayout>
