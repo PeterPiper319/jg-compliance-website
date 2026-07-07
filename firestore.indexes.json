@@ -1,0 +1,23 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "tenders",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "classified_industry",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "province",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "discoveredAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
